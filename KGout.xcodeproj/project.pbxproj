@@ -7,6 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09A2F9462223B27D0001147A /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2F9452223B27D0001147A /* UserInfoViewController.swift */; };
+		09A2F9672223B2A10001147A /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2F9482223B2A10001147A /* DatabaseManager.swift */; };
+		09A2F9682223B2A10001147A /* AddDrugAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2F94A2223B2A10001147A /* AddDrugAlarmViewController.swift */; };
+		09A2F9692223B2A10001147A /* DrugInfoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2F94B2223B2A10001147A /* DrugInfoViewCell.swift */; };
+		09A2F96A2223B2A10001147A /* DrugListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2F94C2223B2A10001147A /* DrugListViewController.swift */; };
+		09A2F96B2223B2A10001147A /* AddDrugInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2F94D2223B2A10001147A /* AddDrugInfoViewController.swift */; };
+		09A2F96C2223B2A10001147A /* DrugAlarmViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2F94E2223B2A10001147A /* DrugAlarmViewCell.swift */; };
+		09A2F96D2223B2A10001147A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2F9502223B2A10001147A /* Constants.swift */; };
+		09A2F96E2223B2A10001147A /* DefaultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2F9512223B2A10001147A /* DefaultCollectionViewCell.swift */; };
+		09A2F96F2223B2A10001147A /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2F9522223B2A10001147A /* Logger.swift */; };
+		09A2F9702223B2A10001147A /* LocalPushManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2F9532223B2A10001147A /* LocalPushManager.swift */; };
+		09A2F9712223B2A10001147A /* GoutFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2F9542223B2A10001147A /* GoutFileManager.swift */; };
+		09A2F9722223B2A10001147A /* GoutDefaultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2F9552223B2A10001147A /* GoutDefaultViewController.swift */; };
+		09A2F9732223B2A10001147A /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2F9562223B2A10001147A /* CameraViewController.swift */; };
+		09A2F9742223B2A10001147A /* DefaultSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2F9572223B2A10001147A /* DefaultSwitchView.swift */; };
+		09A2F9752223B2A10001147A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2F9582223B2A10001147A /* Extensions.swift */; };
+		09A2F9762223B2A10001147A /* BaseLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2F9592223B2A10001147A /* BaseLabel.swift */; };
+		09A2F9772223B2A10001147A /* Enemeration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2F95A2223B2A10001147A /* Enemeration.swift */; };
+		09A2F9782223B2A10001147A /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2F95B2223B2A10001147A /* Structs.swift */; };
+		09A2F9792223B2A10001147A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2F95C2223B2A10001147A /* Utils.swift */; };
+		09A2F97A2223B2A10001147A /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2F95D2223B2A10001147A /* DefaultButton.swift */; };
+		09A2F97B2223B2A10001147A /* BaseNaviBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2F95E2223B2A10001147A /* BaseNaviBar.swift */; };
+		09A2F97C2223B2A10001147A /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2F95F2223B2A10001147A /* BaseButton.swift */; };
+		09A2F97D2223B2A10001147A /* BaseChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2F9612223B2A10001147A /* BaseChartViewController.swift */; };
+		09A2F97E2223B2A10001147A /* GoutDataViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2F9622223B2A10001147A /* GoutDataViewCell.swift */; };
+		09A2F97F2223B2A10001147A /* GoutValueListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2F9632223B2A10001147A /* GoutValueListViewController.swift */; };
+		09A2F9802223B2A10001147A /* UricacidCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2F9642223B2A10001147A /* UricacidCollectionViewCell.swift */; };
+		09A2F9812223B2A10001147A /* GoutChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2F9652223B2A10001147A /* GoutChartViewController.swift */; };
+		09A2F9822223B2A10001147A /* AddValueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2F9662223B2A10001147A /* AddValueViewController.swift */; };
+		09A2F98C2223B3B90001147A /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09A2F9892223B3A80001147A /* Charts.framework */; };
+		09A2F98D2223B3B90001147A /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 09A2F9892223B3A80001147A /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		09A2F9912223B3F70001147A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09A2F9902223B3F70001147A /* GoogleService-Info.plist */; };
+		09A2F9932223B8E70001147A /* GoutTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2F9922223B8E60001147A /* GoutTabbarViewController.swift */; };
 		09AFF5A82223AF2E00D8707E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AFF5A72223AF2E00D8707E /* AppDelegate.swift */; };
 		09AFF5AA2223AF2E00D8707E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AFF5A92223AF2E00D8707E /* ViewController.swift */; };
 		09AFF5AD2223AF2E00D8707E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09AFF5AB2223AF2E00D8707E /* Main.storyboard */; };
@@ -16,7 +49,77 @@
 		401FAEEC7F66BEE03E407F0C /* Pods_KGout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CA2BC9B618EDD607672BB5 /* Pods_KGout.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		09A2F9882223B3A80001147A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 09A2F9832223B3A70001147A /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 65AD9E95D9ED4DC0BD73A743;
+			remoteInfo = Charts;
+		};
+		09A2F98A2223B3A80001147A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 09A2F9832223B3A70001147A /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1CBBC58C6CE1EBEE9852CE41;
+			remoteInfo = ChartsTests;
+		};
+		09A2F98E2223B3B90001147A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 09A2F9832223B3A70001147A /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A58A4ED274A941CA248EA921;
+			remoteInfo = Charts;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		09A2F9432223B22F0001147A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				09A2F98D2223B3B90001147A /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		09A2F9452223B27D0001147A /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		09A2F9482223B2A10001147A /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		09A2F94A2223B2A10001147A /* AddDrugAlarmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDrugAlarmViewController.swift; sourceTree = "<group>"; };
+		09A2F94B2223B2A10001147A /* DrugInfoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugInfoViewCell.swift; sourceTree = "<group>"; };
+		09A2F94C2223B2A10001147A /* DrugListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugListViewController.swift; sourceTree = "<group>"; };
+		09A2F94D2223B2A10001147A /* AddDrugInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDrugInfoViewController.swift; sourceTree = "<group>"; };
+		09A2F94E2223B2A10001147A /* DrugAlarmViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugAlarmViewCell.swift; sourceTree = "<group>"; };
+		09A2F9502223B2A10001147A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		09A2F9512223B2A10001147A /* DefaultCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultCollectionViewCell.swift; sourceTree = "<group>"; };
+		09A2F9522223B2A10001147A /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		09A2F9532223B2A10001147A /* LocalPushManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalPushManager.swift; sourceTree = "<group>"; };
+		09A2F9542223B2A10001147A /* GoutFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoutFileManager.swift; sourceTree = "<group>"; };
+		09A2F9552223B2A10001147A /* GoutDefaultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoutDefaultViewController.swift; sourceTree = "<group>"; };
+		09A2F9562223B2A10001147A /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		09A2F9572223B2A10001147A /* DefaultSwitchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultSwitchView.swift; sourceTree = "<group>"; };
+		09A2F9582223B2A10001147A /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		09A2F9592223B2A10001147A /* BaseLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseLabel.swift; sourceTree = "<group>"; };
+		09A2F95A2223B2A10001147A /* Enemeration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enemeration.swift; sourceTree = "<group>"; };
+		09A2F95B2223B2A10001147A /* Structs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
+		09A2F95C2223B2A10001147A /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		09A2F95D2223B2A10001147A /* DefaultButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
+		09A2F95E2223B2A10001147A /* BaseNaviBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNaviBar.swift; sourceTree = "<group>"; };
+		09A2F95F2223B2A10001147A /* BaseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
+		09A2F9612223B2A10001147A /* BaseChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseChartViewController.swift; sourceTree = "<group>"; };
+		09A2F9622223B2A10001147A /* GoutDataViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoutDataViewCell.swift; sourceTree = "<group>"; };
+		09A2F9632223B2A10001147A /* GoutValueListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoutValueListViewController.swift; sourceTree = "<group>"; };
+		09A2F9642223B2A10001147A /* UricacidCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UricacidCollectionViewCell.swift; sourceTree = "<group>"; };
+		09A2F9652223B2A10001147A /* GoutChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoutChartViewController.swift; sourceTree = "<group>"; };
+		09A2F9662223B2A10001147A /* AddValueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddValueViewController.swift; sourceTree = "<group>"; };
+		09A2F9832223B3A70001147A /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
+		09A2F9902223B3F70001147A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		09A2F9922223B8E60001147A /* GoutTabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoutTabbarViewController.swift; sourceTree = "<group>"; };
 		09AFF5A42223AF2E00D8707E /* KGout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KGout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09AFF5A72223AF2E00D8707E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09AFF5A92223AF2E00D8707E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,15 +139,90 @@
 			buildActionMask = 2147483647;
 			files = (
 				401FAEEC7F66BEE03E407F0C /* Pods_KGout.framework in Frameworks */,
+				09A2F98C2223B3B90001147A /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09A2F9442223B27D0001147A /* user */ = {
+			isa = PBXGroup;
+			children = (
+				09A2F9452223B27D0001147A /* UserInfoViewController.swift */,
+			);
+			path = user;
+			sourceTree = "<group>";
+		};
+		09A2F9472223B2A10001147A /* database */ = {
+			isa = PBXGroup;
+			children = (
+				09A2F9482223B2A10001147A /* DatabaseManager.swift */,
+			);
+			path = database;
+			sourceTree = "<group>";
+		};
+		09A2F9492223B2A10001147A /* drug */ = {
+			isa = PBXGroup;
+			children = (
+				09A2F94A2223B2A10001147A /* AddDrugAlarmViewController.swift */,
+				09A2F94B2223B2A10001147A /* DrugInfoViewCell.swift */,
+				09A2F94C2223B2A10001147A /* DrugListViewController.swift */,
+				09A2F94D2223B2A10001147A /* AddDrugInfoViewController.swift */,
+				09A2F94E2223B2A10001147A /* DrugAlarmViewCell.swift */,
+			);
+			path = drug;
+			sourceTree = "<group>";
+		};
+		09A2F94F2223B2A10001147A /* common */ = {
+			isa = PBXGroup;
+			children = (
+				09A2F9502223B2A10001147A /* Constants.swift */,
+				09A2F9512223B2A10001147A /* DefaultCollectionViewCell.swift */,
+				09A2F9522223B2A10001147A /* Logger.swift */,
+				09A2F9532223B2A10001147A /* LocalPushManager.swift */,
+				09A2F9542223B2A10001147A /* GoutFileManager.swift */,
+				09A2F9552223B2A10001147A /* GoutDefaultViewController.swift */,
+				09A2F9562223B2A10001147A /* CameraViewController.swift */,
+				09A2F9572223B2A10001147A /* DefaultSwitchView.swift */,
+				09A2F9582223B2A10001147A /* Extensions.swift */,
+				09A2F9592223B2A10001147A /* BaseLabel.swift */,
+				09A2F95A2223B2A10001147A /* Enemeration.swift */,
+				09A2F95B2223B2A10001147A /* Structs.swift */,
+				09A2F95C2223B2A10001147A /* Utils.swift */,
+				09A2F95D2223B2A10001147A /* DefaultButton.swift */,
+				09A2F95E2223B2A10001147A /* BaseNaviBar.swift */,
+				09A2F95F2223B2A10001147A /* BaseButton.swift */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		09A2F9602223B2A10001147A /* chart */ = {
+			isa = PBXGroup;
+			children = (
+				09A2F9612223B2A10001147A /* BaseChartViewController.swift */,
+				09A2F9622223B2A10001147A /* GoutDataViewCell.swift */,
+				09A2F9632223B2A10001147A /* GoutValueListViewController.swift */,
+				09A2F9642223B2A10001147A /* UricacidCollectionViewCell.swift */,
+				09A2F9652223B2A10001147A /* GoutChartViewController.swift */,
+				09A2F9662223B2A10001147A /* AddValueViewController.swift */,
+			);
+			path = chart;
+			sourceTree = "<group>";
+		};
+		09A2F9842223B3A80001147A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				09A2F9892223B3A80001147A /* Charts.framework */,
+				09A2F98B2223B3A80001147A /* ChartsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		09AFF59B2223AF2D00D8707E = {
 			isa = PBXGroup;
 			children = (
+				09A2F9832223B3A70001147A /* Charts.xcodeproj */,
 				09AFF5A62223AF2E00D8707E /* KGout */,
 				09AFF5A52223AF2E00D8707E /* Products */,
 				8082A56F137F2142328C819B /* Pods */,
@@ -63,7 +241,14 @@
 		09AFF5A62223AF2E00D8707E /* KGout */ = {
 			isa = PBXGroup;
 			children = (
+				09A2F9602223B2A10001147A /* chart */,
+				09A2F94F2223B2A10001147A /* common */,
+				09A2F9472223B2A10001147A /* database */,
+				09A2F9492223B2A10001147A /* drug */,
+				09A2F9442223B27D0001147A /* user */,
 				09AFF5A72223AF2E00D8707E /* AppDelegate.swift */,
+				09A2F9902223B3F70001147A /* GoogleService-Info.plist */,
+				09A2F9922223B8E60001147A /* GoutTabbarViewController.swift */,
 				09AFF5A92223AF2E00D8707E /* ViewController.swift */,
 				09AFF5AB2223AF2E00D8707E /* Main.storyboard */,
 				09AFF5B12223AF3100D8707E /* Assets.xcassets */,
@@ -103,10 +288,12 @@
 				09AFF5A12223AF2E00D8707E /* Frameworks */,
 				09AFF5A22223AF2E00D8707E /* Resources */,
 				BB44252DEBAFB72BD3BF6097 /* [CP] Embed Pods Frameworks */,
+				09A2F9432223B22F0001147A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				09A2F98F2223B3B90001147A /* PBXTargetDependency */,
 			);
 			name = KGout;
 			productName = KGout;
@@ -139,6 +326,12 @@
 			mainGroup = 09AFF59B2223AF2D00D8707E;
 			productRefGroup = 09AFF5A52223AF2E00D8707E /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 09A2F9842223B3A80001147A /* Products */;
+					ProjectRef = 09A2F9832223B3A70001147A /* Charts.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				09AFF5A32223AF2E00D8707E /* KGout */,
@@ -146,12 +339,30 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		09A2F9892223B3A80001147A /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 09A2F9882223B3A80001147A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		09A2F98B2223B3A80001147A /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = 09A2F98A2223B3A80001147A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		09AFF5A22223AF2E00D8707E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				09AFF5B52223AF3100D8707E /* LaunchScreen.storyboard in Resources */,
+				09A2F9912223B3F70001147A /* GoogleService-Info.plist in Resources */,
 				09AFF5B22223AF3100D8707E /* Assets.xcassets in Resources */,
 				09AFF5AD2223AF2E00D8707E /* Main.storyboard in Resources */,
 			);
@@ -233,13 +444,51 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09A2F97C2223B2A10001147A /* BaseButton.swift in Sources */,
+				09A2F9742223B2A10001147A /* DefaultSwitchView.swift in Sources */,
 				09AFF5AA2223AF2E00D8707E /* ViewController.swift in Sources */,
+				09A2F96D2223B2A10001147A /* Constants.swift in Sources */,
+				09A2F96E2223B2A10001147A /* DefaultCollectionViewCell.swift in Sources */,
+				09A2F9732223B2A10001147A /* CameraViewController.swift in Sources */,
+				09A2F9462223B27D0001147A /* UserInfoViewController.swift in Sources */,
+				09A2F9812223B2A10001147A /* GoutChartViewController.swift in Sources */,
+				09A2F9712223B2A10001147A /* GoutFileManager.swift in Sources */,
+				09A2F97A2223B2A10001147A /* DefaultButton.swift in Sources */,
+				09A2F9752223B2A10001147A /* Extensions.swift in Sources */,
+				09A2F96C2223B2A10001147A /* DrugAlarmViewCell.swift in Sources */,
+				09A2F9762223B2A10001147A /* BaseLabel.swift in Sources */,
+				09A2F97B2223B2A10001147A /* BaseNaviBar.swift in Sources */,
+				09A2F9672223B2A10001147A /* DatabaseManager.swift in Sources */,
+				09A2F97D2223B2A10001147A /* BaseChartViewController.swift in Sources */,
 				09AFF5A82223AF2E00D8707E /* AppDelegate.swift in Sources */,
+				09A2F9702223B2A10001147A /* LocalPushManager.swift in Sources */,
+				09A2F9932223B8E70001147A /* GoutTabbarViewController.swift in Sources */,
+				09A2F97E2223B2A10001147A /* GoutDataViewCell.swift in Sources */,
+				09A2F96A2223B2A10001147A /* DrugListViewController.swift in Sources */,
+				09A2F9782223B2A10001147A /* Structs.swift in Sources */,
+				09A2F9802223B2A10001147A /* UricacidCollectionViewCell.swift in Sources */,
+				09A2F9792223B2A10001147A /* Utils.swift in Sources */,
+				09A2F9692223B2A10001147A /* DrugInfoViewCell.swift in Sources */,
+				09A2F96F2223B2A10001147A /* Logger.swift in Sources */,
+				09A2F9682223B2A10001147A /* AddDrugAlarmViewController.swift in Sources */,
+				09A2F9722223B2A10001147A /* GoutDefaultViewController.swift in Sources */,
+				09A2F97F2223B2A10001147A /* GoutValueListViewController.swift in Sources */,
+				09A2F9822223B2A10001147A /* AddValueViewController.swift in Sources */,
 				09AFF5B02223AF2E00D8707E /* KGout.xcdatamodeld in Sources */,
+				09A2F9772223B2A10001147A /* Enemeration.swift in Sources */,
+				09A2F96B2223B2A10001147A /* AddDrugInfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		09A2F98F2223B3B90001147A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Charts;
+			targetProxy = 09A2F98E2223B3B90001147A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		09AFF5AB2223AF2E00D8707E /* Main.storyboard */ = {
@@ -381,6 +630,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A87AD868570160180B5F80BB /* Pods-KGout.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3ZJQVNKYT2;
@@ -392,7 +642,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.khstar.KGout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -400,6 +650,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A20F69CDE945C0071D67131F /* Pods-KGout.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3ZJQVNKYT2;
@@ -411,7 +662,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.khstar.KGout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

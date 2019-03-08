@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //        let fromKey = databaseKey.fromBase64()
         
         databaseManager?.setPassword(password: databaseKey)
-//        GADMobileAds.configure(withApplicationID: "ca-app-pub-8837395530354963~2877983665")
+        GADMobileAds.configure(withApplicationID: "ca-app-pub-8837395530354963~2877983665")
         
         //DB 파일이 존재하지 않으면
         if(!fileManager.isDatabaseFile()) {

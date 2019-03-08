@@ -582,6 +582,7 @@ class GoutChartViewController: BaseChartViewController {
         xAxis.valueFormatter = self
         
         let leftAxis = chartView.leftAxis
+//        leftAxis.labelTextColor = UIColor(red: 51/255, green: 181/255, blue: 229/255, alpha: 1)
         leftAxis.labelTextColor = UIColor(red: 51/255, green: 181/255, blue: 229/255, alpha: 1)
         leftAxis.axisMaximum = 20
         leftAxis.axisMinimum = 0
@@ -639,12 +640,12 @@ class GoutChartViewController: BaseChartViewController {
         
         let set1 = LineChartDataSet(values: chartDataEntry, label: "요산")
         set1.axisDependency = .left
-        set1.setColor(UIColor(red: 51/255, green: 181/255, blue: 229/255, alpha: 1))
+        set1.setColor(UIColor(red: 51/255, green: 181/255, blue: 229/255, alpha: 1))    //그래프 라인 칼라 수정시
         set1.setCircleColor(.black)
         set1.lineWidth = 2
         set1.circleRadius = 3
         set1.fillAlpha = 65/255
-        set1.fillColor = UIColor(red: 51/255, green: 181/255, blue: 229/255, alpha: 1)
+        set1.fillColor = UIColor(red: 51/255, green: 181/255, blue: 229/255, alpha: 1)  //범례 라인 칼라 수정시
         set1.highlightColor = UIColor(red: 244/255, green: 117/255, blue: 117/255, alpha: 1)
         set1.drawCircleHoleEnabled = false
         let data = LineChartData(dataSets: [set1])

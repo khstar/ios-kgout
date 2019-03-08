@@ -55,7 +55,7 @@ class UricacidCollectionViewCell: DefaultCollectionViewCell {
         addSubview(valueImage)
         addSubview(bottomLineView)
         
-        let dateLabelWidth = Utils.widthOfString("1900-01-01", font: dateLabel.font)
+        let dateLabelWidth = Utils.widthOfString("1900-01-01", font: dateLabel.font) + 10
         
         dateLabel.autoPinEdge(toSuperviewEdge: .left, withInset: 15)
         dateLabel.autoAlignAxis(toSuperviewAxis: .horizontal)
@@ -153,7 +153,7 @@ class DeleteUricacidViewCell: DefaultCollectionViewCell {
         deleteImage.autoAlignAxis(toSuperviewAxis: .horizontal)
         deleteImage.autoSetDimensions(to: CGSize(width: 20, height: 20))
         
-        let dateLabelWidth = Utils.widthOfString("1900-01-01", font: dateLabel.font)
+        let dateLabelWidth = Utils.widthOfString("1900-01-01", font: dateLabel.font) + 10
         
         dateLabel.autoPinEdge(.left, to: .right, of: deleteImage, withOffset: 5)
         dateLabel.autoAlignAxis(toSuperviewAxis: .horizontal)

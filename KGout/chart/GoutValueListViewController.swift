@@ -112,7 +112,6 @@ class GoutValueListViewController: GoutDefaultViewController {
         goutValueCollectionView.autoPinEdge(toSuperviewEdge: .left)
         goutValueCollectionView.autoPinEdge(toSuperviewEdge: .right)
         goutValueCollectionView.autoSetDimension(.height, toSize: 180)
-//        goutValueCollectionView.backgroundColor = .gray
         
         defaultPanelView.addSubview(closeButton)
         closeButton.autoPinEdge(toSuperviewEdge: .bottom, withInset: 7)
@@ -128,15 +127,10 @@ class GoutValueListViewController: GoutDefaultViewController {
     }
     
     func fetchData(){
-        do{
-            let uricacids = DatabaseManager.sharedInstance().selectGoutRegdate(date: regDate!)
-            
-            if uricacids != nil {
-                goutValueList = uricacids!
-            }
-            
-        } catch {
-            print("Fetching Failed")
+        let uricacids = DatabaseManager.sharedInstance().selectGoutRegdate(date: regDate!)
+        
+        if uricacids != nil {
+            goutValueList = uricacids!
         }
     }
 

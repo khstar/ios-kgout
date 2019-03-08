@@ -203,8 +203,6 @@ class BaseChartViewController: GoutDefaultViewController, ChartViewDelegate {
         chartView.setScaleEnabled(true)
         chartView.pinchZoomEnabled = false
         
-        // ChartYAxis *leftAxis = chartView.leftAxis;
-        
         let xAxis = chartView.xAxis
         xAxis.labelPosition = .bottom
         

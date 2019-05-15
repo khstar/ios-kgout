@@ -121,8 +121,8 @@ class GoutTabbarViewController: UITabBarController {
         let iconBottomInset = (tabbarHeight - iconHeight) / 2
         let bottomHeight = Constants.bottomHeight()
         
-        adMobView.adUnitID = "ca-app-pub-3940256099942544/2934735716"   //테스트
-//        adMobView.adUnitID = "ca-app-pub-8837395530354963/7062014527"   //운영
+//        adMobView.adUnitID = "ca-app-pub-3940256099942544/2934735716"   //테스트
+        adMobView.adUnitID = "ca-app-pub-8837395530354963/7062014527"   //운영
         adMobView.rootViewController = self
         adMobView.load(GADRequest())
         
@@ -138,12 +138,9 @@ class GoutTabbarViewController: UITabBarController {
         adMobView.autoPinEdge(toSuperviewEdge: .bottom, withInset: bottomHeight)
         adMobView.autoSetDimension(.height, toSize: 50)
         
-//        adMobView.isHidden = true
-        
         customSolidView.autoPinEdge(toSuperviewEdge: .left, withInset: zeroInset)
         customSolidView.autoPinEdge(toSuperviewEdge: .right, withInset: zeroInset)
         customSolidView.autoPinEdge(.bottom, to: .top, of: adMobView)
-//        customSolidView.autoPinEdge(toSuperviewEdge: .bottom, withInset: bottomHeight)
         customSolidView.autoSetDimension(.height, toSize: tabbarHeight)
         customSolidView.backgroundColor = .white
         

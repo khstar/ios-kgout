@@ -11,8 +11,6 @@ import AVFoundation
 
 protocol CameraDelegate{
     func capture(image: UIImage)
-//    func close()
-//    func change()
 }
 
 
@@ -23,9 +21,6 @@ class CameraViewController: GoutDefaultViewController {
     var session: AVCaptureSession!
     var videoDataOutput: AVCaptureVideoDataOutput!
     var stillImageOutput: AVCaptureStillImageOutput!
-//    lazy var naviBar: BaseNaviBar! = {
-//        return BaseNaviBar()
-//    }()
     
     var cameraDelegate:CameraDelegate?
     
@@ -37,6 +32,22 @@ class CameraViewController: GoutDefaultViewController {
         var button = BaseButton()
         button.setBackgroundImage(#imageLiteral(resourceName: "captureBtn_nor"), for: .normal)
         button.setBackgroundImage(#imageLiteral(resourceName: "captureBtn_sel"), for: .highlighted)
+        return button
+    }()
+    
+    lazy var cancelButton: UIButton! = {
+        let button = UIButton()
+        button.setTitle("취소", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
+        button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = UIColor(0xAFDFE3)
+        button.layer.borderColor = UIColor.white.cgColor
+        button.layer.borderWidth = 2
+        button.layer.cornerRadius = 8
+        
+        button.addTarget(self, action: #selector(touchDown), for: .touchDown)
+        button.addTarget(self, action: #selector(touchUp), for: [.touchUpInside, .touchUpOutside, .touchDragExit])
+        
         return button
     }()
     
@@ -64,13 +75,13 @@ class CameraViewController: GoutDefaultViewController {
         self.view.addSubview(placeHolder)
         self.view.addSubview(captureButton)
         
-        naviBar.autoPinEdge(toSuperviewEdge: .top, withInset: 20)
+        naviBar.autoPinEdge(toSuperviewEdge: .top, withInset: Constants.statusHeight())
         naviBar.autoPinEdge(toSuperviewEdge: .left)
         naviBar.autoPinEdge(toSuperviewEdge: .right)
         naviBar.autoSetDimension(.height, toSize: 44)
         
-        naviBar.title = "약품 정보"
-        naviBar.rightButton = addButton
+        naviBar.title = "약품 사진"
+        naviBar.leftButton = cancelButton
         
         placeHolder.backgroundColor = .green
         placeHolder.autoPinEdge(.top, to: .bottom, of: naviBar)
@@ -81,21 +92,15 @@ class CameraViewController: GoutDefaultViewController {
         captureButton.autoAlignAxis(toSuperviewAxis: .vertical)
         captureButton.autoSetDimensions(to: CGSize(width: 66, height: 66))
         
-//        setupCameraPreview()
-//        self.session = AVCaptureSession()
         prepareCamera()
-//        updateCameraSelection()
-//        checkPermissionCamera()
         
-        addButton.rx.tap.bind {
+        cancelButton.rx.tap.bind {
             [weak self] _ in
-//            self?.naviPopViewController(animated: true)
             self?.dismissSelf(true)
-        }.disposed(by: disposeBag)
+            }.disposed(by: disposeBag)
         
         captureButton.rx.tap.bind {
             [weak self] _ in
-            //            self?.naviPopViewController(animated: true)
             self?.saveToCamera()
             }.disposed(by: disposeBag)
         
@@ -248,6 +253,14 @@ class CameraViewController: GoutDefaultViewController {
                 
             }
         }
+    }
+    
+    @objc func touchDown(sender:UIButton) {
+        sender.backgroundColor = UIColor(0x97C1C4)
+    }
+    
+    @objc func touchUp(sender:UIButton) {
+        sender.backgroundColor = UIColor(0xAFDFE3)
     }
 
 }

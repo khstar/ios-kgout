@@ -625,7 +625,7 @@ class GoutChartViewController: BaseChartViewController {
             dataI = range
             c = range + count
         }
-//        print("\(dataI) - \(c)")
+
         let yVals1 = (dataI..<c).map { (i) -> ChartDataEntry in
             print(i)
             let val = Double(uricacidDatas[i].gout)!
@@ -633,7 +633,6 @@ class GoutChartViewController: BaseChartViewController {
         }
         
         setChartViewData(chartDataEntry: yVals1)
-//        isRefrash = false
     }
     
     func setChartViewData(chartDataEntry: [ChartDataEntry]) {
@@ -841,8 +840,6 @@ extension GoutChartViewController: IAxisValueFormatter {
         
         let s = months[Int(value) % months.count]
         
-//        print("s = \(s)")
-        
         return s
     }
 }
@@ -989,9 +986,6 @@ extension GoutChartViewController: UICollectionViewDelegate, UICollectionViewDat
             return
         }
         
-//        let d = cell as! UricacidCollectionViewCell
-        
-        
         let indexRow = indexPath.row
         var uaCount = uricacidDatas.count
         
@@ -1089,8 +1083,6 @@ extension GoutChartViewController: UICollectionViewDelegate, UICollectionViewDat
 extension GoutChartViewController:UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
-//        pickerView.ㅅㅁ
-        
         let pickerTag = pickerView.tag
         
         var listCount = 0
@@ -1117,7 +1109,5 @@ extension GoutChartViewController:UIPickerViewDelegate, UIPickerViewDataSource {
         } else {
             return String(dateList[row])
         }
-        
-//        return String(monthList[row])
     }
 }

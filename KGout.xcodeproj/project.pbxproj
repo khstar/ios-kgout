@@ -38,6 +38,14 @@
 		09DACA6D229675CB00AA8919 /* AddDrugInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DACA68229675CB00AA8919 /* AddDrugInfoViewController.swift */; };
 		09DACA6E229675CB00AA8919 /* DrugAlarmViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DACA69229675CB00AA8919 /* DrugAlarmViewCell.swift */; };
 		09DACA742296765700AA8919 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DACA732296765700AA8919 /* DatabaseManager.swift */; };
+		09DACA8A22967EB300AA8919 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DACA8822967EB300AA8919 /* BaseButton.swift */; };
+		09DACA8C22967ECA00AA8919 /* DefaultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DACA8B22967ECA00AA8919 /* DefaultCollectionViewCell.swift */; };
+		09DACA8E22967ED200AA8919 /* DefaultSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DACA8D22967ED200AA8919 /* DefaultSwitchView.swift */; };
+		09DACA9022967EDA00AA8919 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DACA8F22967EDA00AA8919 /* Extensions.swift */; };
+		09DACA9522967EE600AA8919 /* GoutDefaultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DACA9122967EE600AA8919 /* GoutDefaultViewController.swift */; };
+		09DACA9622967EE600AA8919 /* LocalPushManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DACA9222967EE600AA8919 /* LocalPushManager.swift */; };
+		09DACA9722967EE600AA8919 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DACA9322967EE600AA8919 /* Logger.swift */; };
+		09DACA9822967EE600AA8919 /* GoutFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DACA9422967EE600AA8919 /* GoutFileManager.swift */; };
 		401FAEEC7F66BEE03E407F0C /* Pods_KGout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CA2BC9B618EDD607672BB5 /* Pods_KGout.framework */; };
 /* End PBXBuildFile section */
 
@@ -114,6 +122,14 @@
 		09DACA68229675CB00AA8919 /* AddDrugInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDrugInfoViewController.swift; sourceTree = "<group>"; };
 		09DACA69229675CB00AA8919 /* DrugAlarmViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugAlarmViewCell.swift; sourceTree = "<group>"; };
 		09DACA732296765700AA8919 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		09DACA8822967EB300AA8919 /* BaseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
+		09DACA8B22967ECA00AA8919 /* DefaultCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultCollectionViewCell.swift; sourceTree = "<group>"; };
+		09DACA8D22967ED200AA8919 /* DefaultSwitchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultSwitchView.swift; sourceTree = "<group>"; };
+		09DACA8F22967EDA00AA8919 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		09DACA9122967EE600AA8919 /* GoutDefaultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoutDefaultViewController.swift; sourceTree = "<group>"; };
+		09DACA9222967EE600AA8919 /* LocalPushManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalPushManager.swift; sourceTree = "<group>"; };
+		09DACA9322967EE600AA8919 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		09DACA9422967EE600AA8919 /* GoutFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoutFileManager.swift; sourceTree = "<group>"; };
 		95CA2BC9B618EDD607672BB5 /* Pods_KGout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KGout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A20F69CDE945C0071D67131F /* Pods-KGout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KGout.release.xcconfig"; path = "Pods/Target Support Files/Pods-KGout/Pods-KGout.release.xcconfig"; sourceTree = "<group>"; };
 		A87AD868570160180B5F80BB /* Pods-KGout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KGout.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KGout/Pods-KGout.debug.xcconfig"; sourceTree = "<group>"; };
@@ -206,12 +222,20 @@
 		09DACA3D229671F200AA8919 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				09DACA8822967EB300AA8919 /* BaseButton.swift */,
 				09DACA432296720700AA8919 /* BaseLabel.swift */,
 				09DACA412296720700AA8919 /* BaseNaviBar.swift */,
 				09DACA442296720700AA8919 /* CameraViewController.swift */,
 				09DACA3F2296720700AA8919 /* Constants.swift */,
 				09DACA422296720700AA8919 /* DefaultButton.swift */,
+				09DACA8B22967ECA00AA8919 /* DefaultCollectionViewCell.swift */,
+				09DACA8D22967ED200AA8919 /* DefaultSwitchView.swift */,
 				09DACA402296720700AA8919 /* Enemeration.swift */,
+				09DACA8F22967EDA00AA8919 /* Extensions.swift */,
+				09DACA9122967EE600AA8919 /* GoutDefaultViewController.swift */,
+				09DACA9422967EE600AA8919 /* GoutFileManager.swift */,
+				09DACA9222967EE600AA8919 /* LocalPushManager.swift */,
+				09DACA9322967EE600AA8919 /* Logger.swift */,
 				09DACA3E2296720700AA8919 /* Structs.swift */,
 				09DACA452296720800AA8919 /* Utils.swift */,
 			);
@@ -424,17 +448,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09DACA8A22967EB300AA8919 /* BaseButton.swift in Sources */,
 				09DACA6D229675CB00AA8919 /* AddDrugInfoViewController.swift in Sources */,
 				09DACA532296720800AA8919 /* BaseLabel.swift in Sources */,
 				09DACA4E2296720800AA8919 /* Structs.swift in Sources */,
 				09DACA4F2296720800AA8919 /* Constants.swift in Sources */,
 				09B35C3B22965EF4003FA1A6 /* GoutChartViewController.swift in Sources */,
 				09AFF5AA2223AF2E00D8707E /* ViewController.swift in Sources */,
+				09DACA9722967EE600AA8919 /* Logger.swift in Sources */,
+				09DACA9022967EDA00AA8919 /* Extensions.swift in Sources */,
 				09DACA552296720800AA8919 /* Utils.swift in Sources */,
 				09DACA542296720800AA8919 /* CameraViewController.swift in Sources */,
 				09AFF5A82223AF2E00D8707E /* AppDelegate.swift in Sources */,
 				09B35C3922965EF4003FA1A6 /* BaseChartViewController.swift in Sources */,
 				09A2F9932223B8E70001147A /* GoutTabbarViewController.swift in Sources */,
+				09DACA9622967EE600AA8919 /* LocalPushManager.swift in Sources */,
+				09DACA8E22967ED200AA8919 /* DefaultSwitchView.swift in Sources */,
 				09B35C3C22965EF4003FA1A6 /* UricacidCollectionViewCell.swift in Sources */,
 				09DACA502296720800AA8919 /* Enemeration.swift in Sources */,
 				09B35C69229662A6003FA1A6 /* UserInfoViewController.swift in Sources */,
@@ -444,11 +473,14 @@
 				09DACA742296765700AA8919 /* DatabaseManager.swift in Sources */,
 				09B35C3E22965EF4003FA1A6 /* GoutDataViewCell.swift in Sources */,
 				09DACA512296720800AA8919 /* BaseNaviBar.swift in Sources */,
+				09DACA9822967EE600AA8919 /* GoutFileManager.swift in Sources */,
 				09DACA6E229675CB00AA8919 /* DrugAlarmViewCell.swift in Sources */,
 				09B35C3D22965EF4003FA1A6 /* AddValueViewController.swift in Sources */,
 				09DACA522296720800AA8919 /* DefaultButton.swift in Sources */,
 				09AFF5B02223AF2E00D8707E /* KGout.xcdatamodeld in Sources */,
 				09DACA6A229675CB00AA8919 /* AddDrugAlarmViewController.swift in Sources */,
+				09DACA8C22967ECA00AA8919 /* DefaultCollectionViewCell.swift in Sources */,
+				09DACA9522967EE600AA8919 /* GoutDefaultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		09A2F9462223B27D0001147A /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2F9452223B27D0001147A /* UserInfoViewController.swift */; };
 		09A2F9682223B2A10001147A /* AddDrugAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2F94A2223B2A10001147A /* AddDrugAlarmViewController.swift */; };
 		09A2F9692223B2A10001147A /* DrugInfoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2F94B2223B2A10001147A /* DrugInfoViewCell.swift */; };
 		09A2F96A2223B2A10001147A /* DrugListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2F94C2223B2A10001147A /* DrugListViewController.swift */; };
@@ -46,6 +45,7 @@
 		09B35C62229660C9003FA1A6 /* BaseNaviBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B35C52229660C9003FA1A6 /* BaseNaviBar.swift */; };
 		09B35C63229660C9003FA1A6 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B35C53229660C9003FA1A6 /* BaseButton.swift */; };
 		09B35C65229660E9003FA1A6 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B35C64229660E9003FA1A6 /* DatabaseManager.swift */; };
+		09B35C69229662A6003FA1A6 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B35C68229662A6003FA1A6 /* UserInfoViewController.swift */; };
 		401FAEEC7F66BEE03E407F0C /* Pods_KGout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CA2BC9B618EDD607672BB5 /* Pods_KGout.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,7 +88,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		09A2F9452223B27D0001147A /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		09A2F94A2223B2A10001147A /* AddDrugAlarmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDrugAlarmViewController.swift; sourceTree = "<group>"; };
 		09A2F94B2223B2A10001147A /* DrugInfoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugInfoViewCell.swift; sourceTree = "<group>"; };
 		09A2F94C2223B2A10001147A /* DrugListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugListViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +129,7 @@
 		09B35C52229660C9003FA1A6 /* BaseNaviBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNaviBar.swift; sourceTree = "<group>"; };
 		09B35C53229660C9003FA1A6 /* BaseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		09B35C64229660E9003FA1A6 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatabaseManager.swift; path = KGout/Database/DatabaseManager.swift; sourceTree = SOURCE_ROOT; };
+		09B35C68229662A6003FA1A6 /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		95CA2BC9B618EDD607672BB5 /* Pods_KGout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KGout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A20F69CDE945C0071D67131F /* Pods-KGout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KGout.release.xcconfig"; path = "Pods/Target Support Files/Pods-KGout/Pods-KGout.release.xcconfig"; sourceTree = "<group>"; };
 		A87AD868570160180B5F80BB /* Pods-KGout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KGout.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KGout/Pods-KGout.debug.xcconfig"; sourceTree = "<group>"; };
@@ -235,7 +235,7 @@
 		09B35C4122965FAD003FA1A6 /* UserInfo */ = {
 			isa = PBXGroup;
 			children = (
-				09A2F9452223B27D0001147A /* UserInfoViewController.swift */,
+				09B35C68229662A6003FA1A6 /* UserInfoViewController.swift */,
 			);
 			path = UserInfo;
 			sourceTree = "<group>";
@@ -451,7 +451,6 @@
 			files = (
 				09B35C3B22965EF4003FA1A6 /* GoutChartViewController.swift in Sources */,
 				09AFF5AA2223AF2E00D8707E /* ViewController.swift in Sources */,
-				09A2F9462223B27D0001147A /* UserInfoViewController.swift in Sources */,
 				09A2F96C2223B2A10001147A /* DrugAlarmViewCell.swift in Sources */,
 				09B35C60229660C9003FA1A6 /* Utils.swift in Sources */,
 				09B35C5A229660C9003FA1A6 /* CameraViewController.swift in Sources */,
@@ -466,6 +465,7 @@
 				09A2F9692223B2A10001147A /* DrugInfoViewCell.swift in Sources */,
 				09B35C63229660C9003FA1A6 /* BaseButton.swift in Sources */,
 				09B35C55229660C9003FA1A6 /* DefaultCollectionViewCell.swift in Sources */,
+				09B35C69229662A6003FA1A6 /* UserInfoViewController.swift in Sources */,
 				09A2F9682223B2A10001147A /* AddDrugAlarmViewController.swift in Sources */,
 				09B35C61229660C9003FA1A6 /* DefaultButton.swift in Sources */,
 				09B35C3A22965EF4003FA1A6 /* GoutValueListViewController.swift in Sources */,

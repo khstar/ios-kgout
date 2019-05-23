@@ -32,14 +32,6 @@
 		09DACA532296720800AA8919 /* BaseLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DACA432296720700AA8919 /* BaseLabel.swift */; };
 		09DACA542296720800AA8919 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DACA442296720700AA8919 /* CameraViewController.swift */; };
 		09DACA552296720800AA8919 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DACA452296720800AA8919 /* Utils.swift */; };
-		09DACA562296720800AA8919 /* GoutDefaultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DACA462296720800AA8919 /* GoutDefaultViewController.swift */; };
-		09DACA572296720800AA8919 /* GoutFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DACA472296720800AA8919 /* GoutFileManager.swift */; };
-		09DACA582296720800AA8919 /* DefaultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DACA482296720800AA8919 /* DefaultCollectionViewCell.swift */; };
-		09DACA592296720800AA8919 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DACA492296720800AA8919 /* Logger.swift */; };
-		09DACA5A2296720800AA8919 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DACA4A2296720800AA8919 /* BaseButton.swift */; };
-		09DACA5B2296720800AA8919 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DACA4B2296720800AA8919 /* Extensions.swift */; };
-		09DACA5C2296720800AA8919 /* LocalPushManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DACA4C2296720800AA8919 /* LocalPushManager.swift */; };
-		09DACA5D2296720800AA8919 /* DefaultSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DACA4D2296720800AA8919 /* DefaultSwitchView.swift */; };
 		09DACA6A229675CB00AA8919 /* AddDrugAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DACA65229675CB00AA8919 /* AddDrugAlarmViewController.swift */; };
 		09DACA6B229675CB00AA8919 /* DrugInfoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DACA66229675CB00AA8919 /* DrugInfoViewCell.swift */; };
 		09DACA6C229675CB00AA8919 /* DrugListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DACA67229675CB00AA8919 /* DrugListViewController.swift */; };
@@ -116,14 +108,6 @@
 		09DACA432296720700AA8919 /* BaseLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseLabel.swift; sourceTree = "<group>"; };
 		09DACA442296720700AA8919 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		09DACA452296720800AA8919 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		09DACA462296720800AA8919 /* GoutDefaultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoutDefaultViewController.swift; sourceTree = "<group>"; };
-		09DACA472296720800AA8919 /* GoutFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoutFileManager.swift; sourceTree = "<group>"; };
-		09DACA482296720800AA8919 /* DefaultCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultCollectionViewCell.swift; sourceTree = "<group>"; };
-		09DACA492296720800AA8919 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
-		09DACA4A2296720800AA8919 /* BaseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
-		09DACA4B2296720800AA8919 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		09DACA4C2296720800AA8919 /* LocalPushManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalPushManager.swift; sourceTree = "<group>"; };
-		09DACA4D2296720800AA8919 /* DefaultSwitchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultSwitchView.swift; sourceTree = "<group>"; };
 		09DACA65229675CB00AA8919 /* AddDrugAlarmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDrugAlarmViewController.swift; sourceTree = "<group>"; };
 		09DACA66229675CB00AA8919 /* DrugInfoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugInfoViewCell.swift; sourceTree = "<group>"; };
 		09DACA67229675CB00AA8919 /* DrugListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugListViewController.swift; sourceTree = "<group>"; };
@@ -222,20 +206,12 @@
 		09DACA3D229671F200AA8919 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				09DACA4A2296720800AA8919 /* BaseButton.swift */,
 				09DACA432296720700AA8919 /* BaseLabel.swift */,
 				09DACA412296720700AA8919 /* BaseNaviBar.swift */,
 				09DACA442296720700AA8919 /* CameraViewController.swift */,
 				09DACA3F2296720700AA8919 /* Constants.swift */,
 				09DACA422296720700AA8919 /* DefaultButton.swift */,
-				09DACA482296720800AA8919 /* DefaultCollectionViewCell.swift */,
-				09DACA4D2296720800AA8919 /* DefaultSwitchView.swift */,
 				09DACA402296720700AA8919 /* Enemeration.swift */,
-				09DACA4B2296720800AA8919 /* Extensions.swift */,
-				09DACA462296720800AA8919 /* GoutDefaultViewController.swift */,
-				09DACA472296720800AA8919 /* GoutFileManager.swift */,
-				09DACA4C2296720800AA8919 /* LocalPushManager.swift */,
-				09DACA492296720800AA8919 /* Logger.swift */,
 				09DACA3E2296720700AA8919 /* Structs.swift */,
 				09DACA452296720800AA8919 /* Utils.swift */,
 			);
@@ -450,30 +426,22 @@
 			files = (
 				09DACA6D229675CB00AA8919 /* AddDrugInfoViewController.swift in Sources */,
 				09DACA532296720800AA8919 /* BaseLabel.swift in Sources */,
-				09DACA562296720800AA8919 /* GoutDefaultViewController.swift in Sources */,
 				09DACA4E2296720800AA8919 /* Structs.swift in Sources */,
 				09DACA4F2296720800AA8919 /* Constants.swift in Sources */,
 				09B35C3B22965EF4003FA1A6 /* GoutChartViewController.swift in Sources */,
-				09DACA592296720800AA8919 /* Logger.swift in Sources */,
 				09AFF5AA2223AF2E00D8707E /* ViewController.swift in Sources */,
 				09DACA552296720800AA8919 /* Utils.swift in Sources */,
 				09DACA542296720800AA8919 /* CameraViewController.swift in Sources */,
-				09DACA5D2296720800AA8919 /* DefaultSwitchView.swift in Sources */,
 				09AFF5A82223AF2E00D8707E /* AppDelegate.swift in Sources */,
 				09B35C3922965EF4003FA1A6 /* BaseChartViewController.swift in Sources */,
 				09A2F9932223B8E70001147A /* GoutTabbarViewController.swift in Sources */,
 				09B35C3C22965EF4003FA1A6 /* UricacidCollectionViewCell.swift in Sources */,
-				09DACA5A2296720800AA8919 /* BaseButton.swift in Sources */,
 				09DACA502296720800AA8919 /* Enemeration.swift in Sources */,
 				09B35C69229662A6003FA1A6 /* UserInfoViewController.swift in Sources */,
-				09DACA5B2296720800AA8919 /* Extensions.swift in Sources */,
 				09DACA6B229675CB00AA8919 /* DrugInfoViewCell.swift in Sources */,
-				09DACA582296720800AA8919 /* DefaultCollectionViewCell.swift in Sources */,
 				09B35C3A22965EF4003FA1A6 /* GoutValueListViewController.swift in Sources */,
 				09DACA6C229675CB00AA8919 /* DrugListViewController.swift in Sources */,
 				09DACA742296765700AA8919 /* DatabaseManager.swift in Sources */,
-				09DACA5C2296720800AA8919 /* LocalPushManager.swift in Sources */,
-				09DACA572296720800AA8919 /* GoutFileManager.swift in Sources */,
 				09B35C3E22965EF4003FA1A6 /* GoutDataViewCell.swift in Sources */,
 				09DACA512296720800AA8919 /* BaseNaviBar.swift in Sources */,
 				09DACA6E229675CB00AA8919 /* DrugAlarmViewCell.swift in Sources */,

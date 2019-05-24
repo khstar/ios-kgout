@@ -219,6 +219,7 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
     }()
     
     let datePicker = UIDatePicker()
+    let timePicker = UIDatePicker()
     
     let databaseManager = DatabaseManager.sharedInstance()
     
@@ -355,6 +356,8 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
         cancelButton.autoSetDimensions(to: CGSize(width: 127.5, height: 30))
         
         createDatePicker()
+        createTimePicker()
+        
         goutTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         kidneyTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
 
@@ -408,6 +411,42 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
         datePicker.addTarget(self, action: #selector(updateDate), for: .valueChanged)
     }
     
+    func createTimePicker(){
+        
+        let doneToolBar = UIToolbar()
+        let doneBarButton = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(donePressed))
+        doneToolBar.sizeToFit()
+        doneToolBar.items = [doneBarButton]
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat =  "HH:mm"
+        
+        let components = DateComponents()
+        let maxDate = Calendar.current.date(byAdding: components, to: Date())
+        var minDate = dateFormatter.date(from: "00:00")
+        var defaultDate = maxDate
+        
+        if reqView != "Add" {
+            minDate = dateFormatter.date(from: "00:00")
+            defaultDate = Calendar.current.date(byAdding: components, to: Utils.stringToyyyyMMdd(dateTextField.text!)!)
+        } else {
+            let today = dateFormatter.string(from: maxDate!)
+            timeTextField.text = today
+        }
+        
+        timePicker.date = defaultDate!
+        timePicker.maximumDate = maxDate
+        timePicker.minimumDate = minDate
+        
+        timePicker.datePickerMode = .time
+        timePicker.timeZone = NSTimeZone.local
+        
+        timeTextField.inputAccessoryView = doneToolBar
+        timeTextField.inputView = timePicker
+        
+        timePicker.addTarget(self, action: #selector(updateTime), for: .valueChanged)
+    }
+    
     @objc func donePressed(){
         view.endEditing(true)
     }
@@ -416,6 +455,12 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
         let dateFormatter: DateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         dateTextField.text = dateFormatter.string(from: datePicker.date)
+    }
+    
+    @objc func updateTime() {
+        let dateFormatter: DateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        timeTextField.text = dateFormatter.string(from: timePicker.date)
     }
     
     func showModifyMode() {

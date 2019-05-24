@@ -392,20 +392,24 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
         let hasGoutData = databaseManager.selectGoutId(date: dateTextField.text!)
         
         if hasGoutData > 0 {
-            self.goutId = hasGoutData
-            showAlert2("\(dateTextField.text!) 데이터가 이미 존재합니다. \n 해당 데이터를 수정 하시겠습니까?", yes: "예", no: "아니요", nextFunction: self.saveGout, closeFunction: {})
+            showAlert2("\(dateTextField.text!) 데이터가 이미 존재합니다. \n 추가 하시겠습니까?", yes: "예", no: "아니요", nextFunction: self.saveGout, closeFunction: {})
         } else {
             saveGout()
         }
     }
     
+    /**
+     요산 데이터 저장하기 액션
+     */
     func saveGout() {
         var gout = goutTextField.text!
         
+        //마지막에 .이 있는 경우 0 붙여주기 ex) 1. -> 1.0
         if gout.last == "." {
             gout.append("0")
         }
         
+        //.이 포함되지 않은 경우 .0 붙여주기 ex) 1 -> 1.0
         if !gout.contains(".") {
             gout.append(".0")
         }
@@ -422,6 +426,7 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
             goutData.goutDesc = descTextView.text
         }
         
+        //요산 데이터 Upsert 요청
         if databaseManager.upsertGoutValue(goutData: goutData) {
             self.dismissView()
         }
@@ -483,7 +488,7 @@ extension AddValueViewController:UITextViewDelegate {
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
-        let numberOfChars = newText.characters.count
+        let numberOfChars = newText.count
         return numberOfChars < 10000
     }
     

@@ -297,6 +297,9 @@ class DatabaseManager {
         return true
     }
     
+    /**
+     요산 데이터 저장
+     */
     func insertGoutValue(goutData:GoutData) -> Bool {
         
         var rc: Int32 = 0

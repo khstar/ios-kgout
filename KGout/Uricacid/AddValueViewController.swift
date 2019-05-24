@@ -67,6 +67,34 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
         return field
     }()
     
+    lazy var timeLabel:UILabel! = {
+        let label = UILabel()
+        label.text = "시간"
+        label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
+        label.textColor = UIColor(0x7a7a7a)
+        return label
+    }()
+    
+    lazy var timeTextField:UITextField! = {
+        let field = UITextField()
+        
+        field.keyboardType = .decimalPad
+        field.leftViewMode = .always
+        field.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        field.textColor = UIColor(0x1c1c1c)
+        field.placeholder = "00:00:00"
+        
+        let doneToolBar = UIToolbar()
+        let doneBarButton = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(setDone))
+        
+        doneToolBar.sizeToFit()
+        doneToolBar.items = [doneBarButton]
+        
+        field.inputAccessoryView = doneToolBar
+        
+        return field
+    }()
+    
     lazy var goutPanel:UIView! = {
         let view = UIView()
         return view
@@ -260,14 +288,28 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
         
         datePanel.addSubview(dateLabel)
         datePanel.addSubview(dateTextField)
+        datePanel.addSubview(timeLabel)
+        datePanel.addSubview(timeTextField)
+        
+        let datePanelWidthHalf:CGFloat = (300 - 30)/2
         
         dateLabel.autoPinEdge(toSuperviewEdge: .top)
         dateLabel.autoPinEdge(toSuperviewEdge: .left)
-        dateLabel.autoPinEdge(toSuperviewEdge: .right)
+//        dateLabel.autoPinEdge(toSuperviewEdge: .right)
+        dateLabel.autoPinEdge(toSuperviewEdge: .right, withInset: datePanelWidthHalf)
         
         dateTextField.autoPinEdge(.top, to: .bottom, of: dateLabel, withOffset: 8)
         dateTextField.autoPinEdge(toSuperviewEdge: .left)
-        dateTextField.autoPinEdge(toSuperviewEdge: .right)
+//        dateTextField.autoPinEdge(toSuperviewEdge: .right)
+        dateTextField.autoPinEdge(toSuperviewEdge: .right, withInset: datePanelWidthHalf)
+        
+        timeLabel.autoPinEdge(toSuperviewEdge: .top)
+        timeLabel.autoPinEdge(toSuperviewEdge: .right)
+        timeLabel.autoPinEdge(toSuperviewEdge: .left, withInset: datePanelWidthHalf)
+        
+        timeTextField.autoPinEdge(.top, to: .bottom, of: dateLabel, withOffset: 8)
+        timeTextField.autoPinEdge(toSuperviewEdge: .right)
+        timeTextField.autoPinEdge(toSuperviewEdge: .left, withInset: datePanelWidthHalf)
         
         goutPanel.autoPinEdge(.top, to: .bottom, of: datePanel, withOffset: 4)
         goutPanel.autoPinEdge(toSuperviewEdge: .left, withInset: 15)

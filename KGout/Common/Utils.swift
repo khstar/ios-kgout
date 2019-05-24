@@ -45,7 +45,7 @@ class Utils{
     
     static func nickname( _ nick: String) -> String{
         let name: String
-        if nick.characters.count > 10 {
+        if nick.count > 10 {
             name = nick.substring(to: nick.index(nick.startIndex, offsetBy: 10)) + "\n" + nick.substring(from: nick.index(nick.startIndex, offsetBy: 10))
         } else {
             name = nick

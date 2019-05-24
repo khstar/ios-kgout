@@ -31,9 +31,7 @@ class GoutValueListViewController: GoutDefaultViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
         defaultPanelView.isHidden = false
-        print("tester")
         super.viewWillAppear(animated)
     }
 
@@ -44,12 +42,10 @@ class GoutValueListViewController: GoutDefaultViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print("viewDidAppear")
     }
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print("viewDidDisappear")
     }
     
     lazy var addTitle:UILabel! = {
@@ -182,7 +178,6 @@ extension GoutValueListViewController: UICollectionViewDelegate, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("indexPath = \(indexPath.row)")
         let drugAlarm = goutValueList[indexPath.row]
         
         let addViewCtrl = AddValueViewController()
@@ -206,13 +201,11 @@ extension GoutValueListViewController: UICollectionViewDelegate, UICollectionVie
 
 extension GoutValueListViewController:AddValueViewDelegate {
     func successGoutValue() {
-        print("success")
         self.fetchData()
         self.defaultPanelView.isHidden = false
     }
     
     func cancelGoutValue() {
-        print("cacnel")
         self.defaultPanelView.isHidden = false
     }
 }

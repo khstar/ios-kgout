@@ -325,8 +325,6 @@ extension DrugListViewController: UICollectionViewDelegate, UICollectionViewData
                     let pathString = "\(GoutFileManager.sharedInstance().getDocumentsDirectory())\(data.drugImg)"
                     let imageData = try Data(contentsOf: URL.init(string: pathString)!)
                     cell.drugImgView.image = UIImage.init(data: imageData)
-                    
-                    print("pathString = \(pathString)")
                 } catch {
                     
                     print("Fail Drug Image")
@@ -355,8 +353,6 @@ extension DrugListViewController: UICollectionViewDelegate, UICollectionViewData
                     let pathString = "\(GoutFileManager.sharedInstance().getDocumentsDirectory())\(data.drugImg)"
                     let imageData = try Data(contentsOf: URL.init(string: pathString)!)
                     cell.drugImgView.image = UIImage.init(data: imageData)
-                    
-                    print("pathString = \(pathString)")
                 } catch {
                     
                     print("Fail Drug Image")
@@ -392,7 +388,7 @@ extension DrugListViewController: UICollectionViewDelegate, UICollectionViewData
             }
             
         } else {
-            print("indexPath = \(indexPath.row)")
+            
             let drugInfo = drugList[indexPath.row]
             nextAddPharmViewCtrl(drugInfo: drugInfo)
         }

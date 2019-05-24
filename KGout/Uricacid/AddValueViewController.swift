@@ -302,38 +302,6 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
         descTextView.autoPinEdge(toSuperviewEdge: .right)
         descTextView.autoPinEdge(toSuperviewEdge: .bottom, withInset: 45)
         
-//        descPanel:UIView! = {
-//            let view = UIView()
-//            return view
-//        }()
-//
-//        lazy var descLabel:UILabel! = {
-//            let label = UILabel()
-//            label.text = "정보"
-//            label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
-//            label.textColor = UIColor(0x7a7a7a)
-//            return label
-//        }()
-//
-//        lazy var goutDesc:UITextView! = {
-
-        
-//        kidneyPanel.autoPinEdge(.top, to: .bottom, of: goutPanel, withOffset: 4)
-//        kidneyPanel.autoPinEdge(toSuperviewEdge: .left, withInset: 15)
-//        kidneyPanel.autoPinEdge(toSuperviewEdge: .right, withInset: 15)
-//        kidneyPanel.autoSetDimension(.height, toSize: 55)
-//
-//        kidneyPanel.addSubview(kidneyLabel)
-//        kidneyPanel.addSubview(kidneyTextField)
-//
-//        kidneyLabel.autoPinEdge(toSuperviewEdge: .top)
-//        kidneyLabel.autoPinEdge(toSuperviewEdge: .left)
-//        kidneyLabel.autoPinEdge(toSuperviewEdge: .right)
-//
-//        kidneyTextField.autoPinEdge(.top, to: .bottom, of: kidneyLabel, withOffset: 7)
-//        kidneyTextField.autoPinEdge(toSuperviewEdge: .left)
-//        kidneyTextField.autoPinEdge(toSuperviewEdge: .right)
-        
         completeButton.autoPinEdge(toSuperviewEdge: .left, withInset: 15)
         completeButton.autoPinEdge(toSuperviewEdge: .bottom, withInset: 7)
         completeButton.autoSetDimension(.height, toSize: 30)
@@ -349,12 +317,6 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
         kidneyTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
 
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
-        
-//        if reqView == "List" {
-//            self.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
-//        } else {
-//            self.view.backgroundColor = UIColor.black.withAlphaComponent(0.0)
-//        }
         
         cancelButton.rx.tap.bind {
             [weak self] _ in
@@ -384,31 +346,8 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
         var defaultDate = maxDate
         
         if reqView != "Add" {
-//            dateTextField.isEnabled = false
-//            maxDate = Calendar.current.date(byAdding: components, to: Utils.stringToyyyyMMdd(dateTextField.text!)!)
             minDate = dateFormatter.date(from: "1900-01-01")
             defaultDate = Calendar.current.date(byAdding: components, to: Utils.stringToyyyyMMdd(dateTextField.text!)!)
-//            let btn = UIButton()
-//            dateTextField.addSubview(btn)
-//            btn.autoPinEdgesToSuperviewEdges()
-//
-//            btn.rx.tap.bind {
-//                [weak self] _ in
-////                print("btn dateTextField")
-////                self?.showModifyMode()
-//                }.disposed(by: disposeBag)
-            
-//            dateTextField.rx.tapGesture().when(.recognized).bind{
-////                print("dateTextField")
-//                [weak self] _ in
-////                print("dateTextField")
-//                self?.showModifyMode()
-//                }.disposed(by: disposeBag)
-            
-//            cancelButton.rx.tap.bind {
-//                [weak self] _ in
-//                self?.dismiss(animated: true)
-//                }.disposed(by: disposeBag)
         } else {
             let today = dateFormatter.string(from: maxDate!)
             dateTextField.text = today

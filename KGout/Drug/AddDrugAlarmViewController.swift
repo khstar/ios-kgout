@@ -467,11 +467,7 @@ class AddDrugAlarmViewController: GoutDefaultViewController {
     }
     
     func weekAction(repeatBtnTag:Int, isSelect:Bool) {
-        
-        print("repeatBtnTag = \(repeatBtnTag)")
-        
         switch repeatBtnTag {
-            
         case WeekType.monday.rawValue:
             self.monBtn.isSelected = isSelect
             repeatWeek.monday = self.monBtn.isSelected
@@ -618,8 +614,6 @@ class AddDrugAlarmViewController: GoutDefaultViewController {
         
         snoozeTextField.text =  "\(Constants.snoozeTimeList[i]) 분"
         drugAlarmInfo?.snoozeTime = i
-        
-        print("select snooze = \(i)")
     }
     
     @objc func donePressed() {
@@ -641,8 +635,6 @@ class AddDrugAlarmViewController: GoutDefaultViewController {
 
 extension AddDrugAlarmViewController:UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        print(pickerView.tag)
-        
         if pickerView.tag == 1 {
             return Constants.snoozeTimeList.count
         } else if pickerView.tag == 2 {

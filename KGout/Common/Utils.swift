@@ -420,7 +420,6 @@ class Utils{
                 do {
                     try fm.copyItem(atPath: path, toPath: fullDestPathString!)
                 } catch {
-                    print("\n")
                     print(error)
                 }
                 //let c = fm.contents(atPath: path)
@@ -439,7 +438,6 @@ class Utils{
                 do {
                     try fm.copyItem(atPath: path, toPath: fullDestPathString!)
                 } catch {
-                    print("\n")
                     print(error)
                 }
                 //let c = fm.contents(atPath: path)
@@ -458,7 +456,6 @@ class Utils{
                 do {
                     try fm.copyItem(atPath: path, toPath: fullDestPathString!)
                 } catch {
-                    print("\n")
                     print(error)
                 }
                 //let c = fm.contents(atPath: path)
@@ -476,7 +473,6 @@ class Utils{
                 do {
                     try fm.copyItem(atPath: path, toPath: fullDestPathString!)
                 } catch {
-                    print("\n")
                     print(error)
                 }
                 //let c = fm.contents(atPath: path)

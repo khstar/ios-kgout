@@ -358,7 +358,7 @@ class DatabaseManager {
                 let queryResultCol1 = String(cString: sqlite3_column_text(queryStatement, 0))
                 let queryResultCol2 = sqlite3_column_double(queryStatement, 1)
                 let queryResultCol3 = String(cString: sqlite3_column_text(queryStatement, 4))
-                print("queryResultCol1 = \(queryResultCol1), queryResultCol2 = \(String(describing: queryResultCol2))")
+
                 var goutData:GoutData = GoutData(regDate: queryResultCol1, gout: queryResultCol2.toString())
                 goutData.goutDesc = queryResultCol3
                 
@@ -399,8 +399,6 @@ class DatabaseManager {
         }
         
         let createGout = "DELETE FROM tb_gout WHERE reg_dt = '\(uricacid.regDate)';"
-        
-        print(createGout)
         
         rc = sqlite3_exec(db, createGout, nil, nil, nil)
         if (rc != SQLITE_OK) {
@@ -566,7 +564,6 @@ class DatabaseManager {
 
                 let col4 = sqlite3_column_double(queryStatement, 3)
                 
-                print("col1 = \(col1), col3 = \(String(describing: col3))")
                 var goutData:GoutData = GoutData(regDate: col2, gout: col4.toString())
                 goutData.id = Int(col1)
                 goutData.regTime = col3
@@ -639,13 +636,8 @@ class DatabaseManager {
         }
         
         sqlite3_close(db)
-        
-//        let maxId = drugInfoMaxId()
-        print("maxID = \(drugInfo.id)")
-        
-//        insertDrugAlarmInfo(drugInfos: drugInfo.drunAlarmInfos, drugInfoId: maxId)
+
         upsertDrugAlarmInfo(drugAlarmList: drugInfo.drunAlarmInfos, drugInfoId: drugInfo.id)
-        
     }
     
     func insertDrugInfo(drugInfo:DrugInfo) {
@@ -675,7 +667,6 @@ class DatabaseManager {
         sqlite3_close(db)
         
         let maxId = drugInfoMaxId()
-        print("maxID = \(maxId)")
         
         //약품 정보가 insert인 경우는 그냥 처리
 //        insertDrugAlarmInfo(drugInfos: drugInfo.drunAlarmInfos, drugInfoId: maxId)
@@ -758,8 +749,6 @@ class DatabaseManager {
                 let col2 = String(cString: sqlite3_column_text(queryStatement, 1))
                 let col3 = String(cString: sqlite3_column_text(queryStatement, 2))
                 let col4 = String(cString: sqlite3_column_text(queryStatement, 3))
-                
-                print("col0 = \(col1), col1 = \(String(describing: col2)), col2 = \(String(describing: col3)), col3 = \(String(describing: col4))")
                 
                 var drugInfo:DrugInfo = DrugInfo()
                 drugInfo.id = Int(col1)
@@ -897,7 +886,6 @@ class DatabaseManager {
         updateDrugInfo.append("WHERE ")
         updateDrugInfo.append("id = \(drugAlarm.id) AND ")
         updateDrugInfo.append("drug_id = \(drugInfoId);")
-        print(updateDrugInfo)
         
         rc = sqlite3_exec(db, updateDrugInfo, nil, nil, nil)
         
@@ -907,8 +895,6 @@ class DatabaseManager {
         }
         
         sqlite3_close(db)
-        
-        print("maxID = \(drugInfoMaxId())")
     }
     
     func insertDrugAlarm(drugAlarm:DrugAlarmInfo, drugInfoId:Int) {
@@ -929,8 +915,6 @@ class DatabaseManager {
         
         insertDrugInfo.append("('\(drugInfoId)', '\(drugAlarm.alarmTime)', '\(drugAlarm.alarmSound)', '\(drugAlarm.enable)', '\(drugAlarm.week.allDay.intValue)', '\(drugAlarm.week.monday.intValue)', '\(drugAlarm.week.tuesday.intValue)', '\(drugAlarm.week.wednesday.intValue)', '\(drugAlarm.week.thursday.intValue)', '\(drugAlarm.week.friday.intValue)', '\(drugAlarm.week.saturday.intValue)' , '\(drugAlarm.week.sunday.intValue)', '\(drugAlarm.snoozeTime)', '\(drugAlarm.alarmDesc)');")
         
-        print(insertDrugInfo)
-        
         rc = sqlite3_exec(db, insertDrugInfo, nil, nil, nil)
         
         if (rc != SQLITE_OK) {
@@ -939,8 +923,6 @@ class DatabaseManager {
         }
         
         sqlite3_close(db)
-        
-        print("maxID = \(drugInfoMaxId())")
     }
     
     func insertDrugAlarmInfo(drugInfos:[DrugAlarmInfo], drugInfoId:Int) {
@@ -972,8 +954,6 @@ class DatabaseManager {
                 insertDrugInfo.append(";")
             }
         }
-        
-        print(insertDrugInfo)
 
         rc = sqlite3_exec(db, insertDrugInfo, nil, nil, nil)
 
@@ -983,9 +963,6 @@ class DatabaseManager {
         }
 
         sqlite3_close(db)
-
-        print("maxID = \(drugInfoMaxId())")
-        
     }
     
     /**

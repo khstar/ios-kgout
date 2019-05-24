@@ -119,15 +119,8 @@ class GoutDefaultViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
-        
         self.view.backgroundColor = .white
-        //        addGradationView()
         addNoticeView()
-//        addNetworkPanel()
-        // Do any additional setup after loading the view.
-        
-        //        UNUserNotificationCenter.current().delegate = self
         
     }
     
@@ -135,7 +128,6 @@ class GoutDefaultViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         //        self.view.bringSubview(toFront: networkErrorPanel)
-        
         //        networkErrorPanel가 보일때만 bringSubview해주기 아닌 경우 AR마사지, 에시테티션's, 3일 플랜에서 상단 화면이 이상하게 나오는 현상 발생
 //        if !networkErrorPanel!.isHidden {
 //            self.view.bringSubview(toFront: networkErrorPanel)

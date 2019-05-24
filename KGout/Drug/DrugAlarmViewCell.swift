@@ -275,37 +275,12 @@ class DrugAlarmViewCell: DefaultCollectionViewCell {
     }
     
     @objc func switchAction() {
-        
         drugAlarmDelegate?.alarmEnable(index: self.index, enable: self.switchBtn!.isOn ? 1 : 0)
-        
-//        if self.switchBtn.isOn {
-//
-//        } else {
-//
-//        }
-//
-//        print("on = \(self.switchBtn.isOn)")
     }
     
 }
 
 class DeleteDrugAlarmViewCell: DrugAlarmViewCell {
-    
-//    lazy var delButton:UIButton! = {
-//        let button = UIButton()
-////        button.setBackgroundImage(#imageLiteral(resourceName: "addSaveBtnNormal"), for: .normal)
-////        button.setBackgroundImage(#imageLiteral(resourceName: "addSaveBtnSelect"), for: .selected)
-//
-//        button.setTitle("삭제", for: .normal)
-//        button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .medium)
-//        button.setBackgroundColor(.red, forState: .normal)
-//        button.setBackgroundColor(.green, forState: .selected)
-//        button.layer.borderWidth = 1
-//        button.layer.borderColor = UIColor.clear.cgColor
-//        button.layer.cornerRadius = 10
-//
-//        return button
-//    }()
     
     lazy var deleteImage:UIImageView! = {
         let image = UIImageView()
@@ -332,7 +307,6 @@ class DeleteDrugAlarmViewCell: DrugAlarmViewCell {
         drugAlamrDesc.autoPinEdge(toSuperviewEdge: .top, withInset: 5)
         drugAlamrDesc.autoPinEdge(.left, to: .right, of: alarmTime, withOffset: 5)
         drugAlamrDesc.autoSetDimensions(to: CGSize(width: 170, height: 20))
-//        drugAlamrDesc.backgroundColor = .lightGray
         
         repeatPanel.autoPinEdge(.left, to: .right, of: alarmTime, withOffset: 5)
         repeatPanel.autoPinEdge(toSuperviewEdge: .bottom, withInset: 5)

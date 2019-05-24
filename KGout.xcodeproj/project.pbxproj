@@ -179,6 +179,7 @@
 		09AFF5A62223AF2E00D8707E /* KGout */ = {
 			isa = PBXGroup;
 			children = (
+				09DACA9922967F3F00AA8919 /* ViewModel */,
 				09DACA722296764200AA8919 /* Database */,
 				09DACA64229675CB00AA8919 /* Drug */,
 				09DACA3D229671F200AA8919 /* Common */,
@@ -260,6 +261,13 @@
 				09DACA732296765700AA8919 /* DatabaseManager.swift */,
 			);
 			path = Database;
+			sourceTree = "<group>";
+		};
+		09DACA9922967F3F00AA8919 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		58AB6AC516505E6AC8157E56 /* Frameworks */ = {

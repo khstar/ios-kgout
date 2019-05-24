@@ -32,10 +32,8 @@ class GoutFileManager {
         
         let fileManager = FileManager.default
         if fileManager.fileExists(atPath: docsDirChange) {
-            print("FILE AVAILABLE")
             return true
         } else {
-            print("FILE NOT AVAILABLE")
             return false
         }
     }

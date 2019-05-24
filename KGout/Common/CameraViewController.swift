@@ -141,7 +141,6 @@ class CameraViewController: GoutDefaultViewController {
     func checkPermissionCamera(){
         AVCaptureDevice.requestAccess(for: AVMediaType.video){ [weak self] response in
             if response{
-                print("response")
                 self?.setupCameraPreview()
             } else {
                 print("else")
@@ -232,7 +231,6 @@ class CameraViewController: GoutDefaultViewController {
                 if let image = UIImage(data: imageData) {
                     
                     let i = image.fixOrientation()
-                    print("image")
                     weakSelf.cameraDelegate?.capture(image: i)
                     weakSelf.dismiss(animated: true)
 //                    weakSelf.delegate?.capture(image: image)

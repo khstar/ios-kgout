@@ -18,7 +18,6 @@ class GoutChartViewController: BaseChartViewController {
     let addButton = AddButton()
     let delButton = AddButton()
     
-//    let disposeBag = DisposeBag()
     let datePicker = UIDatePicker()
     let viewTypePicker = UIPickerView()
     let monthPick = UIPickerView()
@@ -140,7 +139,6 @@ class GoutChartViewController: BaseChartViewController {
             
             isRefrash = false
             isInit = true
-            print("uricacidDatas = \(uricacidDatas.count)")
         }
     }
     
@@ -422,6 +420,7 @@ class GoutChartViewController: BaseChartViewController {
         chartDid()
     }
     
+    
     @objc func datePickerBtnHighlight() {
         self.datePickerIcon.isHighlighted = true
     }
@@ -591,8 +590,6 @@ class GoutChartViewController: BaseChartViewController {
         
         //차트 그려지는 속도
         chartView.animate(xAxisDuration: 0.5)
-        
-        //        updateChartData()
     }
     
     @objc func valueChanged() {
@@ -608,9 +605,6 @@ class GoutChartViewController: BaseChartViewController {
         if uricacidDatas.count > 0 {
             self.setDataCount(1, range: 0, changeType: "down")
         }
-        
-        //        self.setDataCount(7, range: UInt32(0), changeType: "down")
-        
     }
     
     func setDataCount(_ count: Int, range: Int, changeType:String) {
@@ -627,7 +621,6 @@ class GoutChartViewController: BaseChartViewController {
         }
 
         let yVals1 = (dataI..<c).map { (i) -> ChartDataEntry in
-            print(i)
             let val = Double(uricacidDatas[i].gout)!
             return ChartDataEntry(x: Double(i), y: val)
         }
@@ -712,16 +705,10 @@ class GoutChartViewController: BaseChartViewController {
     func nextAddViewCtrl() {
         
         if isDeleteMode {
-            
-            print("count = \(delUricacid.count)")
-            
             if DatabaseManager.sharedInstance().deleteGoutDataList(uricacidList: delUricacid) {
-                print("삭제 성공")
                 self.isDeleteMode = false
                 self.delUricacid = [:]
                 self.fetchData()
-            } else {
-                print("삭제 실패")
             }
         } else {
             let addViewCtrl = AddValueViewController()
@@ -1007,7 +994,6 @@ extension GoutChartViewController: UICollectionViewDelegate, UICollectionViewDat
             hiddenViewIndexRow = indexRow - 7
         }
         
-        print("show showViewIndexRow \(showViewIndexRow), hiddenViewIndexRow \(hiddenViewIndexRow), indexRow \(indexRow) ")
     }
     
     func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
@@ -1017,8 +1003,6 @@ extension GoutChartViewController: UICollectionViewDelegate, UICollectionViewDat
         }
         
         let indexRow = indexPath.row
-        
-        print("hidden showViewIndexRow \(showViewIndexRow), hiddenViewIndexRow \(hiddenViewIndexRow), indexRow \(indexRow) ")
         
         //새롭게 보여진 셀과 사라진 셀이 같은 경우
         if showViewIndexRow == indexRow {
@@ -1036,8 +1020,6 @@ extension GoutChartViewController: UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("index = \(indexPath.row)")
-        
         if isDeleteMode {
 
             guard let cell = uricacidCollectionView.cellForItem(at: indexPath) as? DeleteUricacidViewCell else { return }

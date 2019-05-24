@@ -430,7 +430,6 @@ class AddDrugInfoViewController: GoutDefaultViewController, UITextFieldDelegate 
                     let imageData = try Data(contentsOf: URL.init(string: pathString)!)
                     cameraImageView.image = UIImage.init(data: imageData)
                     
-                    print("pathString = \(pathString)")
                 } catch {
                     print("Fail Drug Image")
                 }
@@ -472,8 +471,6 @@ class AddDrugInfoViewController: GoutDefaultViewController, UITextFieldDelegate 
         let keys = delDrugAlarmList.keys.sorted(by: >)
         
         for key in keys {
-            print("\(key)")
-            
             let drugAlarm = delDrugAlarmList[key]
             let drugId = drugAlarm!.drugId
             let drugAlarmId = drugAlarm!.id
@@ -678,9 +675,6 @@ extension AddDrugInfoViewController:AddDrugAlarmInfoDelegate, CameraDelegate {
         }
         
         self.drugAlarmCollectionView.reloadData()
-        
-        print(self.drugAlarmInfo.count)
-        print(drugInfo.alarmTime)
     }
     
     func capture(image: UIImage) {

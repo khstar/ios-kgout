@@ -13,9 +13,9 @@ class UricacidCollectionViewCell: DefaultCollectionViewCell {
     
     lazy var dateLabel: BaseLabel! = {
         let label = BaseLabel()
-        label.font = UIFont.systemFont(ofSize: 19, weight: .regular)
-        label.textAlignment = .left
-        label.numberOfLines = 1
+        label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        label.textAlignment = .center
+        label.numberOfLines = 2
         return label
     }()
     
@@ -64,7 +64,6 @@ class UricacidCollectionViewCell: DefaultCollectionViewCell {
         uricacidDescLabel.autoPinEdge(.left, to: .right, of: dateLabel, withOffset: 5)
         uricacidDescLabel.autoPinEdge(.right, to: .left, of: uricacidLabel, withOffset: -5)
         uricacidDescLabel.autoSetDimension(.height, toSize: 50)
-//        uricacidDescLabel.backgroundColor = .gray
         
         valueImage.autoAlignAxis(toSuperviewAxis: .horizontal)
         valueImage.autoPinEdge(toSuperviewEdge: .right, withInset: 15)
@@ -105,9 +104,9 @@ class DeleteUricacidViewCell: DefaultCollectionViewCell {
     
     lazy var dateLabel: BaseLabel! = {
         let label = BaseLabel()
-        label.font = UIFont.systemFont(ofSize: 19, weight: .regular)
-        label.textAlignment = .left
-        label.numberOfLines = 1
+        label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        label.textAlignment = .center
+        label.numberOfLines = 2
         return label
     }()
     

@@ -889,7 +889,7 @@ extension GoutChartViewController: UICollectionViewDelegate, UICollectionViewDat
                 let data = uricacidDatas[indexPath.row]
                 
                 cell.deleteImage.image = #imageLiteral(resourceName: "unSelect_Check")
-                cell.dateLabel.text         = data.regDate
+                cell.dateLabel.text         = "\(data.regDate)\n\(data.regTime)"
                 cell.uricacidLabel.text     = data.gout
                 cell.uricacidDescLabel.text = data.goutDesc
                 
@@ -903,7 +903,8 @@ extension GoutChartViewController: UICollectionViewDelegate, UICollectionViewDat
                 let data = uricacidDatas[indexPath.row]
                 
                 cell.deleteImage.image = #imageLiteral(resourceName: "unSelect_Check")
-                cell.dateLabel.text         = data.regDate
+//                cell.dateLabel.text         = data.regDate
+                cell.dateLabel.text         = "\(data.regDate)\n\(data.regTime)"
                 cell.uricacidLabel.text     = data.gout
                 cell.uricacidDescLabel.text = data.goutDesc
                 
@@ -917,7 +918,8 @@ extension GoutChartViewController: UICollectionViewDelegate, UICollectionViewDat
                 let data = uricacidDatas[indexPath.row]
                 
                 cell.deleteImage.image = #imageLiteral(resourceName: "unSelect_Check")
-                cell.dateLabel.text         = data.regDate
+//                cell.dateLabel.text         = data.regDate
+                cell.dateLabel.text         = "\(data.regDate)\n\(data.regTime)"
                 cell.uricacidLabel.text     = data.gout
                 cell.uricacidDescLabel.text = data.goutDesc
                 
@@ -931,7 +933,8 @@ extension GoutChartViewController: UICollectionViewDelegate, UICollectionViewDat
                 
                 let data = uricacidDatas[indexPath.row]
                 
-                cell.dateLabel.text         = data.regDate
+//                cell.dateLabel.text         = data.regDate
+                cell.dateLabel.text         = "\(data.regDate)\n\(data.regTime)"
                 cell.uricacidLabel.text     = data.gout
                 cell.uricacidDescLabel.text = data.goutDesc
                 
@@ -944,7 +947,8 @@ extension GoutChartViewController: UICollectionViewDelegate, UICollectionViewDat
                 
                 let data = uricacidDatas[indexPath.row]
                 
-                cell.dateLabel.text         = data.regDate
+//                cell.dateLabel.text         = data.regDate
+                cell.dateLabel.text         = "\(data.regDate)\n\(data.regTime)"
                 cell.uricacidLabel.text     = data.gout
                 cell.uricacidDescLabel.text = data.goutDesc
                 
@@ -957,7 +961,8 @@ extension GoutChartViewController: UICollectionViewDelegate, UICollectionViewDat
                 
                 let data = uricacidDatas[indexPath.row]
                 
-                cell.dateLabel.text         = data.regDate
+//                cell.dateLabel.text         = data.regDate
+                cell.dateLabel.text         = "\(data.regDate)\n\(data.regTime)"
                 cell.uricacidLabel.text     = data.gout
                 cell.uricacidDescLabel.text = data.goutDesc
                 

@@ -375,6 +375,11 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
         }.disposed(by: disposeBag)
     }
     
+    func rxAction() {
+//        goutTextField.rx.tex
+//        goutTextField.rx.observe(<#T##type: E.Type##E.Type#>, <#T##keyPath: String##String#>)
+    }
+    
     func createDatePicker(){
         
         let doneToolBar = UIToolbar()
@@ -529,6 +534,8 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
+        
+//        guard let value = textField.text, textField.text!.isEmpty else { return}
         
         let value = textField.text!
         

@@ -13,9 +13,9 @@ class UricacidCollectionViewCell: DefaultCollectionViewCell {
     
     lazy var dateLabel: BaseLabel! = {
         let label = BaseLabel()
-        label.font = UIFont.systemFont(ofSize: 19, weight: .regular)
-        label.textAlignment = .left
-        label.numberOfLines = 1
+        label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        label.textAlignment = .center
+        label.numberOfLines = 2
         return label
     }()
     
@@ -42,7 +42,7 @@ class UricacidCollectionViewCell: DefaultCollectionViewCell {
         return view
     }()
     
-    lazy var valueImage:UIImageView! = {
+    lazy var signalIV:UIImageView! = {
         let image = UIImageView()
         image.image = #imageLiteral(resourceName: "valueEqual")
         return image
@@ -52,7 +52,7 @@ class UricacidCollectionViewCell: DefaultCollectionViewCell {
         addSubview(dateLabel)
         addSubview(uricacidDescLabel)
         addSubview(uricacidLabel)
-        addSubview(valueImage)
+        addSubview(signalIV)
         addSubview(bottomLineView)
         
         let dateLabelWidth = Utils.widthOfString("1900-01-01", font: dateLabel.font) + 10
@@ -64,13 +64,12 @@ class UricacidCollectionViewCell: DefaultCollectionViewCell {
         uricacidDescLabel.autoPinEdge(.left, to: .right, of: dateLabel, withOffset: 5)
         uricacidDescLabel.autoPinEdge(.right, to: .left, of: uricacidLabel, withOffset: -5)
         uricacidDescLabel.autoSetDimension(.height, toSize: 50)
-//        uricacidDescLabel.backgroundColor = .gray
         
-        valueImage.autoAlignAxis(toSuperviewAxis: .horizontal)
-        valueImage.autoPinEdge(toSuperviewEdge: .right, withInset: 15)
-        valueImage.autoSetDimensions(to: CGSize(width: 25, height: 25))
+        signalIV.autoAlignAxis(toSuperviewAxis: .horizontal)
+        signalIV.autoPinEdge(toSuperviewEdge: .right, withInset: 15)
+        signalIV.autoSetDimensions(to: CGSize(width: 25, height: 25))
         
-        uricacidLabel.autoPinEdge(.right, to: .left, of: valueImage, withOffset: 10)
+        uricacidLabel.autoPinEdge(.right, to: .left, of: signalIV, withOffset: 10)
         uricacidLabel.autoAlignAxis(toSuperviewAxis: .horizontal)
         uricacidLabel.autoSetDimensions(to: CGSize(width: 80, height: 70))
         
@@ -81,23 +80,9 @@ class UricacidCollectionViewCell: DefaultCollectionViewCell {
     }
 }
 
-class UricacidUpViewCell: UricacidCollectionViewCell {
-    override func setupView() {
-        super.setupView()
-        valueImage.image = #imageLiteral(resourceName: "valueUp")
-    }
-}
-
-class UricacidDownViewCell: UricacidCollectionViewCell {
-    override func setupView() {
-        super.setupView()
-        valueImage.image = #imageLiteral(resourceName: "valueDown")
-    }
-}
-
 class DeleteUricacidViewCell: DefaultCollectionViewCell {
     
-    lazy var deleteImage:UIImageView! = {
+    lazy var deleteCheckIV:UIImageView! = {
         let image = UIImageView()
         image.image = #imageLiteral(resourceName: "unSelect_Check")
         return image
@@ -105,9 +90,9 @@ class DeleteUricacidViewCell: DefaultCollectionViewCell {
     
     lazy var dateLabel: BaseLabel! = {
         let label = BaseLabel()
-        label.font = UIFont.systemFont(ofSize: 19, weight: .regular)
-        label.textAlignment = .left
-        label.numberOfLines = 1
+        label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        label.textAlignment = .center
+        label.numberOfLines = 2
         return label
     }()
     
@@ -128,7 +113,7 @@ class DeleteUricacidViewCell: DefaultCollectionViewCell {
         return label
     }()
     
-    lazy var valueImage:UIImageView! = {
+    lazy var signalIV:UIImageView! = {
         let image = UIImageView()
         image.image = #imageLiteral(resourceName: "valueEqual")
         return image
@@ -142,20 +127,20 @@ class DeleteUricacidViewCell: DefaultCollectionViewCell {
     
     override func setupView() {
         
-        addSubview(deleteImage)
+        addSubview(deleteCheckIV)
         addSubview(dateLabel)
         addSubview(uricacidDescLabel)
         addSubview(uricacidLabel)
-        addSubview(valueImage)
+        addSubview(signalIV)
         addSubview(bottomLineView)
         
-        deleteImage.autoPinEdge(toSuperviewEdge: .left, withInset: 15)
-        deleteImage.autoAlignAxis(toSuperviewAxis: .horizontal)
-        deleteImage.autoSetDimensions(to: CGSize(width: 20, height: 20))
+        deleteCheckIV.autoPinEdge(toSuperviewEdge: .left, withInset: 15)
+        deleteCheckIV.autoAlignAxis(toSuperviewAxis: .horizontal)
+        deleteCheckIV.autoSetDimensions(to: CGSize(width: 20, height: 20))
         
         let dateLabelWidth = Utils.widthOfString("1900-01-01", font: dateLabel.font) + 10
         
-        dateLabel.autoPinEdge(.left, to: .right, of: deleteImage, withOffset: 5)
+        dateLabel.autoPinEdge(.left, to: .right, of: deleteCheckIV, withOffset: 5)
         dateLabel.autoAlignAxis(toSuperviewAxis: .horizontal)
         dateLabel.autoSetDimensions(to: CGSize(width: dateLabelWidth, height: 50))
         
@@ -163,11 +148,11 @@ class DeleteUricacidViewCell: DefaultCollectionViewCell {
         uricacidDescLabel.autoPinEdge(.right, to: .left, of: uricacidLabel, withOffset: -5)
         uricacidDescLabel.autoSetDimension(.height, toSize: 50)
         
-        valueImage.autoAlignAxis(toSuperviewAxis: .horizontal)
-        valueImage.autoPinEdge(toSuperviewEdge: .right, withInset: 15)
-        valueImage.autoSetDimensions(to: CGSize(width: 25, height: 25))
+        signalIV.autoAlignAxis(toSuperviewAxis: .horizontal)
+        signalIV.autoPinEdge(toSuperviewEdge: .right, withInset: 15)
+        signalIV.autoSetDimensions(to: CGSize(width: 25, height: 25))
         
-        uricacidLabel.autoPinEdge(.right, to: .left, of: valueImage, withOffset: 10)
+        uricacidLabel.autoPinEdge(.right, to: .left, of: signalIV, withOffset: 10)
         uricacidLabel.autoAlignAxis(toSuperviewAxis: .horizontal)
         uricacidLabel.autoSetDimensions(to: CGSize(width: 80, height: 70))
         
@@ -178,16 +163,3 @@ class DeleteUricacidViewCell: DefaultCollectionViewCell {
     }
 }
 
-class DeleteUricacidUpViewCell:DeleteUricacidViewCell {
-    override func setupView() {
-        super.setupView()
-        valueImage.image = #imageLiteral(resourceName: "valueUp")
-    }
-}
-
-class DeleteUricacidDownViewCell:DeleteUricacidViewCell {
-    override func setupView() {
-        super.setupView()
-        valueImage.image = #imageLiteral(resourceName: "valueDown")
-    }
-}

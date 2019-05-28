@@ -69,6 +69,34 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
         return field
     }()
     
+    lazy var timeLabel:UILabel! = {
+        let label = UILabel()
+        label.text = "시간"
+        label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
+        label.textColor = UIColor(0x7a7a7a)
+        return label
+    }()
+    
+    lazy var timeTextField:UITextField! = {
+        let field = UITextField()
+        
+        field.keyboardType = .decimalPad
+        field.leftViewMode = .always
+        field.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        field.textColor = UIColor(0x1c1c1c)
+        field.placeholder = "00:00:00"
+        
+        let doneToolBar = UIToolbar()
+        let doneBarButton = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(setDone))
+        
+        doneToolBar.sizeToFit()
+        doneToolBar.items = [doneBarButton]
+        
+        field.inputAccessoryView = doneToolBar
+        
+        return field
+    }()
+    
     lazy var goutPanel:UIView! = {
         let view = UIView()
         return view
@@ -193,6 +221,7 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
     }()
     
     let datePicker = UIDatePicker()
+    let timePicker = UIDatePicker()
     
     let databaseManager = DatabaseManager.sharedInstance()
     
@@ -263,14 +292,28 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
         
         datePanel.addSubview(dateLabel)
         datePanel.addSubview(dateTextField)
+        datePanel.addSubview(timeLabel)
+        datePanel.addSubview(timeTextField)
+        
+        let datePanelWidthHalf:CGFloat = (300 - 30)/2
         
         dateLabel.autoPinEdge(toSuperviewEdge: .top)
         dateLabel.autoPinEdge(toSuperviewEdge: .left)
-        dateLabel.autoPinEdge(toSuperviewEdge: .right)
+//        dateLabel.autoPinEdge(toSuperviewEdge: .right)
+        dateLabel.autoPinEdge(toSuperviewEdge: .right, withInset: datePanelWidthHalf)
         
         dateTextField.autoPinEdge(.top, to: .bottom, of: dateLabel, withOffset: 8)
         dateTextField.autoPinEdge(toSuperviewEdge: .left)
-        dateTextField.autoPinEdge(toSuperviewEdge: .right)
+//        dateTextField.autoPinEdge(toSuperviewEdge: .right)
+        dateTextField.autoPinEdge(toSuperviewEdge: .right, withInset: datePanelWidthHalf)
+        
+        timeLabel.autoPinEdge(toSuperviewEdge: .top)
+        timeLabel.autoPinEdge(toSuperviewEdge: .right)
+        timeLabel.autoPinEdge(toSuperviewEdge: .left, withInset: datePanelWidthHalf)
+        
+        timeTextField.autoPinEdge(.top, to: .bottom, of: dateLabel, withOffset: 8)
+        timeTextField.autoPinEdge(toSuperviewEdge: .right)
+        timeTextField.autoPinEdge(toSuperviewEdge: .left, withInset: datePanelWidthHalf)
         
         goutPanel.autoPinEdge(.top, to: .bottom, of: datePanel, withOffset: 4)
         goutPanel.autoPinEdge(toSuperviewEdge: .left, withInset: 15)
@@ -316,6 +359,8 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
         cancelButton.autoSetDimensions(to: CGSize(width: 127.5, height: 30))
         
         createDatePicker()
+        createTimePicker()
+        
         goutTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         kidneyTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
 
@@ -343,6 +388,11 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
         .disposed(by: disposeBag)
         
 //        addValueViewModel
+    }
+    
+    func rxAction() {
+//        goutTextField.rx.tex
+//        goutTextField.rx.observe(<#T##type: E.Type##E.Type#>, <#T##keyPath: String##String#>)
     }
     
     func createDatePicker(){
@@ -381,6 +431,42 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
         datePicker.addTarget(self, action: #selector(updateDate), for: .valueChanged)
     }
     
+    func createTimePicker(){
+        
+        let doneToolBar = UIToolbar()
+        let doneBarButton = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(donePressed))
+        doneToolBar.sizeToFit()
+        doneToolBar.items = [doneBarButton]
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat =  "HH:mm"
+        
+        let components = DateComponents()
+        let maxDate = Calendar.current.date(byAdding: components, to: Date())
+        var minDate = dateFormatter.date(from: "00:00")
+        var defaultDate = maxDate
+        
+        if reqView != "Add" {
+            minDate = dateFormatter.date(from: "00:00")
+            defaultDate = Calendar.current.date(byAdding: components, to: Utils.stringToyyyyMMdd(dateTextField.text!)!)
+        } else {
+            let today = dateFormatter.string(from: maxDate!)
+            timeTextField.text = today
+        }
+        
+        timePicker.date = defaultDate!
+        timePicker.maximumDate = maxDate
+        timePicker.minimumDate = minDate
+        
+        timePicker.datePickerMode = .time
+        timePicker.timeZone = NSTimeZone.local
+        
+        timeTextField.inputAccessoryView = doneToolBar
+        timeTextField.inputView = timePicker
+        
+        timePicker.addTarget(self, action: #selector(updateTime), for: .valueChanged)
+    }
+    
     @objc func donePressed(){
         view.endEditing(true)
     }
@@ -389,6 +475,12 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
         let dateFormatter: DateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         dateTextField.text = dateFormatter.string(from: datePicker.date)
+    }
+    
+    @objc func updateTime() {
+        let dateFormatter: DateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        timeTextField.text = dateFormatter.string(from: timePicker.date)
     }
     
     func showModifyMode() {
@@ -407,20 +499,24 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
         let hasGoutData = databaseManager.selectGoutId(date: dateTextField.text!)
         
         if hasGoutData > 0 {
-            self.goutId = hasGoutData
-            showAlert2("\(dateTextField.text!) 데이터가 이미 존재합니다. \n 해당 데이터를 수정 하시겠습니까?", yes: "예", no: "아니요", nextFunction: self.saveGout, closeFunction: {})
+            showAlert2("\(dateTextField.text!) 데이터가 이미 존재합니다. \n 추가 하시겠습니까?", yes: "예", no: "아니요", nextFunction: self.saveGout, closeFunction: {})
         } else {
             saveGout()
         }
     }
     
+    /**
+     요산 데이터 저장하기 액션
+     */
     func saveGout() {
         var gout = goutTextField.text!
         
+        //마지막에 .이 있는 경우 0 붙여주기 ex) 1. -> 1.0
         if gout.last == "." {
             gout.append("0")
         }
         
+        //.이 포함되지 않은 경우 .0 붙여주기 ex) 1 -> 1.0
         if !gout.contains(".") {
             gout.append(".0")
         }
@@ -437,6 +533,7 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
             goutData.goutDesc = descTextView.text
         }
         
+        //요산 데이터 Upsert 요청
         if databaseManager.upsertGoutValue(goutData: goutData) {
             self.dismissView()
         }
@@ -448,6 +545,8 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
+        
+//        guard let value = textField.text, textField.text!.isEmpty else { return}
         
         let value = textField.text!
         

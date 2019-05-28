@@ -207,11 +207,7 @@ class GoutChartViewController: BaseChartViewController {
         collectionView.backgroundColor = .white
         collectionView.register(EmptyCell.self, forCellWithReuseIdentifier: EmptyCell.className)
         collectionView.register(UricacidCollectionViewCell.self, forCellWithReuseIdentifier: UricacidCollectionViewCell.className)
-        collectionView.register(UricacidUpViewCell.self, forCellWithReuseIdentifier: UricacidUpViewCell.className)
-        collectionView.register(UricacidDownViewCell.self, forCellWithReuseIdentifier: UricacidDownViewCell.className)
         collectionView.register(DeleteUricacidViewCell.self, forCellWithReuseIdentifier: DeleteUricacidViewCell.className)
-        collectionView.register(DeleteUricacidDownViewCell.self, forCellWithReuseIdentifier: DeleteUricacidDownViewCell.className)
-        collectionView.register(DeleteUricacidUpViewCell.self, forCellWithReuseIdentifier: DeleteUricacidUpViewCell.className)
         
         collectionView.bounces = false
         collectionView.delegate = self
@@ -883,90 +879,44 @@ extension GoutChartViewController: UICollectionViewDelegate, UICollectionViewDat
             prevGout = CGFloat(Double(uricacidDatas[indexPath.row + 1].gout)!)
         }
         
+        ///요산 데이터의 업/다운. 이밎
+        var signalImage:UIImage = #imageLiteral(resourceName: "valueEqual")
+        
+        if currGout > prevGout {
+            signalImage = #imageLiteral(resourceName: "valueUp")
+        } else if currGout < prevGout {
+            signalImage = #imageLiteral(resourceName: "valueDown")
+        }
+        
         if isDeleteMode {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DeleteUricacidViewCell.className, for: indexPath) as? DeleteUricacidViewCell else {
+                return UICollectionViewCell()
+            }
             
-            if currGout > prevGout {
-                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DeleteUricacidUpViewCell.className, for: indexPath) as? DeleteUricacidUpViewCell else {
-                    return UICollectionViewCell()
-                }
-                
-                let data = uricacidDatas[indexPath.row]
-                
-                cell.deleteImage.image = #imageLiteral(resourceName: "unSelect_Check")
-                cell.dateLabel.text         = data.regDate
-                cell.uricacidLabel.text     = data.gout
-                cell.uricacidDescLabel.text = data.goutDesc
-                
-                return cell
-                
-            } else if currGout < prevGout {
-                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DeleteUricacidDownViewCell.className, for: indexPath) as? DeleteUricacidDownViewCell else {
-                    return UICollectionViewCell()
-                }
-                
-                let data = uricacidDatas[indexPath.row]
-                
-                cell.deleteImage.image = #imageLiteral(resourceName: "unSelect_Check")
-                cell.dateLabel.text         = data.regDate
-                cell.uricacidLabel.text     = data.gout
-                cell.uricacidDescLabel.text = data.goutDesc
-                
-                return cell
-                
-            } else {
-                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DeleteUricacidViewCell.className, for: indexPath) as? DeleteUricacidViewCell else {
-                    return UICollectionViewCell()
-                }
-                
-                let data = uricacidDatas[indexPath.row]
-                
-                cell.deleteImage.image = #imageLiteral(resourceName: "unSelect_Check")
-                cell.dateLabel.text         = data.regDate
-                cell.uricacidLabel.text     = data.gout
-                cell.uricacidDescLabel.text = data.goutDesc
-                
-                return cell
-            }
+            let data = uricacidDatas[indexPath.row]
+            
+            cell.deleteCheckIV.image = #imageLiteral(resourceName: "unSelect_Check")
+            cell.signalIV.image = signalImage
+            cell.dateLabel.text         = "\(data.regDate)\n\(data.regTime)"
+            cell.uricacidLabel.text     = data.gout
+            cell.uricacidDescLabel.text = data.goutDesc
+            
+            return cell
+    
         } else {
-            if currGout > prevGout {
-                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UricacidUpViewCell.className, for: indexPath) as? UricacidUpViewCell else {
-                    return UICollectionViewCell()
-                }
-                
-                let data = uricacidDatas[indexPath.row]
-                
-                cell.dateLabel.text         = data.regDate
-                cell.uricacidLabel.text     = data.gout
-                cell.uricacidDescLabel.text = data.goutDesc
-                
-                return cell
-                
-            } else if currGout < prevGout {
-                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UricacidDownViewCell.className, for: indexPath) as? UricacidDownViewCell else {
-                    return UICollectionViewCell()
-                }
-                
-                let data = uricacidDatas[indexPath.row]
-                
-                cell.dateLabel.text         = data.regDate
-                cell.uricacidLabel.text     = data.gout
-                cell.uricacidDescLabel.text = data.goutDesc
-                
-                return cell
-                
-            } else {
-                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UricacidCollectionViewCell.className, for: indexPath) as? UricacidCollectionViewCell else {
-                    return UICollectionViewCell()
-                }
-                
-                let data = uricacidDatas[indexPath.row]
-                
-                cell.dateLabel.text         = data.regDate
-                cell.uricacidLabel.text     = data.gout
-                cell.uricacidDescLabel.text = data.goutDesc
-                
-                return cell
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UricacidCollectionViewCell.className, for: indexPath) as? UricacidCollectionViewCell else {
+                return UICollectionViewCell()
             }
+            
+            let data = uricacidDatas[indexPath.row]
+            
+            cell.dateLabel.text         = "\(data.regDate)\n\(data.regTime)"
+            cell.uricacidLabel.text     = data.gout
+            cell.uricacidDescLabel.text = data.goutDesc
+            cell.signalIV.image       = signalImage
+            
+            return cell
+
         }
     }
     
@@ -1029,10 +979,10 @@ extension GoutChartViewController: UICollectionViewDelegate, UICollectionViewDat
             guard let cell = uricacidCollectionView.cellForItem(at: indexPath) as? DeleteUricacidViewCell else { return }
             
             if delUricacid[indexPath.row] == nil {
-                cell.deleteImage.image = #imageLiteral(resourceName: "select_Check")
+                cell.deleteCheckIV.image = #imageLiteral(resourceName: "select_Check")
                 delUricacid[indexPath.row] = uricacidDatas[indexPath.row]
             } else {
-                cell.deleteImage.image = #imageLiteral(resourceName: "unSelect_Check")
+                cell.deleteCheckIV.image = #imageLiteral(resourceName: "unSelect_Check")
                 delUricacid.removeValue(forKey: indexPath.row)
             }
             

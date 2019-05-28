@@ -19,6 +19,8 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
     var reqView:String = "Add"
     var goutId:Int = -1
     
+    var addValueViewModel = AddGoutValueViewModel()
+    
     lazy var defaultPanelView:UIView! = {
         let view = UIView()
         view.layer.cornerRadius = 15
@@ -203,7 +205,8 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardDidHideNotification, object: nil)
         
-        setView()
+        setupView()
+        setupRX()
         // Do any additional setup after loading the view.
     }
 
@@ -232,7 +235,7 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
     /**
      화면 그리기
      */
-    func setView() {
+    func setupView() {
         
         self.view.addSubview(defaultPanelView)
         defaultPanelView.autoAlignAxis(toSuperviewAxis: .horizontal)
@@ -317,17 +320,29 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
         kidneyTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
 
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+    }
+    
+    /**
+     RXSwift 액션 설정
+     */
+    func setupRX() {
         
         cancelButton.rx.tap.bind {
             [weak self] _ in
             self?.addValueViewDelegate?.cancelGoutValue()
             self?.dismiss(animated: true)
-        }.disposed(by: disposeBag)
+            }.disposed(by: disposeBag)
         
         completeButton.rx.tap.bind {
             [weak self] _ in
             self?.saveGoutValue()
-        }.disposed(by: disposeBag)
+            }.disposed(by: disposeBag)
+        
+        goutTextField.rx.text.orEmpty
+        .bind(to: addValueViewModel.goutValue)
+        .disposed(by: disposeBag)
+        
+//        addValueViewModel
     }
     
     func createDatePicker(){
@@ -432,10 +447,6 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
         dismiss(animated: true)
     }
     
-    @objc func goutValid() {
-        print("\(String(describing: goutTextField.text))")
-    }
-    
     @objc func textFieldDidChange(_ textField: UITextField) {
         
         let value = textField.text!
@@ -483,7 +494,7 @@ extension AddValueViewController:UITextViewDelegate {
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
-        let numberOfChars = newText.characters.count
+        let numberOfChars = newText.count
         return numberOfChars < 10000
     }
     

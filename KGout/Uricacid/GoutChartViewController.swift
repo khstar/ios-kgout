@@ -226,6 +226,10 @@ class GoutChartViewController: BaseChartViewController {
         //        DatabaseManager.sharedInstance().selectGoutVaule(date: "test")
         setupRXView()
         fetchData()
+        
+        var test  = NSLocalizedString("Hello", comment: "하이")
+        print(test)
+        
         // Do any additional setup after loading the view.
     }
     

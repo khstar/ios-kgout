@@ -24,6 +24,7 @@
 		09B35C3D22965EF4003FA1A6 /* AddValueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B35C3722965EF4003FA1A6 /* AddValueViewController.swift */; };
 		09B35C3E22965EF4003FA1A6 /* GoutDataViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B35C3822965EF4003FA1A6 /* GoutDataViewCell.swift */; };
 		09B35C69229662A6003FA1A6 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B35C68229662A6003FA1A6 /* UserInfoViewController.swift */; };
+		09D6E214229D28760032DBB0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 09D6E216229D28760032DBB0 /* Localizable.strings */; };
 		09DACA4E2296720800AA8919 /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DACA3E2296720700AA8919 /* Structs.swift */; };
 		09DACA4F2296720800AA8919 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DACA3F2296720700AA8919 /* Constants.swift */; };
 		09DACA502296720800AA8919 /* Enemeration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DACA402296720700AA8919 /* Enemeration.swift */; };
@@ -46,6 +47,7 @@
 		09DACA9622967EE600AA8919 /* LocalPushManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DACA9222967EE600AA8919 /* LocalPushManager.swift */; };
 		09DACA9722967EE600AA8919 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DACA9322967EE600AA8919 /* Logger.swift */; };
 		09DACA9822967EE600AA8919 /* GoutFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DACA9422967EE600AA8919 /* GoutFileManager.swift */; };
+		09F67EF1229BCFD60084E2AC /* AddGoutValueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F67EF0229BCFD60084E2AC /* AddGoutValueViewModel.swift */; };
 		401FAEEC7F66BEE03E407F0C /* Pods_KGout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CA2BC9B618EDD607672BB5 /* Pods_KGout.framework */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +110,8 @@
 		09B35C3F22965F35003FA1A6 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
 		09B35C4022965F35003FA1A6 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		09B35C68229662A6003FA1A6 /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		09D6E215229D28760032DBB0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		09D6E217229D28780032DBB0 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		09DACA3E2296720700AA8919 /* Structs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
 		09DACA3F2296720700AA8919 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		09DACA402296720700AA8919 /* Enemeration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enemeration.swift; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 		09DACA9222967EE600AA8919 /* LocalPushManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalPushManager.swift; sourceTree = "<group>"; };
 		09DACA9322967EE600AA8919 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		09DACA9422967EE600AA8919 /* GoutFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoutFileManager.swift; sourceTree = "<group>"; };
+		09F67EF0229BCFD60084E2AC /* AddGoutValueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoutValueViewModel.swift; sourceTree = "<group>"; };
 		95CA2BC9B618EDD607672BB5 /* Pods_KGout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KGout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A20F69CDE945C0071D67131F /* Pods-KGout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KGout.release.xcconfig"; path = "Pods/Target Support Files/Pods-KGout/Pods-KGout.release.xcconfig"; sourceTree = "<group>"; };
 		A87AD868570160180B5F80BB /* Pods-KGout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KGout.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KGout/Pods-KGout.debug.xcconfig"; sourceTree = "<group>"; };
@@ -194,6 +199,7 @@
 				09AFF5B32223AF3100D8707E /* LaunchScreen.storyboard */,
 				09AFF5B62223AF3100D8707E /* Info.plist */,
 				09AFF5AE2223AF2E00D8707E /* KGout.xcdatamodeld */,
+				09D6E216229D28760032DBB0 /* Localizable.strings */,
 			);
 			path = KGout;
 			sourceTree = "<group>";
@@ -266,6 +272,7 @@
 		09DACA9922967F3F00AA8919 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				09F67EF0229BCFD60084E2AC /* AddGoutValueViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -373,6 +380,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09D6E214229D28760032DBB0 /* Localizable.strings in Resources */,
 				09AFF5B52223AF3100D8707E /* LaunchScreen.storyboard in Resources */,
 				09A2F9912223B3F70001147A /* GoogleService-Info.plist in Resources */,
 				09AFF5B22223AF3100D8707E /* Assets.xcassets in Resources */,
@@ -457,6 +465,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09DACA8A22967EB300AA8919 /* BaseButton.swift in Sources */,
+				09F67EF1229BCFD60084E2AC /* AddGoutValueViewModel.swift in Sources */,
 				09DACA6D229675CB00AA8919 /* AddDrugInfoViewController.swift in Sources */,
 				09DACA532296720800AA8919 /* BaseLabel.swift in Sources */,
 				09DACA4E2296720800AA8919 /* Structs.swift in Sources */,
@@ -519,6 +528,15 @@
 				09B35C4022965F35003FA1A6 /* ko */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		09D6E216229D28760032DBB0 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				09D6E215229D28760032DBB0 /* en */,
+				09D6E217229D28780032DBB0 /* ko */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

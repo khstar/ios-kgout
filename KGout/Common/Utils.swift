@@ -236,24 +236,76 @@ class Utils{
     /**
      사용자의 시간제 설정이 24시간제인 경우 true, 12시간제인 경우 false리턴
      */
-    static func is24Hour() -> Bool {
+    static func is12Hour() -> Bool {
         let locale = NSLocale.current
         let timeFormat = DateFormatter.dateFormat(fromTemplate: "j", options:0, locale:locale)!
         
         if timeFormat.contains("a") {
             //phone is set to 12 hours
-            return false
+            return true
         } else {
             //phone is set to 24 hours
-            return true
+            return false
         }
     }
     
+    
+    static func showHHmmmss(timeString:String) -> String {
+        
+        let timeFormat = "HH:mm"
+        let dateFormatter = DateFormatter.init()
+        dateFormatter.dateFormat = timeFormat
+        
+        //DateFormat이 HH:mm인지 확인
+        if let date = dateFormatter.date(from: timeString) {
+            print(date)
+            
+            // 12시간제 인경우
+            if is12Hour() {
+                dateFormatter.dateFormat = "a h:mm"
+            }
+            
+            return dateFormatter.string(from: date)
+            
+        }
+        
+        dateFormatter.dateFormat = "\(timeFormat):ss"
+        
+        //DateFormat이 HH:mm:ss인지 확인
+        if let date = dateFormatter.date(from: timeString) {
+            // 12시간제 인경우
+            if is12Hour() {
+                dateFormatter.dateFormat = "a h:mm:ss"
+            }
+            
+            return dateFormatter.string(from: date)
+        }
+        
+        return ""
+    }
+    
+    static func showDateHHmmmss(timeString:String) -> Date {
+        
+        let timeFormat = "HH:mm"
+        let dateFormatter = DateFormatter.init()
+        dateFormatter.dateFormat = timeFormat
+        
+        //DateFormat이 HH:mm인지 확인
+        if let date = dateFormatter.date(from: timeString) {
+            return date
+        } else {
+            return stringToDateahmm(timeString: timeString)
+        }
+    }
+    
+    /**
+     HH:mm:ss -> HH:mm 포맷으로 변경
+     */
     static func hhmmmssTohhmm(timeString:String) -> String {
         
         var timeFormat = "a h:mm"
         
-        if is24Hour() {
+        if !is12Hour() {
             timeFormat = "HH:mm"
         }
         
@@ -268,17 +320,44 @@ class Utils{
         
     }
     
-    ///알람 시간을 String -> Date로 변환
-    static func alarmTime(alarmTime:String) -> Date {
+    /**
+     String -> Date로 변환
+     */
+    static func stringToDateHHmmss(timeString:String) -> Date {
         let dateFormatter = DateFormatter.init()
-        dateFormatter.dateFormat = "HH:mm"
-        let date = dateFormatter.date(from: alarmTime)
+        dateFormatter.dateFormat = "HH:mm:ss"
+        let date = dateFormatter.date(from: timeString)
         
         return date!
     }
     
-    static func alarmTimeToString(alarmTime:Date) -> String {
-        let now = alarmTime
+    /**
+     String -> Date로 변환
+     */
+    static func stringToDateahmm(timeString:String) -> Date {
+        let dateFormatter = DateFormatter.init()
+        dateFormatter.dateFormat = "a h:mm"
+        let date = dateFormatter.date(from: timeString)
+        
+        return date!
+    }
+    
+    /**
+     String -> Date로 변환
+     */
+    static func stringToDateHHmm(timeString:String) -> Date {
+        let dateFormatter = DateFormatter.init()
+        dateFormatter.dateFormat = "HH:mm"
+        let date = dateFormatter.date(from: timeString)
+        
+        return date!
+    }
+    
+    /**
+     date를 String으로 변환
+     */
+    static func dateToStringHHmm(timeDate:Date) -> String {
+        let now = timeDate
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
         

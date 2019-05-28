@@ -299,12 +299,10 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
         
         dateLabel.autoPinEdge(toSuperviewEdge: .top)
         dateLabel.autoPinEdge(toSuperviewEdge: .left)
-//        dateLabel.autoPinEdge(toSuperviewEdge: .right)
         dateLabel.autoPinEdge(toSuperviewEdge: .right, withInset: datePanelWidthHalf)
         
         dateTextField.autoPinEdge(.top, to: .bottom, of: dateLabel, withOffset: 8)
         dateTextField.autoPinEdge(toSuperviewEdge: .left)
-//        dateTextField.autoPinEdge(toSuperviewEdge: .right)
         dateTextField.autoPinEdge(toSuperviewEdge: .right, withInset: datePanelWidthHalf)
         
         timeLabel.autoPinEdge(toSuperviewEdge: .top)
@@ -439,25 +437,19 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
         doneToolBar.items = [doneBarButton]
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat =  "HH:mm"
+        dateFormatter.dateFormat = "a h:mm"
         
         let components = DateComponents()
-        let maxDate = Calendar.current.date(byAdding: components, to: Date())
-        var minDate = dateFormatter.date(from: "00:00")
-        var defaultDate = maxDate
+        var defaultDate = Calendar.current.date(byAdding: components, to: Date())
         
         if reqView != "Add" {
-            minDate = dateFormatter.date(from: "00:00")
-            defaultDate = Calendar.current.date(byAdding: components, to: Utils.stringToyyyyMMdd(dateTextField.text!)!)
+            defaultDate = Calendar.current.date(byAdding: components, to: Utils.showDateHHmmmss(timeString: timeTextField.text!))
         } else {
-            let today = dateFormatter.string(from: maxDate!)
+            let today = dateFormatter.string(from: defaultDate!)
             timeTextField.text = today
         }
         
         timePicker.date = defaultDate!
-        timePicker.maximumDate = maxDate
-        timePicker.minimumDate = minDate
-        
         timePicker.datePickerMode = .time
         timePicker.timeZone = NSTimeZone.local
         

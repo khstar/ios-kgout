@@ -184,6 +184,7 @@ extension GoutValueListViewController: UICollectionViewDelegate, UICollectionVie
         addViewCtrl.reqView = "Gout"
         
         addViewCtrl.dateTextField.text = drugAlarm.regDate
+        addViewCtrl.timeTextField.text = drugAlarm.regTime
         addViewCtrl.goutTextField.text = drugAlarm.gout
         addViewCtrl.goutId = drugAlarm.id
         

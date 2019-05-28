@@ -364,7 +364,9 @@ class DatabaseManager {
                 let queryResultCol4 = String(cString: sqlite3_column_text(queryStatement, 5))
 
                 var goutData:GoutData = GoutData(regDate: queryResultCol1, gout: queryResultCol3.toString())
-                goutData.regTime = queryResultCol2
+                let regTime = queryResultCol2.split(separator: ":")
+                
+                goutData.regTime = regTime[0] + ":" + regTime[1]
                 goutData.goutDesc = queryResultCol4
                 
                 uricacidDatas?.append(goutData)

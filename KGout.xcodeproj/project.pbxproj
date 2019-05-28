@@ -25,6 +25,7 @@
 		09B35C3E22965EF4003FA1A6 /* GoutDataViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B35C3822965EF4003FA1A6 /* GoutDataViewCell.swift */; };
 		09B35C69229662A6003FA1A6 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B35C68229662A6003FA1A6 /* UserInfoViewController.swift */; };
 		09D6E214229D28760032DBB0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 09D6E216229D28760032DBB0 /* Localizable.strings */; };
+		09D6E222229D2D780032DBB0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 09D6E224229D2D780032DBB0 /* InfoPlist.strings */; };
 		09DACA4E2296720800AA8919 /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DACA3E2296720700AA8919 /* Structs.swift */; };
 		09DACA4F2296720800AA8919 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DACA3F2296720700AA8919 /* Constants.swift */; };
 		09DACA502296720800AA8919 /* Enemeration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DACA402296720700AA8919 /* Enemeration.swift */; };
@@ -112,6 +113,8 @@
 		09B35C68229662A6003FA1A6 /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		09D6E215229D28760032DBB0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		09D6E217229D28780032DBB0 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		09D6E223229D2D780032DBB0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		09D6E225229D2D7A0032DBB0 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		09DACA3E2296720700AA8919 /* Structs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
 		09DACA3F2296720700AA8919 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		09DACA402296720700AA8919 /* Enemeration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enemeration.swift; sourceTree = "<group>"; };
@@ -200,6 +203,7 @@
 				09AFF5B62223AF3100D8707E /* Info.plist */,
 				09AFF5AE2223AF2E00D8707E /* KGout.xcdatamodeld */,
 				09D6E216229D28760032DBB0 /* Localizable.strings */,
+				09D6E224229D2D780032DBB0 /* InfoPlist.strings */,
 			);
 			path = KGout;
 			sourceTree = "<group>";
@@ -381,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09D6E214229D28760032DBB0 /* Localizable.strings in Resources */,
+				09D6E222229D2D780032DBB0 /* InfoPlist.strings in Resources */,
 				09AFF5B52223AF3100D8707E /* LaunchScreen.storyboard in Resources */,
 				09A2F9912223B3F70001147A /* GoogleService-Info.plist in Resources */,
 				09AFF5B22223AF3100D8707E /* Assets.xcassets in Resources */,
@@ -537,6 +542,15 @@
 				09D6E217229D28780032DBB0 /* ko */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		09D6E224229D2D780032DBB0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				09D6E223229D2D780032DBB0 /* en */,
+				09D6E225229D2D7A0032DBB0 /* ko */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -897,7 +897,7 @@ extension GoutChartViewController: UICollectionViewDelegate, UICollectionViewDat
             
             cell.deleteCheckIV.image = #imageLiteral(resourceName: "unSelect_Check")
             cell.signalIV.image = signalImage
-            cell.dateLabel.text         = "\(data.regDate)\n\(data.regTime)"
+            cell.dateLabel.text         = "\(data.regDate)\n\(Utils.hhmmmssTohhmm(timeString: data.regTime))"
             cell.uricacidLabel.text     = data.gout
             cell.uricacidDescLabel.text = data.goutDesc
             
@@ -910,7 +910,7 @@ extension GoutChartViewController: UICollectionViewDelegate, UICollectionViewDat
             
             let data = uricacidDatas[indexPath.row]
             
-            cell.dateLabel.text         = "\(data.regDate)\n\(data.regTime)"
+            cell.dateLabel.text         = "\(data.regDate)\n\(Utils.hhmmmssTohhmm(timeString: data.regTime))"
             cell.uricacidLabel.text     = data.gout
             cell.uricacidDescLabel.text = data.goutDesc
             cell.signalIV.image       = signalImage

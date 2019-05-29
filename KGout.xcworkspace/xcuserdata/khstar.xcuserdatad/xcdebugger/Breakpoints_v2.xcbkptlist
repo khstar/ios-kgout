@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KGout/Database/DatabaseManager.swift"
-            timestampString = "580813973.346875"
+            timestampString = "580829570.137561"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "251"
@@ -112,6 +112,22 @@
             startingLineNumber = "497"
             endingLineNumber = "497"
             landmarkName = "saveGoutValue()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KGout/Database/DatabaseManager.swift"
+            timestampString = "580829570.1378061"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "createTable()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

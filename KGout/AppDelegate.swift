@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         ref = Database.database().reference()
         GADMobileAds.sharedInstance().start(completionHandler: nil)
+        databaseManager = DatabaseManager.sharedInstance()
         
         //DB 파일이 존재하지 않으면
         if(!fileManager.isDatabaseFile()) {

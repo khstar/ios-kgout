@@ -498,7 +498,7 @@ class UserInfoViewController: GoutDefaultViewController, UITextFieldDelegate {
         let userBirthDay = dateFormatter.string(from: datePicker.date)
         userBirthTextField.text = userBirthDay
         
-       let age = Utils.getUserAge(birth: userBirthDay)
+       let age = DatetimeUtils.getUserAge(birth: userBirthDay)
         
         userAgeTextField.text = "\(age)"
         

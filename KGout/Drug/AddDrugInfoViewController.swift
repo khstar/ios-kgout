@@ -547,7 +547,7 @@ class AddDrugInfoViewController: GoutDefaultViewController, UITextFieldDelegate 
         }
         
         if (drugInfo?.drugImg.isEmpty)! {
-            drugImgName = "\(Utils.nowMMDDHHmmss()).png"
+            drugImgName = "\(DatetimeUtils.nowMMDDHHmmss()).png"
             
             var pathString = GoutFileManager.sharedInstance().getDocumentsDirectory()
             pathString.appendPathComponent(drugImgName)
@@ -566,7 +566,7 @@ class AddDrugInfoViewController: GoutDefaultViewController, UITextFieldDelegate 
             //삭제 후 저장
             GoutFileManager.sharedInstance().removeImage(fileName: drugInfo!.drugImg)
             
-            drugImgName = "\(Utils.nowMMDDHHmmss()).png"
+            drugImgName = "\(DatetimeUtils.nowMMDDHHmmss()).png"
             
             var pathString = GoutFileManager.sharedInstance().getDocumentsDirectory()
             pathString.appendPathComponent(drugImgName)

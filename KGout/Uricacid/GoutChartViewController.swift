@@ -896,7 +896,7 @@ extension GoutChartViewController: UICollectionViewDelegate, UICollectionViewDat
             
             cell.deleteCheckIV.image = #imageLiteral(resourceName: "unSelect_Check")
             cell.signalIV.image = signalImage
-            cell.dateLabel.text         = "\(data.regDate)\n\(Utils.showHHmmmss(timeString: data.regTime))"
+            cell.dateLabel.text         = "\(data.regDate)\n\(DatetimeUtils.showHHmmmss(timeString: data.regTime))"
             cell.uricacidLabel.text     = data.gout
             cell.uricacidDescLabel.text = data.goutDesc
             
@@ -909,7 +909,7 @@ extension GoutChartViewController: UICollectionViewDelegate, UICollectionViewDat
             
             let data = uricacidDatas[indexPath.row]
             
-            cell.dateLabel.text         = "\(data.regDate)\n\(Utils.showHHmmmss(timeString: data.regTime))"
+            cell.dateLabel.text         = "\(data.regDate)\n\(DatetimeUtils.showHHmmmss(timeString: data.regTime))"
             cell.uricacidLabel.text     = data.gout
             cell.uricacidDescLabel.text = data.goutDesc
             cell.signalIV.image       = signalImage
@@ -993,7 +993,7 @@ extension GoutChartViewController: UICollectionViewDelegate, UICollectionViewDat
             addViewCtrl.reqView = "Modify"
             
             addViewCtrl.dateTextField.text = goutData.regDate
-            addViewCtrl.timeTextField.text = Utils.showHHmmmss(timeString: goutData.regTime)
+            addViewCtrl.timeTextField.text = DatetimeUtils.showHHmmmss(timeString: goutData.regTime)
             addViewCtrl.goutTextField.text = goutData.gout
             addViewCtrl.descTextView.textColor = .black
             addViewCtrl.descTextView.text = goutData.goutDesc

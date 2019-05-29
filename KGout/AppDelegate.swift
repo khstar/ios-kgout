@@ -142,8 +142,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         guard let title = value["title"] as? String else { return }
         guard let msg = value["mesg"] as? String else { return }
         guard let datemsg = value["datemesg"] as? String else { return }
-        guard let start = value["start"] as? String , let startDate = Utils.stringToDate(start) else { return }
-        guard let end = value["end"] as? String, let endDate = Utils.stringToDate(end) else { return }
+        guard let start = value["start"] as? String , let startDate = DatetimeUtils.stringToDate(start) else { return }
+        guard let end = value["end"] as? String, let endDate = DatetimeUtils.stringToDate(end) else { return }
         
         let currentDate = Date()
         

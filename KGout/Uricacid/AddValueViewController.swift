@@ -410,7 +410,7 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
         
         if reqView != "Add" {
             minDate = dateFormatter.date(from: "1900-01-01")
-            defaultDate = Calendar.current.date(byAdding: components, to: Utils.stringToyyyyMMdd(dateTextField.text!)!)
+            defaultDate = Calendar.current.date(byAdding: components, to: DatetimeUtils.stringToyyyyMMdd(dateTextField.text!)!)
         } else {
             let today = dateFormatter.string(from: maxDate!)
             dateTextField.text = today
@@ -443,7 +443,7 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
         var defaultDate = Calendar.current.date(byAdding: components, to: Date())
         
         if reqView != "Add" {
-            defaultDate = Calendar.current.date(byAdding: components, to: Utils.showDateHHmmmss(timeString: timeTextField.text!))
+            defaultDate = Calendar.current.date(byAdding: components, to: DatetimeUtils.showDateHHmmmss(timeString: timeTextField.text!))
         } else {
             let today = dateFormatter.string(from: defaultDate!)
             timeTextField.text = today
@@ -521,7 +521,7 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
             gout.append(".0")
         }
         
-        let nowTime = Utils.nowHHmmss()
+        let nowTime = DatetimeUtils.convertAmPmToHHmm(time: timeTextField.text!)
         
         var goutData:GoutData = GoutData.init(regDate: dateTextField.text!, gout: gout)
         goutData.id = self.goutId

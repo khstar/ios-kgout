@@ -42,7 +42,7 @@ public class LocalPushManager {
                 continue
             }
             
-            let alarmTime = Utils.stringToDateHHmm(timeString: drugAlarm.alarmTime)
+            let alarmTime = DatetimeUtils.stringToDateHHmm(timeString: drugAlarm.alarmTime)
             let alarmSound = drugAlarm.alarmSound
             let alarmSnoozeTime = drugAlarm.snoozeTime
             let alarmDesc = drugAlarm.alarmDesc

@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0978BEA8229E2A1000606905 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0978BEA7229E2A1000606905 /* ViewController.swift */; };
 		09A2F98C2223B3B90001147A /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09A2F9892223B3A80001147A /* Charts.framework */; };
 		09A2F98D2223B3B90001147A /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 09A2F9892223B3A80001147A /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		09A2F9912223B3F70001147A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09A2F9902223B3F70001147A /* GoogleService-Info.plist */; };
 		09A2F9932223B8E70001147A /* GoutTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2F9922223B8E60001147A /* GoutTabbarViewController.swift */; };
 		09AFF5A82223AF2E00D8707E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AFF5A72223AF2E00D8707E /* AppDelegate.swift */; };
-		09AFF5AA2223AF2E00D8707E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AFF5A92223AF2E00D8707E /* ViewController.swift */; };
+		09AFF5AA2223AF2E00D8707E /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AFF5A92223AF2E00D8707E /* LaunchViewController.swift */; };
 		09AFF5AD2223AF2E00D8707E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09AFF5AB2223AF2E00D8707E /* Main.storyboard */; };
 		09AFF5B02223AF2E00D8707E /* KGout.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09AFF5AE2223AF2E00D8707E /* KGout.xcdatamodeld */; };
 		09AFF5B22223AF3100D8707E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09AFF5B12223AF3100D8707E /* Assets.xcassets */; };
@@ -91,12 +92,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0978BEA7229E2A1000606905 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		09A2F9832223B3A70001147A /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
 		09A2F9902223B3F70001147A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		09A2F9922223B8E60001147A /* GoutTabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoutTabbarViewController.swift; sourceTree = "<group>"; };
 		09AFF5A42223AF2E00D8707E /* KGout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KGout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09AFF5A72223AF2E00D8707E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		09AFF5A92223AF2E00D8707E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		09AFF5A92223AF2E00D8707E /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		09AFF5AC2223AF2E00D8707E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		09AFF5AF2223AF2E00D8707E /* KGout.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KGout.xcdatamodel; sourceTree = "<group>"; };
 		09AFF5B12223AF3100D8707E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -195,7 +197,8 @@
 				09AFF5A72223AF2E00D8707E /* AppDelegate.swift */,
 				09A2F9902223B3F70001147A /* GoogleService-Info.plist */,
 				09A2F9922223B8E60001147A /* GoutTabbarViewController.swift */,
-				09AFF5A92223AF2E00D8707E /* ViewController.swift */,
+				09AFF5A92223AF2E00D8707E /* LaunchViewController.swift */,
+				0978BEA7229E2A1000606905 /* ViewController.swift */,
 				09AFF5AB2223AF2E00D8707E /* Main.storyboard */,
 				09AFF5B12223AF3100D8707E /* Assets.xcassets */,
 				09AFF5B32223AF3100D8707E /* LaunchScreen.storyboard */,
@@ -475,7 +478,7 @@
 				09DACA4E2296720800AA8919 /* Structs.swift in Sources */,
 				09DACA4F2296720800AA8919 /* Constants.swift in Sources */,
 				09B35C3B22965EF4003FA1A6 /* GoutChartViewController.swift in Sources */,
-				09AFF5AA2223AF2E00D8707E /* ViewController.swift in Sources */,
+				09AFF5AA2223AF2E00D8707E /* LaunchViewController.swift in Sources */,
 				09DACA9722967EE600AA8919 /* Logger.swift in Sources */,
 				09DACA9022967EDA00AA8919 /* Extensions.swift in Sources */,
 				09DACA552296720800AA8919 /* Utils.swift in Sources */,
@@ -493,6 +496,7 @@
 				09DACA6C229675CB00AA8919 /* DrugListViewController.swift in Sources */,
 				09DACA742296765700AA8919 /* DatabaseManager.swift in Sources */,
 				09B35C3E22965EF4003FA1A6 /* GoutDataViewCell.swift in Sources */,
+				0978BEA8229E2A1000606905 /* ViewController.swift in Sources */,
 				09DACA512296720800AA8919 /* BaseNaviBar.swift in Sources */,
 				09DACA9822967EE600AA8919 /* GoutFileManager.swift in Sources */,
 				09DACA6E229675CB00AA8919 /* DrugAlarmViewCell.swift in Sources */,

@@ -33,13 +33,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow.init(frame: UIScreen.main.bounds)
         window?.backgroundColor = .white
         
-        let firstTab = GoutChartViewController()
-        let secondTab = DrugListViewController()
-        let thirdTab = UserInfoViewController()
+//        let firstTab = GoutChartViewController()
+//        let secondTab = DrugListViewController()
+//        let thirdTab = UserInfoViewController()
+//
+//        let mainViewController = GoutTabbarViewController()
+//        mainViewController.viewControllers = [firstTab, secondTab, thirdTab]
         
-        let mainViewController = GoutTabbarViewController()
-        mainViewController.viewControllers = [firstTab, secondTab, thirdTab]
-        window!.rootViewController = mainViewController
+        let launchViewCtrl = LaunchViewController()
+        window!.rootViewController = launchViewCtrl
         
         UNUserNotificationCenter.current().delegate = self
         let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]

@@ -334,11 +334,11 @@ class DatabaseManager {
         
         var queryString = ""
         if listType == goutListType.month {
-            queryString = "select reg_dt, reg_time, uric_acid_value, kidney_value, liver_ggt_value, gout_desc from tb_gout where strftime('%Y-%m', reg_dt, 'localtime') = '\(date!)' order by reg_dt desc;"
+            queryString = "select id, reg_dt, reg_time, uric_acid_value, kidney_value, liver_ggt_value, gout_desc from tb_gout where strftime('%Y-%m', reg_dt, 'localtime') = '\(date!)' order by reg_dt desc;"
         } else if listType == goutListType.year {
-            queryString = "select reg_dt, reg_time, uric_acid_value, kidney_value, liver_ggt_value, gout_desc from tb_gout where strftime('%Y', reg_dt, 'localtime') = '\(date!)' order by reg_dt desc;"
+            queryString = "select id, reg_dt, reg_time, uric_acid_value, kidney_value, liver_ggt_value, gout_desc from tb_gout where strftime('%Y', reg_dt, 'localtime') = '\(date!)' order by reg_dt desc;"
         } else {
-            queryString = "select reg_dt, reg_time, uric_acid_value, kidney_value, liver_ggt_value, gout_desc from tb_gout order by reg_dt desc;"
+            queryString = "select id, reg_dt, reg_time, uric_acid_value, kidney_value, liver_ggt_value, gout_desc from tb_gout order by reg_dt desc;"
         }
         
         var queryStatement: OpaquePointer? = nil
@@ -348,14 +348,16 @@ class DatabaseManager {
             
             while sqlite3_step(queryStatement) == SQLITE_ROW {
                 
-                let queryResultCol1 = String(cString: sqlite3_column_text(queryStatement, 0))
-                let queryResultCol2 = String(cString: sqlite3_column_text(queryStatement, 1))
-                let queryResultCol3 = sqlite3_column_double(queryStatement, 2)
-                let queryResultCol4 = String(cString: sqlite3_column_text(queryStatement, 5))
+                let col1 = sqlite3_column_int(queryStatement, 0)
+                let queryResultCol1 = String(cString: sqlite3_column_text(queryStatement, 1))
+                let queryResultCol2 = String(cString: sqlite3_column_text(queryStatement, 2))
+                let queryResultCol3 = sqlite3_column_double(queryStatement, 3)
+                let queryResultCol4 = String(cString: sqlite3_column_text(queryStatement, 6))
 
                 var goutData:GoutData = GoutData(regDate: queryResultCol1, gout: queryResultCol3.toString())
                 let regTime = queryResultCol2.split(separator: ":")
                 
+                goutData.id = Int(col1)
                 goutData.regTime = regTime[0] + ":" + regTime[1]
                 goutData.goutDesc = queryResultCol4
                 

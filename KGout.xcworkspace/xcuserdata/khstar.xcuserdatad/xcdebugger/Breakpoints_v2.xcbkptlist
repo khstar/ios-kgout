@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KGout/Uricacid/GoutChartViewController.swift"
-            timestampString = "580754913.620129"
+            timestampString = "580804118.551072"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "916"
@@ -41,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "KGout/Common/Utils.swift"
-            timestampString = "580754913.620254"
+            filePath = "KGout/Database/DatabaseManager.swift"
+            timestampString = "580804118.551163"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "289"
-            endingLineNumber = "289"
-            landmarkName = "showDateHHmmmss(timeString:)"
+            startingLineNumber = "251"
+            endingLineNumber = "251"
+            landmarkName = "upsertGoutValue(goutData:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -57,13 +57,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "KGout/LaunchViewController.swift"
-            timestampString = "580801703.249102"
+            filePath = "KGout/Uricacid/AddValueViewController.swift"
+            timestampString = "580804118.551211"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "presentMainViewCtrl()"
+            startingLineNumber = "493"
+            endingLineNumber = "493"
+            landmarkName = "saveGoutValue()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -73,14 +73,78 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "KGout/GoutTabbarViewController.swift"
-            timestampString = "580790994.473042"
+            filePath = "KGout/Uricacid/AddValueViewController.swift"
+            timestampString = "580804118.551538"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "526"
+            endingLineNumber = "526"
+            landmarkName = "saveGout()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KGout/Uricacid/GoutChartViewController.swift"
+            timestampString = "580804118.551753"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1004"
+            endingLineNumber = "1004"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KGout/Uricacid/AddValueViewController.swift"
+            timestampString = "580804118.5517941"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "498"
+            endingLineNumber = "498"
+            landmarkName = "saveGoutValue()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "KGout.AddValueViewController.saveGoutValue() -&gt; ()"
+                  moduleName = "KGout"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/nemu/khstar/xCode/ios-kgout/KGout/Uricacid/AddValueViewController.swift"
+                  timestampString = "580804118.987449"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "498"
+                  endingLineNumber = "498"
+                  offsetFromSymbolStart = "3044">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in KGout.AddValueViewController.saveGoutValue() -&gt; ()"
+                  moduleName = "KGout"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/nemu/khstar/xCode/ios-kgout/KGout/Uricacid/AddValueViewController.swift"
+                  timestampString = "580804118.988822"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "498"
+                  endingLineNumber = "498"
+                  offsetFromSymbolStart = "0">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -491,7 +491,13 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
         let hasGoutData = databaseManager.selectGoutId(date: dateTextField.text!)
         
         if hasGoutData > 0 {
-            showAlert2("\(dateTextField.text!) 데이터가 이미 존재합니다. \n 추가 하시겠습니까?", yes: "예", no: "아니요", nextFunction: self.saveGout, closeFunction: {})
+            
+            if self.goutId > -1 {
+                showAlert2("\(dateTextField.text!) \(timeTextField.text!)\n데이터가 이미 존재합니다. \n 수정 하시겠습니까?", yes: "예", no: "아니요", nextFunction: self.saveGout, closeFunction: {})
+            } else {
+                showAlert2("\(dateTextField.text!) 데이터가 이미 존재합니다. \n 추가 하시겠습니까?", yes: "예", no: "아니요", nextFunction: self.saveGout, closeFunction: {})
+            }
+            
         } else {
             saveGout()
         }
@@ -537,8 +543,6 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
-        
-//        guard let value = textField.text, textField.text!.isEmpty else { return}
         
         let value = textField.text!
         

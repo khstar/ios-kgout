@@ -51,7 +51,7 @@ class AddDrugAlarmViewController: GoutDefaultViewController {
     
     lazy var cancelButton: UIButton! = {
         let button = UIButton()
-        button.setTitle("취소", for: .normal)
+        button.setTitle(StringConstants.cancelBtn, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = UIColor(0xAFDFE3)
@@ -67,7 +67,7 @@ class AddDrugAlarmViewController: GoutDefaultViewController {
     
     lazy var saveAlarmBtn: UIButton! = {
         let button = UIButton()
-        button.setTitle("저장", for: .normal)
+        button.setTitle(StringConstants.saveBtn, for: .normal)
         button.backgroundColor = UIColor(0xAFDFE3)
         return button
     }()

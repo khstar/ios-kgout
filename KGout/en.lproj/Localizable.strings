@@ -6,3 +6,36 @@
   Copyright © 2019 khstar. All rights reserved.
 */
 "Hello" = "Hello Swift";
+
+//ButtonTitle
+"addBtn" = "Add";
+"delBtn" = "Del";
+"saveBtn" = "Save";
+"cancelBtn" = "Cancel";
+"modifyBtn" = "Modify";
+"yesBtn" = "Yes";
+"noBtn" = "No";
+
+//common
+"date" = "Date";
+"time" = "Time";
+"desc" = "Desc";
+
+//요산 리스트 조회 타입
+"allUricacidList"="All";
+"yearUricacidList"="Year";
+"monthUricacidList"="Month";
+
+//요산
+"uricacid" = "Uricacid";
+"uricacidTitle" = "Uricacid Management";
+"uricacidInfoDesc"="Informatino Descroption";
+"uricacidAdd" = "Uricacid Add";
+
+"uricacidDataExistMSG" = "Data already exists.";
+"uricacidDataModifyMSG" = "Do you want to modify it?";
+"uricacidDataAddMSG" = "Would you like to add it?";
+
+"uricacidMinMaxRangeMSG" = "The input value must be between 0 and 20 inclusive.";
+"uricacidDecimalErrMSG" = "Can enter up to one decimal place.";
+"uricacidDotErrMSG" = "Can not have two dot.";

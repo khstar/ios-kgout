@@ -46,7 +46,7 @@ class DrugListViewController: GoutDefaultViewController {
     
     lazy var addButton: UIButton! = {
         let button = UIButton()
-        button.setTitle("추가", for: .normal)
+        button.setTitle(StringConstants.addBtn, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = UIColor(0xAFDFE3)
@@ -78,7 +78,7 @@ class DrugListViewController: GoutDefaultViewController {
     
     lazy var cancelButton: UIButton! = {
         let button = UIButton()
-        button.setTitle("취소", for: .normal)
+        button.setTitle(StringConstants.cancelBtn, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = UIColor(0xAFDFE3)
@@ -94,7 +94,7 @@ class DrugListViewController: GoutDefaultViewController {
     
     lazy var deleteButton: UIButton! = {
         let button = UIButton()
-        button.setTitle("삭제", for: .normal)
+        button.setTitle(StringConstants.delBtn, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = UIColor(0xAFDFE3)
@@ -226,7 +226,7 @@ class DrugListViewController: GoutDefaultViewController {
             cancelButton.isHidden = false
             
         } else {
-            addButton.titleLabel!.text = "추가"
+            addButton.titleLabel!.text = StringConstants.addBtn
             
             naviBar.leftButton = deleteButton
             cancelButton.isEnabled = false
@@ -375,7 +375,7 @@ extension DrugListViewController: UICollectionViewDelegate, UICollectionViewData
         
         if isDeleteMode {
             
-            deleteButton.titleLabel!.text = "취소"
+            deleteButton.titleLabel!.text = StringConstants.cancelBtn
             
             guard let cell = drugInfoCollectionView.cellForItem(at: indexPath) as? DeleteDrugInfoViewCell else { return }
             

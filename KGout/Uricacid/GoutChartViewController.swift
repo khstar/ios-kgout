@@ -37,11 +37,13 @@ class GoutChartViewController: BaseChartViewController {
     var isRefrash:Bool = false
     var isDeleteMode:Bool = false
     
-    var viewTypeList = ["전체","년도별","월별"]
+    var viewTypeList = [StringConstants.allUricacidList,
+                        StringConstants.yearUricacidList,
+                        StringConstants.monthUricacidList]
     
     lazy var addUricButton: UIButton! = {
         let button = UIButton()
-        button.setTitle("추가", for: .normal)
+        button.setTitle(StringConstants.addBtn, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = UIColor(0xAFDFE3)
@@ -73,7 +75,7 @@ class GoutChartViewController: BaseChartViewController {
     
     lazy var cancelButton: UIButton! = {
         let button = UIButton()
-        button.setTitle("취소", for: .normal)
+        button.setTitle(StringConstants.cancelBtn, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         button.setTitleColor(.black, for: .normal)
 
@@ -98,7 +100,7 @@ class GoutChartViewController: BaseChartViewController {
     
     lazy var deleteButton: UIButton! = {
         let button = UIButton()
-        button.setTitle("삭제", for: .normal)
+        button.setTitle(StringConstants.delBtn, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = UIColor(0xAFDFE3)
@@ -173,7 +175,7 @@ class GoutChartViewController: BaseChartViewController {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         label.textColor = UIColor(0x1c1c1c)
-        label.text = "전체"
+        label.text = StringConstants.allUricacidList
         return label
     }()
     
@@ -219,12 +221,9 @@ class GoutChartViewController: BaseChartViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        DatabaseManager.sharedInstance().selectGoutVaule(date: "test")
+        
         setupRXView()
         fetchData()
-        
-        var test  = NSLocalizedString("Hello", comment: "하이")
-        print(test)
         
         // Do any additional setup after loading the view.
     }
@@ -308,7 +307,7 @@ class GoutChartViewController: BaseChartViewController {
         naviBar.autoPinEdge(toSuperviewEdge: .right)
         naviBar.autoSetDimension(.height, toSize: 44)
         
-        naviBar.title = "요산 관리"
+        naviBar.title = StringConstants.uricacidTitle
         naviBar.rightButton = addUricButton
         naviBar.leftButton = deleteButton
         
@@ -508,7 +507,7 @@ class GoutChartViewController: BaseChartViewController {
             cancelButton.isHidden = false
             
         } else {
-            addUricButton.titleLabel!.text = "추가"
+            addUricButton.titleLabel!.text = StringConstants.addBtn
             
             naviBar.leftButton = deleteButton
             cancelButton.isHidden = true
@@ -630,7 +629,7 @@ class GoutChartViewController: BaseChartViewController {
     
     func setChartViewData(chartDataEntry: [ChartDataEntry]) {
         
-        let set1 = LineChartDataSet(values: chartDataEntry, label: "요산")
+        let set1 = LineChartDataSet(values: chartDataEntry, label: StringConstants.uricacid)
         set1.axisDependency = .left
         set1.setColor(UIColor(red: 51/255, green: 181/255, blue: 229/255, alpha: 1))    //그래프 라인 칼라 수정시
         set1.setCircleColor(.black)

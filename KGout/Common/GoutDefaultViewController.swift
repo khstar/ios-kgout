@@ -295,10 +295,10 @@ class GoutDefaultViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    func showAlertDestructive(_ message: String, destructive: String = "삭제", nextFunction: (() -> Void)? = nil, closeFunction: (() -> Void)? = nil){
+    func showAlertDestructive(_ message: String, destructive: String = StringConstants.delBtn, nextFunction: (() -> Void)? = nil, closeFunction: (() -> Void)? = nil){
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         
-        let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: {_ in
+        let cancelAction = UIAlertAction(title: StringConstants.cancelBtn, style: .cancel, handler: {_ in
             if let _ = closeFunction {
                 closeFunction!()
             }

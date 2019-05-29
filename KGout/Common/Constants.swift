@@ -59,5 +59,41 @@ class Constants {
     
     ///Push Identifier Prefix
     static let goutIdentifier = "goutIdentifier_"
+    
 }
 
+class StringConstants {
+    
+    //common
+    static let commonDate = NSLocalizedString("date", comment: "날짜")
+    static let commonTime = NSLocalizedString("time", comment: "시간")
+    static let commonDesc = NSLocalizedString("desc", comment: "요약")
+    
+    //Btn
+    static let addBtn = NSLocalizedString("addBtn", comment: "추가")
+    static let delBtn = NSLocalizedString("delBtn", comment: "삭제")
+    static let saveBtn = NSLocalizedString("saveBtn", comment: "저장")
+    static let cancelBtn = NSLocalizedString("cancelBtn", comment: "취소")
+    static let modifyBtn = NSLocalizedString("modifyBtn", comment: "수정")
+    static let yesBtn = NSLocalizedString("yesBtn", comment: "예")
+    static let noBtn = NSLocalizedString("noBtn", comment: "아니오")
+    //요산 리스트 조회 타입 문자열
+    static let allUricacidList = NSLocalizedString("allUricacidList", comment: "전체")
+    static let yearUricacidList = NSLocalizedString("yearUricacidList", comment: "년도별")
+    static let monthUricacidList = NSLocalizedString("monthUricacidList", comment: "월별")
+    
+    //gout
+    static let uricacid = NSLocalizedString("uricacid", comment: "요산")
+    static let uricacidTitle = NSLocalizedString("uricacidTitle", comment: "요산 관리")
+    static let uricacidAdd = NSLocalizedString("uricacidAdd", comment: "요산 추가")
+    static let uricacidInfoDesc = NSLocalizedString("uricacidInfoDesc", comment: "해당 날짜에 기록해야할 정보가 있으면 입력해 주세요. ")
+    
+    static let uricacidDataExistMSG = NSLocalizedString("uricacidDataExistMSG", comment: "데이터가 이미 존재합니다.")
+    static let uricacidDataModifyMSG = NSLocalizedString("uricacidDataModifyMSG", comment: "수정 하시겠습니까?")
+    static let uricacidDataAddMSG = NSLocalizedString("uricacidDataAddMSG", comment: "추가 하시겠습니까?")
+    
+    //
+    static let uricacidMinMaxRangeMSG = NSLocalizedString("uricacidMinMaxRangeMSG", comment: "입력 값은 0 이상 20 이하여야 합니다.")
+    static let uricacidDecimalErrMSG = NSLocalizedString("uricacidDecimalErrMSG", comment: "소수점 한 자리까지 입력 할 수 있습니다.")
+    static let uricacidDotErrMSG = NSLocalizedString("uricacidDotErrMSG", comment: ".이 두 개 들어갈수 없습니다.")
+}

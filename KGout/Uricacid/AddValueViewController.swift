@@ -30,7 +30,7 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
     
     lazy var addTitle:UILabel! = {
         let label = UILabel()
-        label.text = "수치 입력"
+        label.text = StringConstants.uricacidAdd
         label.font = UIFont.boldSystemFont(ofSize: 18)
         label.textAlignment = .center
         return label
@@ -43,7 +43,7 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
     
     lazy var dateLabel:UILabel! = {
         let label = UILabel()
-        label.text = "날짜"
+        label.text = StringConstants.commonDate
         label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         label.textColor = UIColor(0x7a7a7a)
         return label
@@ -71,7 +71,7 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
     
     lazy var timeLabel:UILabel! = {
         let label = UILabel()
-        label.text = "시간"
+        label.text = StringConstants.commonTime
         label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         label.textColor = UIColor(0x7a7a7a)
         return label
@@ -104,7 +104,7 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
     
     lazy var goutLabel:UILabel! = {
         let label = UILabel()
-        label.text = "요산"
+        label.text = StringConstants.uricacid
         label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         label.textColor = UIColor(0x7a7a7a)
         return label
@@ -137,7 +137,7 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
     
     lazy var descLabel:UILabel! = {
         let label = UILabel()
-        label.text = "요약"
+        label.text = StringConstants.commonDesc
         label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         label.textColor = UIColor(0x7a7a7a)
         return label
@@ -146,7 +146,7 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
     lazy var descTextView:UITextView! = {
         let field = UITextView()
         
-        field.text = "해당 날짜에 기록해야할 정보가 있으면 입력해 주세요."
+        field.text = StringConstants.uricacidInfoDesc
         field.textColor = .placeholder
         
         field.keyboardType = .default
@@ -204,7 +204,7 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
         let button = UIButton()
         button.setBackgroundImage(#imageLiteral(resourceName: "addSaveBtnNormal"), for: .normal)
         button.setBackgroundImage(#imageLiteral(resourceName: "addSaveBtnSelect"), for: .selected)
-        button.setTitle("저장", for: .normal)
+        button.setTitle(StringConstants.saveBtn, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         
         return button
@@ -214,7 +214,7 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
         let button = UIButton()
         button.setBackgroundImage(#imageLiteral(resourceName: "addSaveBtnNormal"), for: .normal)
         button.setBackgroundImage(#imageLiteral(resourceName: "addSaveBtnSelect"), for: .selected)
-        button.setTitle("취소", for: .normal)
+        button.setTitle(StringConstants.cancelBtn, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         
         return button
@@ -475,10 +475,6 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
         timeTextField.text = dateFormatter.string(from: timePicker.date)
     }
     
-    func showModifyMode() {
-        showAlertAll(title: "통풍 캐어", "수정 모드에서는 날짜를 변경할 수 없습니다.", nextFunction: {})
-    }
-    
     /**
      입력값 저장하기
      */
@@ -493,9 +489,15 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
         if hasGoutData > 0 {
             
             if self.goutId > -1 {
-                showAlert2("\(dateTextField.text!) \(timeTextField.text!)\n데이터가 이미 존재합니다. \n 수정 하시겠습니까?", yes: "예", no: "아니요", nextFunction: self.saveGout, closeFunction: {})
+                showAlert2("\(dateTextField.text!) \(timeTextField.text!)\n\(StringConstants.uricacidDataExistMSG) \n \(StringConstants.uricacidDataModifyMSG)",
+                    yes: StringConstants.yesBtn,
+                    no: StringConstants.noBtn,
+                    nextFunction: self.saveGout, closeFunction: {})
             } else {
-                showAlert2("\(dateTextField.text!) 데이터가 이미 존재합니다. \n 추가 하시겠습니까?", yes: "예", no: "아니요", nextFunction: self.saveGout, closeFunction: {})
+                showAlert2("\(dateTextField.text!) + \(StringConstants.uricacidDataExistMSG) \n \(StringConstants.uricacidDataAddMSG)",
+                    yes: StringConstants.yesBtn,
+                    no: StringConstants.noBtn,
+                    nextFunction: self.saveGout, closeFunction: {})
             }
             
         } else {
@@ -553,7 +555,7 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
         //소수점이 두개 연속으로 들어가면 알림
         if value.contains("..") {
             textField.text = String(value.dropLast())
-            self.showAlert(".이 두 개 들어갈수 없습니다.", nextFunction: {})
+            self.showAlert(StringConstants.uricacidDotErrMSG, nextFunction: {})
             return
         }
         
@@ -564,14 +566,14 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
             //소수점이 하나 더 들어간경우
             if value.last == "." {
                 textField.text = String(value.dropLast())
-                self.showAlert(".이 두 개 들어갈수 없습니다.", nextFunction: {})
+                self.showAlert(StringConstants.uricacidDotErrMSG, nextFunction: {})
             }
             
             //소수점 두자리인 경우
             if valueArr[1].count > 1 {
                 //알림창 띄우기
                 textField.text = String(value.dropLast())
-                self.showAlert("소수점 한자리 까지 입력할 수 있습니다.", nextFunction: {})
+                self.showAlert(StringConstants.uricacidDecimalErrMSG, nextFunction: {})
             }
         }
         
@@ -580,7 +582,7 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
         //범위 관리
         if n < Constants.minUricacid || Constants.maxUricacid < n {
             textField.text = ""
-            self.showAlert("입력 값은 0 이상 20 이하여야 합니다.", nextFunction: {})
+            self.showAlert(StringConstants.uricacidMinMaxRangeMSG, nextFunction: {})
         }
     }
 }
@@ -602,7 +604,7 @@ extension AddValueViewController:UITextViewDelegate {
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
-            textView.text = "해당 날짜에 기록해야할 정보가 있으면 입력해 주세요."
+            textView.text = StringConstants.uricacidInfoDesc
             textView.textColor = .placeholder
         }
     }

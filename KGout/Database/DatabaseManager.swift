@@ -185,16 +185,6 @@ class DatabaseManager {
             return false
         }
         
-//        rc = sqlite3_key(db, password, Int32(password.utf8CString.count))
-//        sqlite3_
-        
-        
-        
-//        if (rc != SQLITE_OK) {
-//            let errmsg = String(cString: sqlite3_errmsg(db))
-//            NSLog("Error setting key: \(errmsg)")
-//        }
-        
         var updateGoutValue = "UPDATE tb_user_info SET "
         updateGoutValue.append("name = '\(userInfo.userName)', ")
         updateGoutValue.append("birthday = '\(userInfo.userBirthDay)', ")

@@ -22,15 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
-        databaseManager = DatabaseManager.sharedInstance()
-        
-        let baseKey = "gout_khstar"
         ref = Database.database().reference()
-        let databaseKey = baseKey.toBase64()
-        //키의 복원
-        //        let fromKey = databaseKey.fromBase64()
-        
-        databaseManager?.setPassword(password: databaseKey)
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         
         //DB 파일이 존재하지 않으면

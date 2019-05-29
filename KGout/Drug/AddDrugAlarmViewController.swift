@@ -35,7 +35,7 @@ class AddDrugAlarmViewController: GoutDefaultViewController {
     
     lazy var completeButton: UIButton! = {
         let button = UIButton()
-        button.setTitle("완료", for: .normal)
+        button.setTitle(StringConstants.completeBtn, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = UIColor(0xAFDFE3)

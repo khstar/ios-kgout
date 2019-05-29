@@ -507,21 +507,17 @@ class AddDrugInfoViewController: GoutDefaultViewController, UITextFieldDelegate 
             self.isDeleteMode = false
             self.addAlarmBtn.isHidden = false
             self.delAlarmBtn.isHidden = false
-            
-//            self.addAlarmBtn.titleLabel!.text = "알람 추가"
-//            self.delAlarmBtn.titleLabel!.text = "알람 취소"
+        
         } else {
             
             if drugAlarmInfo.count == 0 {
-                showAlertAll(title: "통풍 캐어", "등록된 알람이 없습니다.", nextFunction: {})
+                showAlertAll(title: Bundle.main.displayName!, "등록된 알람이 없습니다.", nextFunction: {})
                 return
             }
             
             self.isDeleteMode = true
             self.addAlarmBtn.isHidden = true
             self.delAlarmBtn.isHidden = true
-//            self.addAlarmBtn.titleLabel!.text = "삭제 하기"
-//            self.delAlarmBtn.titleLabel!.text = "알람 삭제"
         }
         
         drugAlarmCollectionView.reloadData()

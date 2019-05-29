@@ -234,7 +234,7 @@ class GoutDefaultViewController: UIViewController {
     }
     
     func showAlert(_ message: String, nextFunction: @escaping () -> Void){
-        let alert = UIAlertController(title: "통풍 캐어", message: message, preferredStyle: .alert)
+        let alert = UIAlertController(title: Bundle.main.displayName!, message: message, preferredStyle: .alert)
         
         let defaultAction = UIAlertAction(title: "확인", style: .default, handler: {_ in
             nextFunction()
@@ -256,7 +256,7 @@ class GoutDefaultViewController: UIViewController {
     }
     
     func showAlert2(_ message: String, yes: String = "재시도", no: String = "닫기", nextFunction: (() -> Void)? = nil, closeFunction: (() -> Void)? = nil){
-        let alert = UIAlertController(title: "통풍 캐어", message: message, preferredStyle: .alert)
+        let alert = UIAlertController(title: Bundle.main.displayName!, message: message, preferredStyle: .alert)
         
         let defaultAction = UIAlertAction(title: yes, style: .default, handler: {_ in
             if let _ = nextFunction {

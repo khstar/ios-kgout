@@ -59,7 +59,7 @@ class GoutChartViewController: BaseChartViewController {
     
     lazy var completeButton: UIButton! = {
         let button = UIButton()
-        button.setTitle("완료", for: .normal)
+        button.setTitle(StringConstants.completeBtn, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = UIColor(0xAFDFE3)
@@ -286,7 +286,7 @@ class GoutChartViewController: BaseChartViewController {
         
         view.addSubview(label)
         label.autoCenterInSuperview()
-        label.text = "데이터가 없습니다."
+        label.text = StringConstants.noData
         
         return view
     }()
@@ -451,7 +451,7 @@ class GoutChartViewController: BaseChartViewController {
         
         //데이터가 0인데 삭제 버튼을 누른 경우
         if uricacidDatas.count == 0 {
-            showAlertAll(title: "통풍 캐어", "삭제 할 데이터가 없습니다.", nextFunction: {})
+            showAlertAll(title: Bundle.main.displayName!, StringConstants.noDataDelete, nextFunction: {})
             return
         }
         
@@ -500,7 +500,7 @@ class GoutChartViewController: BaseChartViewController {
         self.delUricacid = [:]
         
         if isDeleteMode {
-            addUricButton.titleLabel!.text = "완료"
+            addUricButton.titleLabel!.text = StringConstants.completeBtn
             
             naviBar.leftButton = cancelButton
             deleteButton.isHidden = true

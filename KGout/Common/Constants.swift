@@ -69,6 +69,10 @@ class StringConstants {
     static let commonTime = NSLocalizedString("time", comment: "시간")
     static let commonDesc = NSLocalizedString("desc", comment: "요약")
     
+    //common message
+    static let noData = NSLocalizedString("noData", comment: "데이터가 없습니다.")
+    static let noDataDelete = NSLocalizedString("noDataDelete", comment: "삭제할 데이터가 없습니다.")
+    
     //Btn
     static let addBtn = NSLocalizedString("addBtn", comment: "추가")
     static let delBtn = NSLocalizedString("delBtn", comment: "삭제")
@@ -77,6 +81,8 @@ class StringConstants {
     static let modifyBtn = NSLocalizedString("modifyBtn", comment: "수정")
     static let yesBtn = NSLocalizedString("yesBtn", comment: "예")
     static let noBtn = NSLocalizedString("noBtn", comment: "아니오")
+    static let completeBtn = NSLocalizedString("completeBtn", comment: "완료")
+    
     //요산 리스트 조회 타입 문자열
     static let allUricacidList = NSLocalizedString("allUricacidList", comment: "전체")
     static let yearUricacidList = NSLocalizedString("yearUricacidList", comment: "년도별")

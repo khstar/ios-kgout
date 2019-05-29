@@ -28,7 +28,7 @@ class UserInfoViewController: GoutDefaultViewController, UITextFieldDelegate {
     
     lazy var completeButton: UIButton! = {
         let button = UIButton()
-        button.setTitle("완료", for: .normal)
+        button.setTitle(StringConstants.completeBtn, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         button.setTitleColor(.black, for: .normal)
         
@@ -510,7 +510,7 @@ class UserInfoViewController: GoutDefaultViewController, UITextFieldDelegate {
     }
     
     func showBMIAlert() {
-        self.showAlertAll(title: "통풍 캐어", "키와 몸무게를 입력하면 자동으로 생성됩니다.", nextFunction: {})
+        self.showAlertAll(title: Bundle.main.displayName!, "키와 몸무게를 입력하면 자동으로 생성됩니다.", nextFunction: {})
     }
     
     @objc func setDone() {
@@ -614,7 +614,7 @@ class UserInfoViewController: GoutDefaultViewController, UITextFieldDelegate {
         if !userWeightTextField.text!.isEmpty {
             let weight = Float(userWeightTextField.text!)
             if weight! < 30 || weight! > 200 {
-                showAlertAll(title: "통풍 캐어", "몸무게 입력 범위가 맞습니까?", nextFunction: {})
+                showAlertAll(title: Bundle.main.displayName!, "몸무게 입력 범위가 맞습니까?", nextFunction: {})
                 return
             }
         }
@@ -623,7 +623,7 @@ class UserInfoViewController: GoutDefaultViewController, UITextFieldDelegate {
         if !userHeightTextField.text!.isEmpty {
             let height = Float(userHeightTextField.text!)
             if height! < 100 || height! > 250 {
-                showAlertAll(title: "통풍 캐어", "키(신장) 입력 범위가 맞습니까?", nextFunction: {})
+                showAlertAll(title: Bundle.main.displayName!, "키(신장) 입력 범위가 맞습니까?", nextFunction: {})
                 return
             }
         }

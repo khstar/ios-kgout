@@ -385,7 +385,6 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
         .bind(to: addValueViewModel.goutValue)
         .disposed(by: disposeBag)
         
-//        addValueViewModel
     }
     
     func rxAction() {
@@ -494,7 +493,7 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
                     no: StringConstants.noBtn,
                     nextFunction: self.saveGout, closeFunction: {})
             } else {
-                showAlert2("\(dateTextField.text!) + \(StringConstants.uricacidDataExistMSG) \n \(StringConstants.uricacidDataAddMSG)",
+                showAlert2("\(dateTextField.text!) \(StringConstants.uricacidDataExistMSG) \n \(StringConstants.uricacidDataAddMSG)",
                     yes: StringConstants.yesBtn,
                     no: StringConstants.noBtn,
                     nextFunction: self.saveGout, closeFunction: {})
@@ -544,6 +543,9 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
         dismiss(animated: true)
     }
     
+    /**
+     요산 데이터 유효성 체크
+     */
     @objc func textFieldDidChange(_ textField: UITextField) {
         
         let value = textField.text!

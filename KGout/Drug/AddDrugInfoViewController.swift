@@ -371,8 +371,6 @@ class AddDrugInfoViewController: GoutDefaultViewController, UITextFieldDelegate 
         drugAlarmCollectionView.autoPinEdge(toSuperviewEdge: .right, withInset: 15)
         drugAlarmCollectionView.autoPinEdge(toSuperviewEdge: .bottom)
         
-        drugNameTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-        
         //취소 버튼 이벤트
         cancelButton.rx.tap.bind {
             [weak self] _ in
@@ -545,12 +543,17 @@ class AddDrugInfoViewController: GoutDefaultViewController, UITextFieldDelegate 
      */
     func saveDrugInfo() {
         let drugName = self.drugNameTextField.text!
-        let drugDesc = self.drugDesc.text!
+        var drugDesc = self.drugDesc.text!
         var drugImgName = ""
         
         if drugName.isEmpty {
             showAlert2(StringConstants.medicineNameFieldMSG)
             return
+        }
+        
+        //텍스트 색이 placeholder 색과 같으면
+        if self.drugDesc.textColor == .placeholder {
+            drugDesc = ""
         }
         
         if (drugInfo?.drugImg.isEmpty)! {
@@ -606,36 +609,6 @@ class AddDrugInfoViewController: GoutDefaultViewController, UITextFieldDelegate 
     
     @objc func goutValid() {
         print("\(String(describing: drugDesc.text))")
-    }
-    
-    @objc func textFieldDidChange(_ textField: UITextField) {
-        
-        let value = textField.text!
-        
-        //소수점이 두개 연속으로 들어가면 알림
-        if value.contains("..") {
-            textField.text = String(value.dropLast())
-            self.showAlert(".이 두 개 들어갈수 없습니다.", nextFunction: {})
-            return
-        }
-        
-        let valueArr = value.split(separator: ".")
-        
-        //소수점이 하나인가?
-        if valueArr.count > 1 {
-            //소수점이 하나 더 들어간경우
-            if value.last == "." {
-                textField.text = String(value.dropLast())
-                self.showAlert(".이 두 개 들어갈수 없습니다.", nextFunction: {})
-            }
-            
-            //소수점 두자리인 경우
-            if valueArr[1].count > 1 {
-                //알림창 띄우기
-                textField.text = String(value.dropLast())
-                self.showAlert("소수점 한자리 까지 입력할 수 있습니다.", nextFunction: {})
-            }
-        }
     }
 }
 

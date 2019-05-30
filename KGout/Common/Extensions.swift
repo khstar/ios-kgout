@@ -149,11 +149,11 @@ extension String {
     }
     
     func isValidNick() -> Bool {
-        return self.characters.count > 0 && self.characters.count < 20
+        return self.count > 0 && self.count < 20
     }
     
     func isValidPassword() -> Bool {
-        return self.characters.count > 5
+        return self.count > 5
     }
     
     func safeLimitedTo(lenght n: Int) -> String {

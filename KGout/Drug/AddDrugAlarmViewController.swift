@@ -157,15 +157,10 @@ class AddDrugAlarmViewController: GoutDefaultViewController {
         label.font = UIFont.systemFont(ofSize: 15.5, weight: .medium)
         label.textColor = .black
         label.text = "\(StringConstants.alarmInfoTitle) : "
-//        label.text = "다시 알림 : "
         return label
     }()
     
     lazy var descTextField:UITextField! = {
-//        let text = UITextField()
-//        text.font = UIFont.systemFont(ofSize: 15, weight: .medium)
-//        text.textColor = .black
-        
         let field = UITextField()
         field.leftViewMode = .always
         field.font = UIFont.systemFont(ofSize: 18, weight: .medium)
@@ -290,27 +285,6 @@ class AddDrugAlarmViewController: GoutDefaultViewController {
         snoozePanel.autoPinEdge(toSuperviewEdge: .left, withInset: 14.5)
         snoozePanel.autoPinEdge(toSuperviewEdge: .right, withInset: 14.5)
         snoozePanel.autoSetDimension(.height, toSize: 30)
-        
-//        snoozePanel.addSubview(snoozeLabel)
-//        snoozePanel.addSubview(snoozeTextField)
-//
-//        snoozeLabel.autoPinEdge(toSuperviewEdge: .left)
-//        snoozeLabel.autoPinEdge(toSuperviewEdge: .top)
-//        snoozeLabel.autoPinEdge(toSuperviewEdge: .bottom)
-//        snoozeLabel.autoSetDimension(.width, toSize: 80)
-//
-//        snoozeTextField.autoPinEdge(.left, to: .right, of: snoozeLabel, withOffset: 5)
-//        snoozeTextField.autoPinEdge(toSuperviewEdge: .top)
-//        snoozeTextField.autoPinEdge(toSuperviewEdge: .bottom)
-//        snoozeTextField.autoPinEdge(toSuperviewEdge: .right)
-//
-//        let line2 = UIView()
-//        self.view.addSubview(line2)
-//        line2.autoPinEdge(.top, to: .bottom, of: snoozePanel)
-//        line2.autoPinEdge(toSuperviewEdge: .left, withInset: 14.5)
-//        line2.autoPinEdge(toSuperviewEdge: .right, withInset: 14.5)
-//        line2.autoSetDimension(.height, toSize: 1)
-//        line2.backgroundColor = .gray
         
         repeatPanel.addSubview(weekBtn)
         weekBtn.autoPinEdge(toSuperviewEdge: .top)

@@ -85,10 +85,10 @@
 "userNameTitle" = "이름";
 "birthdayTitle" = "생년월일";
 "ageTitle" = "나이";
-"height" = "키";
-"weight" = "몸무게";
-"bmi" = "BMI";
-"obesity" = "비만도";
+"heightTitle" = "키";
+"weightTitle" = "몸무게";
+"bmiTitle" = "BMI";
+"obesityTitle" = "비만도";
 
 "autoMSG" = "자동생성";
 "userNameFieldMSG" = "이름을 입력해주세요.";

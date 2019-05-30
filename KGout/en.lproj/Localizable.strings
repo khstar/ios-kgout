@@ -36,7 +36,7 @@
 //요산
 "uricacid" = "Uricacid";
 "uricacidTitle" = "Uricacid Management";
-"uricacidInfoDesc"="Informatino Descroption";
+"uricacidInfoDesc"="Infomation Descroption";
 "uricacidAdd" = "Uricacid Add";
 
 "uricacidDataExistMSG" = "Data already exists.";

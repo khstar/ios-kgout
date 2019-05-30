@@ -268,6 +268,10 @@ class DatetimeUtils {
             age = compos.year!
         }
         
+        if Utils.getContryCode() != "KR" {
+            return age
+        }
+        
         if userAgeMonth(birth: birth) >= 0 {
             age = age + 1
         } else {

@@ -363,6 +363,12 @@ class Utils{
         return UIDevice.current.systemVersion
     }
     
+    static func getContryCode() -> String {
+        guard let countryCode = Locale.current.regionCode else { return "KR"}
+        
+        return countryCode
+    }
+    
     ///디바이스 구분을 위한 Identifier 찾기
     static func getDeviceIdentifier() -> String {
         var systemInfo = utsname()
@@ -552,7 +558,6 @@ class Utils{
         f.numberStyle = .decimal
         return f
     }()
-    
 }
 
 

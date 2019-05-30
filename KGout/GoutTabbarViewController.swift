@@ -137,6 +137,7 @@ class GoutTabbarViewController: UITabBarController {
         adMobView.autoPinEdge(toSuperviewEdge: .right)
         adMobView.autoPinEdge(toSuperviewEdge: .bottom, withInset: bottomHeight)
         adMobView.autoSetDimension(.height, toSize: 50)
+        adMobView.isHidden = false
         
         customSolidView.autoPinEdge(toSuperviewEdge: .left, withInset: zeroInset)
         customSolidView.autoPinEdge(toSuperviewEdge: .right, withInset: zeroInset)

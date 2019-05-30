@@ -198,10 +198,6 @@ class DatabaseManager {
         sqlite3_finalize(stmt)
         stmt = nil
         
-        if sqlite3_prepare_v2(db, updateGoutValue, -1, &stmt, nil)  == SQLITE_OK {
-            return true
-        }
-        
         rc = sqlite3_exec(db, updateGoutValue, nil, nil, nil)
         if (rc != SQLITE_OK) {
             let errmsg = String(cString: sqlite3_errmsg(db))

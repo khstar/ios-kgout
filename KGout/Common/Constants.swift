@@ -120,7 +120,7 @@ class StringConstants {
     
     //Alarm
     static let alarmTitle = NSLocalizedString("alarmTitle", comment: "알람")
-    static let alarmRegistTitle = NSLocalizedString("registsAlarmTitle", comment: "알람 등록")
+    static let alarmRegistTitle = NSLocalizedString("registAlarmTitle", comment: "알람 등록")
     static let noAlarmMSG = NSLocalizedString("noAlarmMSG", comment: "등록된 알람이 없습니다.")
     static let alarmInfoTitle = NSLocalizedString("alarmInfoTitle", comment: "설명")
     

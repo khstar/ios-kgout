@@ -6,3 +6,4 @@
   Copyright © 2019 khstar. All rights reserved.
 */
 CFBundleDisplayName = "Gout Care";
+NSCameraUsageDescription = "Use the camera for medicinal pictures.";

@@ -6,3 +6,4 @@
   Copyright © 2019 khstar. All rights reserved.
 */
 CFBundleDisplayName = "통풍캐어";
+NSCameraUsageDescription = "약품 사진을 위해 카메라를 사용합니다.";

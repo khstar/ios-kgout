@@ -54,6 +54,7 @@
 "medicineName" = "약 이름";
 "medicineInfo" = "약 정보";
 "medicineAlarm" = "약 알람";
+"medicinePhoto" = "약품 사진";
 
 "medicineNameFieldMSG" = "약 이름을 입력하세요.";
 "medicineInfoFieldMSG" = "약 정보를 입력하세요.";

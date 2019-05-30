@@ -556,39 +556,40 @@ class AddDrugInfoViewController: GoutDefaultViewController, UITextFieldDelegate 
             drugDesc = ""
         }
         
-        if (drugInfo?.drugImg.isEmpty)! {
-            drugImgName = "\(DatetimeUtils.nowMMDDHHmmss()).png"
-            
-            var pathString = GoutFileManager.sharedInstance().getDocumentsDirectory()
-            pathString.appendPathComponent(drugImgName)
-            
-            let drugImg = self.cameraImageView.image!.resized(toWidth: 300)
-            let data = UIImage.pngData(drugImg!)
-            
-            do {
-                try data()?.write(to: pathString)
-            }
-            catch {
-                print("이미지 생성중 에러")
-            }
-        } else {
-            
-            //삭제 후 저장
-            GoutFileManager.sharedInstance().removeImage(fileName: drugInfo!.drugImg)
-            
-            drugImgName = "\(DatetimeUtils.nowMMDDHHmmss()).png"
-            
-            var pathString = GoutFileManager.sharedInstance().getDocumentsDirectory()
-            pathString.appendPathComponent(drugImgName)
-            
-            let drugImg = self.cameraImageView.image!.resized(toWidth: 300)
-            let data = UIImage.pngData(drugImg!)
-            
-            do {
-                try data()?.write(to: pathString)
-            }
-            catch {
-                print("이미지 생성중 에러")
+        if !(cameraImageView.image?.isEqual(#imageLiteral(resourceName: "camera")))! {
+            if (drugInfo?.drugImg.isEmpty)! {
+                drugImgName = "\(DatetimeUtils.nowMMDDHHmmss()).png"
+                
+                var pathString = GoutFileManager.sharedInstance().getDocumentsDirectory()
+                pathString.appendPathComponent(drugImgName)
+                
+                let drugImg = self.cameraImageView.image!.resized(toWidth: 300)
+                let data = UIImage.pngData(drugImg!)
+                
+                do {
+                    try data()?.write(to: pathString)
+                }
+                catch {
+                    print("이미지 생성중 에러")
+                }
+            } else {
+                //삭제 후 저장
+                GoutFileManager.sharedInstance().removeImage(fileName: drugInfo!.drugImg)
+                
+                drugImgName = "\(DatetimeUtils.nowMMDDHHmmss()).png"
+                
+                var pathString = GoutFileManager.sharedInstance().getDocumentsDirectory()
+                pathString.appendPathComponent(drugImgName)
+                
+                let drugImg = self.cameraImageView.image!.resized(toWidth: 300)
+                let data = UIImage.pngData(drugImg!)
+                
+                do {
+                    try data()?.write(to: pathString)
+                }
+                catch {
+                    print("이미지 생성중 에러")
+                }
             }
         }
         

@@ -54,6 +54,7 @@
 "medicineName" = "Medicine Name";
 "medicineInfo" = "Medicine Info";
 "medicineAlarm" = "Medicine Alarm";
+"medicinePhoto" = "Medicine Photo";
 
 "medicineNameFieldMSG" = "Please enter a medicine name.";
 "medicineInfoFieldMSG" = "Please enter information about the medicine.";

@@ -47,7 +47,7 @@ class DrugInfoViewCell: DefaultCollectionViewCell {
     
     lazy var drugImgPanel:UIView! = {
         let view = UIView()
-        view.backgroundColor = UIColor(0x000000, alpha: 0.06)
+        view.backgroundColor = UIColor(0xffffff, alpha: 0.06)
         return view
     }()
     
@@ -169,7 +169,7 @@ class DeleteDrugInfoViewCell: DefaultCollectionViewCell {
     
     lazy var drugImgPanel:UIView! = {
         let view = UIView()
-        view.backgroundColor = UIColor(0x000000, alpha: 0.06)
+        view.backgroundColor = UIColor(0xffffff, alpha: 0.06)
         return view
     }()
     

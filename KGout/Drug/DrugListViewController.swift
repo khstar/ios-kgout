@@ -301,7 +301,6 @@ extension DrugListViewController: UICollectionViewDelegate, UICollectionViewData
             return CGSize(width: collectionView.bounds.width, height: UIScreen.main.bounds.height - 63)
         }
         
-//        return CGSize(width: UIScreen.main.bounds.width, height: 58)
         return CGSize(width: self.view.frame.width, height: (12 + 50 + 12))
     }
     
@@ -330,16 +329,13 @@ extension DrugListViewController: UICollectionViewDelegate, UICollectionViewData
             
             //약품 이미지가 없는 경우는 기본 이미지 사용
             if data.drugImg.isEmpty {
-                
                 cell.drugImgView.image = #imageLiteral(resourceName: "emptyDrugImg")
-                
             } else {
                 do {
                     let pathString = "\(GoutFileManager.sharedInstance().getDocumentsDirectory())\(data.drugImg)"
                     let imageData = try Data(contentsOf: URL.init(string: pathString)!)
                     cell.drugImgView.image = UIImage.init(data: imageData)
                 } catch {
-                    
                     print("Fail Drug Image")
                     
                 }
@@ -358,18 +354,15 @@ extension DrugListViewController: UICollectionViewDelegate, UICollectionViewData
             
             //약품 이미지가 없는 경우는 기본 이미지 사용
             if data.drugImg.isEmpty {
-                
                 cell.drugImgView.image = #imageLiteral(resourceName: "emptyDrugImg")
-                
             } else {
                 do {
                     let pathString = "\(GoutFileManager.sharedInstance().getDocumentsDirectory())\(data.drugImg)"
                     let imageData = try Data(contentsOf: URL.init(string: pathString)!)
                     cell.drugImgView.image = UIImage.init(data: imageData)
+                    
                 } catch {
-                    
                     print("Fail Drug Image")
-                    
                 }
             }
             

@@ -28,6 +28,14 @@ class CameraViewController: GoutDefaultViewController {
         return UIView()
     }()
     
+    lazy var cameraPermissionInfoLable:UILabel! = {
+        let label = UILabel()
+        label.text = "asdfs "
+        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.textAlignment = .center
+        return label
+    }()
+    
     lazy var captureButton: BaseButton! = {
         var button = BaseButton()
         button.setBackgroundImage(#imageLiteral(resourceName: "captureBtn_nor"), for: .normal)
@@ -53,6 +61,7 @@ class CameraViewController: GoutDefaultViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupView()
         // Do any additional setup after loading the view.
         
@@ -73,6 +82,7 @@ class CameraViewController: GoutDefaultViewController {
     func setupView() {
         self.view.addSubview(naviBar)
         self.view.addSubview(placeHolder)
+        self.view.addSubview(cameraPermissionInfoLable)
         self.view.addSubview(captureButton)
         
         naviBar.autoPinEdge(toSuperviewEdge: .top, withInset: Constants.statusHeight())
@@ -80,13 +90,15 @@ class CameraViewController: GoutDefaultViewController {
         naviBar.autoPinEdge(toSuperviewEdge: .right)
         naviBar.autoSetDimension(.height, toSize: 44)
         
-        naviBar.title = "약품 사진"
+        naviBar.title = StringConstants.medicinePhoto
         naviBar.leftButton = cancelButton
         
-        placeHolder.backgroundColor = .green
+        placeHolder.backgroundColor = .white
         placeHolder.autoPinEdge(.top, to: .bottom, of: naviBar)
         placeHolder.autoPinEdge(toSuperviewEdge: .left)
         placeHolder.autoSetDimensions(to: CGSize(width:  screenWidth, height: screenWidth))
+        
+        
         
         captureButton.autoPinEdge(.top, to: .bottom, of: placeHolder, withOffset: 20)
         captureButton.autoAlignAxis(toSuperviewAxis: .vertical)
@@ -108,13 +120,30 @@ class CameraViewController: GoutDefaultViewController {
     
     func prepareCamera(){
         
+        switch AVCaptureDevice.authorizationStatus(for: .video) {
+        case .denied:
+            print("Denied, request permission from settings")
+        case .restricted:
+            print("Restricted, device owner must approve")
+        case .authorized:
+            print("Authorized, proceed")
+        case .notDetermined:
+            AVCaptureDevice.requestAccess(for: .video) { success in
+                if success {
+                    print("Permission granted, proceed")
+                } else {
+                    print("Permission denied")
+                }
+            }
+        }
+        
         self.session = AVCaptureSession()
-       self.session.sessionPreset = AVCaptureSession.Preset.photo//AVCaptureSessionPresetPhoto
+        self.session.sessionPreset = AVCaptureSession.Preset.photo//AVCaptureSessionPresetPhoto
         
         updateCameraSelection()
         setupVideoProcession()
         setupCameraPreview()
-        //        Utils.saveDetectXmlFromBundle()
+//        Utils.saveDetectXmlFromBundle()
         
     }
     

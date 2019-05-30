@@ -114,6 +114,7 @@ class StringConstants {
     static let medicineName = NSLocalizedString("medicineName", comment: "약 이름")
     static let medicineInfo = NSLocalizedString("medicineInfo", comment: "약 정보")
     static let medicineAlarm = NSLocalizedString("medicineAlarm", comment: "약 알람")
+    static let medicinePhoto = NSLocalizedString("medicinePhoto", comment: "약 사진")
     
     static let medicineNameFieldMSG = NSLocalizedString("medicineNameFieldMSG", comment: "약 이름을 입력하세요.")
     static let medicineInfoFieldMSG = NSLocalizedString("medicineInfoFieldMSG", comment: "약 정보를 입력하세요.")

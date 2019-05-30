@@ -16,6 +16,9 @@
 "yesBtn" = "Yes";
 "noBtn" = "No";
 "completeBtn" = "Complete";
+"okBtn" = "Ok";
+"closeBtn" = "Close";
+"retryBtn" = "Retry";
 
 //common
 "date" = "Date";

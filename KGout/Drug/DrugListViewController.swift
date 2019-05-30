@@ -120,7 +120,7 @@ class DrugListViewController: GoutDefaultViewController {
         
         view.addSubview(label)
         label.autoCenterInSuperview()
-        label.text = StringConstants.noData
+        label.text = StringConstants.noDataMSG
         
         return view
     }()
@@ -147,6 +147,11 @@ class DrugListViewController: GoutDefaultViewController {
             [weak self] _ in
             self?.nextAddPharmViewCtrl(drugInfo: nil)
             }.disposed(by: disposeBag)
+        
+        completeButton.rx.tap.bind {
+            [weak self] _ in
+            self?.reqDeleteMedicine()
+            }.disposed(by:disposeBag)
         
         deleteButton.rx.tap.bind {
             [weak self] _ in
@@ -188,7 +193,7 @@ class DrugListViewController: GoutDefaultViewController {
         
         //데이터가 0인데 삭제 버튼을 누른 경우
         if drugList.count == 0 {
-            showAlertAll(title: Bundle.main.displayName!, StringConstants.noDataDelete, nextFunction: {})
+            showAlertAll(title: Bundle.main.displayName!, StringConstants.noDataDeleteMSG, nextFunction: {})
             return
         }
         
@@ -216,48 +221,56 @@ class DrugListViewController: GoutDefaultViewController {
         }
         
         if isDeleteMode {
-            addButton.titleLabel!.text = StringConstants.completeBtn
-            
             naviBar.leftButton = cancelButton
+            naviBar.rightButton = completeButton
+            
             deleteButton.isEnabled = false
             deleteButton.isHidden = true
+            addButton.isEnabled = false
+            addButton.isHidden = true
             
             cancelButton.isEnabled = true
             cancelButton.isHidden = false
+            completeButton.isEnabled = true
+            completeButton.isHidden = false
             
         } else {
-            addButton.titleLabel!.text = StringConstants.addBtn
-            
             naviBar.leftButton = deleteButton
+            naviBar.rightButton = addButton
+            
             cancelButton.isEnabled = false
             cancelButton.isHidden = true
+            completeButton.isEnabled = false
+            completeButton.isHidden = true
             
             deleteButton.isEnabled = true
             deleteButton.isHidden = false
+            addButton.isEnabled = true
+            addButton.isHidden = false
         }
     }
     
     func nextAddPharmViewCtrl(drugInfo:DrugInfo?) {
+        let addViewCtrl = AddDrugInfoViewController()
+        addViewCtrl.drugInfo = drugInfo
+        addViewCtrl.addDrugInfoDelegate = self
+        present(addViewCtrl, animated: true, completion: nil)
+    }
+    
+    /**
+     약품 정보 삭제
+     */
+    func reqDeleteMedicine() {
         let database = DatabaseManager.sharedInstance()
         
-        //삭제 모드인가
-        if isDeleteMode {
+        if database.deleteDrugInfoList(drugInfoList: deleteDrugList) {
+            print("삭제 성공")
             
-            if database.deleteDrugInfoList(drugInfoList: deleteDrugList) {
-                print("삭제 성공")
-            } else {
-                print("삭제 실패")
-            }
-            
-            deleteDrugList = [:]
-            fetchData()
-            
-        } else {
-            let addViewCtrl = AddDrugInfoViewController()
-            addViewCtrl.drugInfo = drugInfo
-            addViewCtrl.addDrugInfoDelegate = self
-            present(addViewCtrl, animated: true, completion: nil)
         }
+        
+        self.isDeleteMode = false
+        deleteDrugList = [:]
+        fetchData()
     }
     
     /**

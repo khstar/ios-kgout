@@ -16,6 +16,9 @@
 "yesBtn" = "예";
 "noBtn" = "아니오";
 "completeBtn" = "완료";
+"okBtn" = "확인";
+"closeBtn" = "닫기";
+"retryBtn" = "재시도";
 
 //common
 "date" = "날짜";

@@ -55,7 +55,7 @@ class GoutDefaultViewController: UIViewController {
     
     lazy var refreshButton: UIButton! = {
         let button = UIButton()
-        button.setTitle("재시도", for: .normal)
+        button.setTitle(StringConstants.retryBtn, for: .normal)
         button.setTitleColor(UIColor(0xF2F2F2), for: .normal)
         button.setTitleColor(UIColor(0xF2F2F2, alpha: 0.5), for: .highlighted)
         button.setBackgroundImage(#imageLiteral(resourceName: "btn_bg_3_dis"), for: .normal)
@@ -236,7 +236,7 @@ class GoutDefaultViewController: UIViewController {
     func showAlert(_ message: String, nextFunction: @escaping () -> Void){
         let alert = UIAlertController(title: Bundle.main.displayName!, message: message, preferredStyle: .alert)
         
-        let defaultAction = UIAlertAction(title: "확인", style: .default, handler: {_ in
+        let defaultAction = UIAlertAction(title: StringConstants.okBtn, style: .default, handler: {_ in
             nextFunction()
         })
         alert.addAction(defaultAction)
@@ -247,7 +247,7 @@ class GoutDefaultViewController: UIViewController {
     func showAlertAll(title: String,_ message: String, nextFunction: @escaping () -> Void){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        let defaultAction = UIAlertAction(title: "확인", style: .default, handler: {_ in
+        let defaultAction = UIAlertAction(title: StringConstants.okBtn, style: .default, handler: {_ in
             nextFunction()
         })
         alert.addAction(defaultAction)
@@ -255,7 +255,11 @@ class GoutDefaultViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    func showAlert2(_ message: String, yes: String = "재시도", no: String = "닫기", nextFunction: (() -> Void)? = nil, closeFunction: (() -> Void)? = nil){
+    func showAlert2(_ message: String,
+                    yes: String = StringConstants.retryBtn,
+                    no: String = StringConstants.closeBtn,
+                    nextFunction: (() -> Void)? = nil,
+                    closeFunction: (() -> Void)? = nil){
         let alert = UIAlertController(title: Bundle.main.displayName!, message: message, preferredStyle: .alert)
         
         let defaultAction = UIAlertAction(title: yes, style: .default, handler: {_ in
@@ -275,7 +279,13 @@ class GoutDefaultViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    func showAlert2All(title: String, _ message: String, yes: String = "재시도", no: String = "닫기", nextFunction: (() -> Void)? = nil, closeFunction: (() -> Void)? = nil){
+    func showAlert2All(title: String,
+                       _ message: String,
+                       yes: String = StringConstants.retryBtn,
+                       no: String = StringConstants.closeBtn,
+                       nextFunction: (() -> Void)? = nil,
+                       closeFunction: (() -> Void)? = nil){
+        
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let defaultAction = UIAlertAction(title: yes, style: .default, handler: {_ in

@@ -286,7 +286,7 @@ class GoutChartViewController: BaseChartViewController {
         
         view.addSubview(label)
         label.autoCenterInSuperview()
-        label.text = StringConstants.noData
+        label.text = StringConstants.noDataMSG
         
         return view
     }()
@@ -456,7 +456,7 @@ class GoutChartViewController: BaseChartViewController {
         
         //데이터가 0인데 삭제 버튼을 누른 경우
         if uricacidDatas.count == 0 {
-            showAlertAll(title: Bundle.main.displayName!, StringConstants.noDataDelete, nextFunction: {})
+            showAlertAll(title: Bundle.main.displayName!, StringConstants.noDataDeleteMSG, nextFunction: {})
             return
         }
         
@@ -505,9 +505,6 @@ class GoutChartViewController: BaseChartViewController {
         self.delUricacid = [:]
 
         if isDeleteMode {
-//            addUricButton.titleLabel!.autoSetDimension(.width, toSize: 60)
-//            addUricButton.titleLabel!.text = StringConstants.completeBtn
-
             naviBar.leftButton = cancelButton
             naviBar.rightButton = completeButton
             
@@ -517,8 +514,6 @@ class GoutChartViewController: BaseChartViewController {
             completeButton.isHidden = false
             
         } else {
-//            addUricButton.titleLabel!.text = StringConstants.addBtn
-            
             naviBar.leftButton = deleteButton
             naviBar.rightButton = addUricButton
             
@@ -526,8 +521,6 @@ class GoutChartViewController: BaseChartViewController {
             addUricButton.isHidden = false
             cancelButton.isHidden = true
             completeButton.isHidden = true
-//            addButton.isHidden = true
-//            deleteButton.isHidden = false
         }
         
         createDatePicker()

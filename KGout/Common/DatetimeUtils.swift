@@ -146,15 +146,12 @@ class DatetimeUtils {
         
         //DateFormat이 HH:mm인지 확인
         if let date = dateFormatter.date(from: timeString) {
-            print(date)
-            
             // 12시간제 인경우
             if is12Hour() {
                 dateFormatter.dateFormat = "a h:mm"
             }
             
             return dateFormatter.string(from: date)
-            
         }
         
         dateFormatter.dateFormat = "\(timeFormat):ss"

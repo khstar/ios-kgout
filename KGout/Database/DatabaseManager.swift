@@ -211,6 +211,41 @@ class DatabaseManager {
         return true
     }
     
+    func selectGoutIdToDatetime(date:String, time:String) -> Int {
+        
+        var rc: Int32 = 0
+        var db: OpaquePointer? = nil
+        let dbFileFullPath = fileManager.getDBFilePath()
+        var goutId = -1
+        
+        rc = sqlite3_open(dbFileFullPath, &db)
+        
+        if (rc != SQLITE_OK) {
+            let errmsg = String(cString: sqlite3_errmsg(db))
+            NSLog("Error opening database: \(errmsg)")
+        }
+        
+        let queryStatementString = "select id from tb_gout WHERE reg_dt = '\(date)' and strftime('%H:%M', reg_time) = '\(time)';"
+        var queryStatement: OpaquePointer? = nil
+        
+        if sqlite3_prepare_v2(db, queryStatementString, -1, &queryStatement, nil) == SQLITE_OK {
+            
+            while sqlite3_step(queryStatement) == SQLITE_ROW {
+                
+                let col1 = sqlite3_column_int(queryStatement, 0)
+                goutId = Int(col1)
+            }
+        } else {
+            // Fail
+            NSLog("Query Failed: \(queryStatementString)")
+        }
+        
+        sqlite3_finalize(queryStatement)
+        
+        return goutId
+    }
+    
+    
     func selectGoutId(date:String) -> Int {
         
         var rc: Int32 = 0
@@ -334,11 +369,11 @@ class DatabaseManager {
         
         var queryString = ""
         if listType == goutListType.month {
-            queryString = "select id, reg_dt, reg_time, uric_acid_value, kidney_value, liver_ggt_value, gout_desc from tb_gout where strftime('%Y-%m', reg_dt, 'localtime') = '\(date!)' order by reg_dt desc;"
+            queryString = "select id, reg_dt, reg_time, uric_acid_value, kidney_value, liver_ggt_value, gout_desc from tb_gout where strftime('%Y-%m', reg_dt, 'localtime') = '\(date!)' order by reg_dt desc, reg_time desc;"
         } else if listType == goutListType.year {
-            queryString = "select id, reg_dt, reg_time, uric_acid_value, kidney_value, liver_ggt_value, gout_desc from tb_gout where strftime('%Y', reg_dt, 'localtime') = '\(date!)' order by reg_dt desc;"
+            queryString = "select id, reg_dt, reg_time, uric_acid_value, kidney_value, liver_ggt_value, gout_desc from tb_gout where strftime('%Y', reg_dt, 'localtime') = '\(date!)' order by reg_dt desc, reg_time desc;"
         } else {
-            queryString = "select id, reg_dt, reg_time, uric_acid_value, kidney_value, liver_ggt_value, gout_desc from tb_gout order by reg_dt desc;"
+            queryString = "select id, reg_dt, reg_time, uric_acid_value, kidney_value, liver_ggt_value, gout_desc from tb_gout order by reg_dt desc, reg_time desc;"
         }
         
         var queryStatement: OpaquePointer? = nil

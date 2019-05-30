@@ -462,15 +462,27 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
         view.endEditing(true)
     }
     
+    /**
+     DatePicker의 변화에 따른 자동으로 값 변경 처리
+     */
     @objc func updateDate() {
         let dateFormatter: DateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         dateTextField.text = dateFormatter.string(from: datePicker.date)
     }
     
+    /*
+     TimePicker의 변화에 따른 자동으로 값 변경 처리
+     */
     @objc func updateTime() {
+        var timeFormat = "HH:mm"
+        
+        if DatetimeUtils.is12Hour() {
+            timeFormat = "a h:mm"
+        }
+        
         let dateFormatter: DateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm"
+        dateFormatter.dateFormat = timeFormat
         timeTextField.text = dateFormatter.string(from: timePicker.date)
     }
     
@@ -483,21 +495,33 @@ class AddValueViewController: GoutDefaultViewController, UITextFieldDelegate {
         descTextView.resignFirstResponder()
         goutTextField.resignFirstResponder()
         
-        let hasGoutData = databaseManager.selectGoutId(date: dateTextField.text!)
+//        let hasGoutData = databaseManager.selectGoutId(date: dateTextField.text!)
+        let hadGout = databaseManager.selectGoutIdToDatetime(date: dateTextField.text!, time: DatetimeUtils.convertAmPmToHHmm(time: timeTextField.text!))
         
-        if hasGoutData > 0 {
+        if hadGout > 0 {
             
-            if self.goutId > -1 {
-                showAlert2("\(dateTextField.text!) \(timeTextField.text!)\n\(StringConstants.uricacidDataExistMSG) \n \(StringConstants.uricacidDataModifyMSG)",
-                    yes: StringConstants.yesBtn,
-                    no: StringConstants.noBtn,
-                    nextFunction: self.saveGout, closeFunction: {})
-            } else {
-                showAlert2("\(dateTextField.text!) \(StringConstants.uricacidDataExistMSG) \n \(StringConstants.uricacidDataAddMSG)",
-                    yes: StringConstants.yesBtn,
-                    no: StringConstants.noBtn,
-                    nextFunction: self.saveGout, closeFunction: {})
-            }
+            showAlert2("\(dateTextField.text!) \(timeTextField.text!)\n\(StringConstants.uricacidDataExistMSG) \n \(StringConstants.uricacidDataModifyMSG)",
+                yes: StringConstants.yesBtn,
+                no: StringConstants.noBtn,
+                nextFunction: {() -> Void in
+                    self.goutId = hadGout
+                    self.saveGout()
+                }, closeFunction: {})
+            
+//            if self.goutId > -1 {
+//                showAlert2("\(dateTextField.text!) \(timeTextField.text!)\n\(StringConstants.uricacidDataExistMSG) \n \(StringConstants.uricacidDataModifyMSG)",
+//                    yes: StringConstants.yesBtn,
+//                    no: StringConstants.noBtn,
+//                    nextFunction: self.saveGout, closeFunction: {})
+//            } else {
+//                showAlert2("\(dateTextField.text!) \(StringConstants.uricacidDataExistMSG) \n \(StringConstants.uricacidDataAddMSG)",
+//                    yes: StringConstants.yesBtn,
+//                    no: StringConstants.noBtn,
+//                    nextFunction: {() -> Void in
+//                        self.goutId = hasGoutData
+//                        self.saveGout()
+//                    }, closeFunction: {})
+//            }
             
         } else {
             saveGout()

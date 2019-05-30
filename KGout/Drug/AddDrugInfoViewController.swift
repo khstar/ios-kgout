@@ -343,9 +343,12 @@ class AddDrugInfoViewController: GoutDefaultViewController, UITextFieldDelegate 
         drugAlarmPanel.addSubview(delCancelAlarmBtn)
         drugAlarmPanel.addSubview(delAlarmBtn)
         
+        //영어 가 들어가면 약간 짧아서 + 5 넣어줌 
+        let drugAlarmLabelWidth = Utils.widthOfString(drugAlarmLabel.text!, font: drugAlarmLabel.font!) + 5
+        
         drugAlarmLabel.autoPinEdge(toSuperviewEdge: .top)
         drugAlarmLabel.autoPinEdge(toSuperviewEdge: .left)
-        drugAlarmLabel.autoSetDimensions(to: CGSize(width: 120, height: 20))
+        drugAlarmLabel.autoSetDimensions(to: CGSize(width: drugAlarmLabelWidth, height: 20))
         
         delComformAlarmBtn.autoPinEdge(toSuperviewEdge: .top)
         delComformAlarmBtn.autoPinEdge(.left, to: .right, of: drugAlarmLabel, withOffset: 5)

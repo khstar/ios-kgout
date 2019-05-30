@@ -397,7 +397,7 @@ class DatabaseManager {
             return false
         }
         
-        let createGout = "DELETE FROM tb_gout WHERE reg_dt = '\(uricacid.regDate)';"
+        let createGout = "DELETE FROM tb_gout WHERE id = '\(uricacid.id)';"
         
         rc = sqlite3_exec(db, createGout, nil, nil, nil)
         if (rc != SQLITE_OK) {

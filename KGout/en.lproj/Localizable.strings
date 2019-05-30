@@ -43,3 +43,21 @@
 "uricacidMinMaxRangeMSG" = "The input value must be between 0 and 20 inclusive.";
 "uricacidDecimalErrMSG" = "Can enter up to one decimal place.";
 "uricacidDotErrMSG" = "Can not have two dot.";
+
+//약품
+"medicineInfoTitle" = "Medicine Info";
+"medicineInfoAddTitle" = "Medicine Info Add";
+
+"medicineName" = "Medicine Name";
+"medicineInfo" = "Medicine Info";
+"medicineAlarm" = "Medicine Alarm";
+
+"medicineNameFieldMSG" = "Please enter a medicine name.";
+"medicineInfoFiledMSG" = "Please enter information about the medicine.";
+
+//알람
+"registAlarmTitle" = "Alarm Registration";
+"noAlarmMSG" = "There are no registered alarms.";
+
+"addAlarm" = "Add Alarm";
+"delAlarm" = "Del Alarm";

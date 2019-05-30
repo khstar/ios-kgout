@@ -233,9 +233,6 @@ class AddDrugAlarmViewController: GoutDefaultViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardDidShowNotification, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardDidHideNotification, object: nil)
-        
         self.view.addSubview(naviBar)
         
         naviBar.autoPinEdge(toSuperviewEdge: .top, withInset: 20)
@@ -243,9 +240,7 @@ class AddDrugAlarmViewController: GoutDefaultViewController {
         naviBar.autoPinEdge(toSuperviewEdge: .right)
         naviBar.autoSetDimension(.height, toSize: 44)
         
-        naviBar.title = "알람 등록"
-//        naviBar.leftButton = backButton
-//        naviBar.rightButton = addButton
+        naviBar.title = StringConstants.alarmRegistTitle
         naviBar.rightButton = completeButton
         naviBar.leftButton = cancelButton
         
@@ -253,12 +248,6 @@ class AddDrugAlarmViewController: GoutDefaultViewController {
         datePicker.autoPinEdge(.top, to: .bottom, of: naviBar)
         datePicker.autoPinEdge(toSuperviewEdge: .left)
         datePicker.autoPinEdge(toSuperviewEdge: .right)
-        
-//        self.view.addSubview(saveAlarmBtn)
-//        saveAlarmBtn.autoPinEdge(toSuperviewEdge: .bottom, withInset: 55)
-//        saveAlarmBtn.autoPinEdge(toSuperviewEdge: .left, withInset: 15)
-//        saveAlarmBtn.autoPinEdge(toSuperviewEdge: .right, withInset: 15)
-//        saveAlarmBtn.autoSetDimension(.height, toSize: 55)
         
         self.view.addSubview(repeatPanel)
         repeatPanel.autoPinEdge(.top, to: .bottom, of: datePicker, withOffset: 15)

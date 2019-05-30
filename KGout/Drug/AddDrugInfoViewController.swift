@@ -43,7 +43,7 @@ class AddDrugInfoViewController: GoutDefaultViewController, UITextFieldDelegate 
     
     lazy var pharmNameLabel:UILabel! = {
         let label = UILabel()
-        label.text = "약 이름"
+        label.text = StringConstants.medicineName
         label.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         label.textColor = UIColor(0x7a7a7a)
         return label
@@ -55,7 +55,7 @@ class AddDrugInfoViewController: GoutDefaultViewController, UITextFieldDelegate 
         field.keyboardType = .default
         field.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         field.textColor = UIColor(0x1c1c1c)
-        field.placeholder = "약 이름을 입력하세요."
+        field.placeholder = StringConstants.medicineNameFieldMSG
         
         let doneToolBar = UIToolbar()
         let doneBarButton = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(setDone))
@@ -75,7 +75,7 @@ class AddDrugInfoViewController: GoutDefaultViewController, UITextFieldDelegate 
     
     lazy var pharmDescLabel:UILabel! = {
         let label = UILabel()
-        label.text = "약 정보"
+        label.text = StringConstants.medicineInfo
         label.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         label.textColor = UIColor(0x7a7a7a)
         return label
@@ -84,7 +84,7 @@ class AddDrugInfoViewController: GoutDefaultViewController, UITextFieldDelegate 
     lazy var drugDesc:UITextView! = {
         let field = UITextView()
 
-        field.text = "약품 정보를 입력해주세요."
+        field.text = StringConstants.medicineInfoFieldMSG
         field.textColor = .placeholder
         
         field.keyboardType = .default
@@ -140,7 +140,7 @@ class AddDrugInfoViewController: GoutDefaultViewController, UITextFieldDelegate 
     
     lazy var addAlarmBtn:UIButton! = {
         let button = UIButton()
-        button.setTitle("알람 추가", for: .normal)
+        button.setTitle(StringConstants.addAlarm, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = UIColor(0xAFDFE3)
@@ -156,7 +156,7 @@ class AddDrugInfoViewController: GoutDefaultViewController, UITextFieldDelegate 
     
     lazy var delAlarmBtn:UIButton! = {
         let button = UIButton()
-        button.setTitle("알람 삭제", for: .normal)
+        button.setTitle(StringConstants.delAlarm, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = UIColor(0xAFDFE3)
@@ -203,7 +203,7 @@ class AddDrugInfoViewController: GoutDefaultViewController, UITextFieldDelegate 
     }()
     lazy var drugAlarmLabel:UILabel! = {
         let label = UILabel()
-        label.text = "약 알람"
+        label.text = StringConstants.medicineAlarm
         label.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         label.textColor = UIColor(0x7a7a7a)
         return label
@@ -279,7 +279,7 @@ class AddDrugInfoViewController: GoutDefaultViewController, UITextFieldDelegate 
         naviBar.autoPinEdge(toSuperviewEdge: .left)
         naviBar.autoPinEdge(toSuperviewEdge: .right)
         naviBar.autoSetDimension(.height, toSize: 44)
-        naviBar.title = "약 정보 추가"
+        naviBar.title = StringConstants.medicineInfoAddTitle
         naviBar.rightButton = completeButton
         naviBar.leftButton = cancelButton
         
@@ -345,7 +345,7 @@ class AddDrugInfoViewController: GoutDefaultViewController, UITextFieldDelegate 
         
         drugAlarmLabel.autoPinEdge(toSuperviewEdge: .top)
         drugAlarmLabel.autoPinEdge(toSuperviewEdge: .left)
-        drugAlarmLabel.autoSetDimensions(to: CGSize(width: 50, height: 20))
+        drugAlarmLabel.autoSetDimensions(to: CGSize(width: 100, height: 20))
         
         delComformAlarmBtn.autoPinEdge(toSuperviewEdge: .top)
         delComformAlarmBtn.autoPinEdge(.left, to: .right, of: drugAlarmLabel, withOffset: 5)
@@ -511,7 +511,7 @@ class AddDrugInfoViewController: GoutDefaultViewController, UITextFieldDelegate 
         } else {
             
             if drugAlarmInfo.count == 0 {
-                showAlertAll(title: Bundle.main.displayName!, "등록된 알람이 없습니다.", nextFunction: {})
+                showAlertAll(title: Bundle.main.displayName!, StringConstants.noAlarmMSG, nextFunction: {})
                 return
             }
             
@@ -542,7 +542,7 @@ class AddDrugInfoViewController: GoutDefaultViewController, UITextFieldDelegate 
         var drugImgName = ""
         
         if drugName.isEmpty {
-            showAlert2("약 이름을 입력해 주세요.")
+            showAlert2(StringConstants.medicineNameFieldMSG)
             return
         }
         
@@ -654,7 +654,7 @@ extension AddDrugInfoViewController: UITextViewDelegate {
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
-            textView.text = "약품 정보를 입력해주세요."
+            textView.text = StringConstants.medicineInfoFieldMSG
             textView.textColor = .placeholder
         }
     }
@@ -701,7 +701,7 @@ extension AddDrugInfoViewController: UICollectionViewDelegate, UICollectionViewD
         
         if drugAlarmInfo.count == 0 {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EmptyCell.className, for: indexPath) as? EmptyCell {
-                cell.titleLabel.text = "등록된 알람이 없습니다."
+                cell.titleLabel.text = StringConstants.noAlarmMSG
                 cell.subsLabel.isHidden = true
                 return cell
             }

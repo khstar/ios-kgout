@@ -31,7 +31,7 @@ class BaseNaviBar: UIView {
             leftButton?.autoPinEdge(toSuperviewEdge: .top, withInset: 4.5)
             leftButton?.autoPinEdge(toSuperviewEdge: .bottom, withInset: 4.5)
             leftInset = leftButton?.autoPinEdge(toSuperviewEdge: .left, withInset: 4.5)
-            leftButton?.autoSetDimension(.width, toSize: 50)
+            leftButton?.autoSetDimension(.width, toSize: 70)
         }
     }
     
@@ -42,7 +42,7 @@ class BaseNaviBar: UIView {
             rightButton?.autoPinEdge(toSuperviewEdge: .top, withInset: 4.5)
             rightButton?.autoPinEdge(toSuperviewEdge: .bottom, withInset: 4.5)
             rightInset = rightButton?.autoPinEdge(toSuperviewEdge: .right, withInset: 4.5)
-            rightButton?.autoSetDimension(.width, toSize: 50)
+            rightButton?.autoSetDimension(.width, toSize: 70)
         }
     }
     

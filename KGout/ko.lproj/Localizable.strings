@@ -43,3 +43,21 @@
 "uricacidMinMaxRangeMSG" = "입력 값은 0 이상 20 이하여야 합니다.";
 "uricacidDecimalErrMSG" = "소수점 한 자리까지 입력 할 수 있습니다.";
 "uricacidDotErrMSG" = ".이 두 개 들어갈수 없습니다.";
+
+//약품
+"medicineInfoTitle" = "약품 정보";
+"medicineInfoAddTitle" = "약품 정보 추가";
+
+"medicineName" = "약 이름";
+"medicineInfo" = "약 정보";
+"medicineAlarm" = "약 알람";
+
+"medicineNameFieldMSG" = "약 이름을 입력하세요.";
+"medicineInfoFieldMSG" = "약 정보를 입력하세요.";
+
+//알람
+"registAlarmTitle" = "알람 등록";
+"noAlarmMSG" = "등록된 알람이 없습니다.";
+
+"addAlarm" = "알람 추가";
+"delAlarm" = "알람 삭제";

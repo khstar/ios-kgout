@@ -133,7 +133,7 @@ class DrugListViewController: GoutDefaultViewController {
         naviBar.autoPinEdge(toSuperviewEdge: .right)
         naviBar.autoSetDimension(.height, toSize: 44)
         
-        naviBar.title = "약품 정보"
+        naviBar.title = StringConstants.medicineInfoTitle
         naviBar.rightButton = addButton
         naviBar.leftButton = deleteButton
             

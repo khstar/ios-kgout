@@ -102,4 +102,25 @@ class StringConstants {
     static let uricacidMinMaxRangeMSG = NSLocalizedString("uricacidMinMaxRangeMSG", comment: "입력 값은 0 이상 20 이하여야 합니다.")
     static let uricacidDecimalErrMSG = NSLocalizedString("uricacidDecimalErrMSG", comment: "소수점 한 자리까지 입력 할 수 있습니다.")
     static let uricacidDotErrMSG = NSLocalizedString("uricacidDotErrMSG", comment: ".이 두 개 들어갈수 없습니다.")
+    
+    
+    //Drug
+    static let medicineInfoTitle = NSLocalizedString("medicineInfoTitle", comment: "약품 정보")
+    static let medicineInfoAddTitle = NSLocalizedString("medicineInfoAddTitle", comment: "약 정보 추가")
+    
+    static let medicineName = NSLocalizedString("medicineName", comment: "약 이름")
+    static let medicineInfo = NSLocalizedString("medicineInfo", comment: "약 정보")
+    static let medicineAlarm = NSLocalizedString("medicineAlarm", comment: "약 알람")
+    
+    static let medicineNameFieldMSG = NSLocalizedString("medicineNameFieldMSG", comment: "약 이름을 입력하세요.")
+    static let medicineInfoFieldMSG = NSLocalizedString("medicineInfoFieldMSG", comment: "약 정보를 입력하세요.")
+    
+    //Alarm
+    static let alarmRegistTitle = NSLocalizedString("registsAlarmTitle", comment: "알람 등록")
+    static let noAlarmMSG = NSLocalizedString("noAlarmMSG", comment: "등록된 알람이 없습니다.")
+    
+    static let addAlarm = NSLocalizedString("addAlarm", comment: "알람 추가")
+    static let delAlarm = NSLocalizedString("delAlarm", comment: "알람 삭제")
+    
+//    static let drugNameInputMSG = NSLocalizedString("ㅇ", comment: <#T##String#>)
 }

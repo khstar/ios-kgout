@@ -162,7 +162,6 @@ class DrugAlarmViewCell: DefaultCollectionViewCell {
         drugAlamrDesc.autoPinEdge(toSuperviewEdge: .top, withInset: 5)
         drugAlamrDesc.autoPinEdge(.left, to: .right, of: alarmTime, withOffset: 5)
         drugAlamrDesc.autoSetDimensions(to: CGSize(width: 170, height: 20))
-//        drugAlamrDesc.backgroundColor = .lightGray
         
         repeatPanel.autoPinEdge(.left, to: .right, of: alarmTime, withOffset: 5)
         repeatPanel.autoPinEdge(toSuperviewEdge: .bottom, withInset: 5)

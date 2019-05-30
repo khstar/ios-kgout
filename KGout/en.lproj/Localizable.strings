@@ -93,7 +93,7 @@
 
 "autoMSG" = "Auto generation";
 "userNameFieldMSG" = "Please enter your name.";
-"birthdayFieldMSG" = "1900-01-01";
+"birthdayFieldMSG" = "1981-01-01";
 "heightFieldMSG" = "Please enter height.";
 "weightFieldMSG" = "Please enter weight.";
 

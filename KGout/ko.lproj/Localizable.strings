@@ -92,7 +92,7 @@
 
 "autoMSG" = "자동생성";
 "userNameFieldMSG" = "이름을 입력해주세요.";
-"birthdayFieldMSG" = "1900-01-01";
+"birthdayFieldMSG" = "1981-01-01";
 "heightFieldMSG" = "키(신장)을 입력해주세요.";
 "weightFieldMSG" = "몸무게를 입력해주세요.";
 

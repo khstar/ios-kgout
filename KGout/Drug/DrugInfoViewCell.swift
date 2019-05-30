@@ -32,7 +32,7 @@ class DrugInfoViewCell: DefaultCollectionViewCell {
         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         label.textAlignment = .left
         label.numberOfLines = 1
-        label.text = "알람 :"
+        label.text = "\(StringConstants.alarmTitle) :"
         return label
     }()
     
@@ -110,10 +110,10 @@ class DrugInfoViewCell: DefaultCollectionViewCell {
     
         drugAlarmLabel.autoAlignAxis(toSuperviewAxis: .horizontal)
         drugAlarmLabel.autoPinEdge(.right, to: .left, of: drugAlarmCount, withOffset: 3)
-        drugAlarmLabel.autoSetDimension(.width, toSize: 40)
+        drugAlarmLabel.autoSetDimension(.width, toSize: 50)
         
         drugAlarmCount.autoAlignAxis(toSuperviewAxis: .horizontal)
-        drugAlarmCount.autoPinEdge(toSuperviewEdge: .right, withInset: 10)
+        drugAlarmCount.autoPinEdge(toSuperviewEdge: .right, withInset: 5)
         drugAlarmCount.autoSetDimension(.width, toSize: 20)
         
         bottomLineView.autoPinEdge(toSuperviewEdge: .left, withInset: 15)
@@ -154,7 +154,7 @@ class DeleteDrugInfoViewCell: DefaultCollectionViewCell {
         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         label.textAlignment = .left
         label.numberOfLines = 1
-        label.text = "알람 :"
+        label.text = "\(StringConstants.alarmTitle) :"
         return label
     }()
     
@@ -238,10 +238,10 @@ class DeleteDrugInfoViewCell: DefaultCollectionViewCell {
         
         drugAlarmLabel.autoAlignAxis(toSuperviewAxis: .horizontal)
         drugAlarmLabel.autoPinEdge(.right, to: .left, of: drugAlarmCount, withOffset: 3)
-        drugAlarmLabel.autoSetDimension(.width, toSize: 40)
+        drugAlarmLabel.autoSetDimension(.width, toSize: 50)
         
         drugAlarmCount.autoAlignAxis(toSuperviewAxis: .horizontal)
-        drugAlarmCount.autoPinEdge(toSuperviewEdge: .right, withInset: 10)
+        drugAlarmCount.autoPinEdge(toSuperviewEdge: .right, withInset: 5)
         drugAlarmCount.autoSetDimension(.width, toSize: 20)
         
         bottomLineView.autoPinEdge(toSuperviewEdge: .left, withInset: 15)

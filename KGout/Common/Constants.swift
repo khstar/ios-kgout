@@ -116,11 +116,52 @@ class StringConstants {
     static let medicineInfoFieldMSG = NSLocalizedString("medicineInfoFieldMSG", comment: "약 정보를 입력하세요.")
     
     //Alarm
+    static let alarmTitle = NSLocalizedString("alarmTitle", comment: "알람")
     static let alarmRegistTitle = NSLocalizedString("registsAlarmTitle", comment: "알람 등록")
     static let noAlarmMSG = NSLocalizedString("noAlarmMSG", comment: "등록된 알람이 없습니다.")
+    static let alarmInfoTitle = NSLocalizedString("alarmInfoTitle", comment: "설명")
     
     static let addAlarm = NSLocalizedString("addAlarm", comment: "알람 추가")
     static let delAlarm = NSLocalizedString("delAlarm", comment: "알람 삭제")
     
-//    static let drugNameInputMSG = NSLocalizedString("ㅇ", comment: <#T##String#>)
+    static let resetAlarmBtn = NSLocalizedString("resetAlarmBtn", comment: "알람 리셋")
+    
+    static let allday = NSLocalizedString("allday", comment: "매일")
+    static let monday = NSLocalizedString("monday", comment: "월")
+    static let tuesday = NSLocalizedString("tuesday", comment: "화")
+    static let wednesday = NSLocalizedString("wednesday", comment: "수")
+    static let thursday = NSLocalizedString("thursday", comment: "목")
+    static let friday = NSLocalizedString("friday", comment: "금")
+    static let saturday = NSLocalizedString("saturday", comment: "토")
+    static let sunday = NSLocalizedString("sunday", comment: "일")
+    
+    static let alarmResetCompMSG = NSLocalizedString("alarmResetCompMSG", comment: "알람이 재설정 되었습니다.")
+    static let alarmDeleteAlertMSG = NSLocalizedString("alarmDeleteAlertMSG", comment: "알람 삭제는 취소할 수 없습니다.\n계속 하시겠습니까?")
+    //UserInfo
+    static let infoTitle = NSLocalizedString("infoTitle", comment: "정보")
+    static let userNameTitle = NSLocalizedString("userNameTitle", comment: "이름")
+    static let birthdayTitle = NSLocalizedString("birthdayTitle", comment: "생년월일")
+    static let ageTitle = NSLocalizedString("ageTitle", comment: "나이")
+    static let heightTitle = NSLocalizedString("heightTitle", comment: "키(신장)")
+    static let weightTitle = NSLocalizedString("weightTitle", comment: "몸무게")
+    static let bmiTitle = NSLocalizedString("bmiTitle", comment: "BMI")
+    static let obesityTitle = NSLocalizedString("obesityTitle", comment: "비만도")
+    
+    static let autoMSG = NSLocalizedString("autoMSG", comment: "자동생성")
+    static let userNameFieldMSG = NSLocalizedString("userNameFieldMSG", comment: "이름으르 입력해주세요.")
+    static let birthdayFieldMSG = NSLocalizedString("birthdayFieldMSG", comment: "1900-01-01")
+    static let heightFieldMSG = NSLocalizedString("heightFieldMSG", comment: "키(신장)을 입력해주세요.")
+    static let weightFieldMSG = NSLocalizedString("weightFieldMSG", comment: "몸무게를 입력해주세요.")
+    
+    static let userInfoSaveMSG = NSLocalizedString("userInfoSaveMSG", comment: "사용자 정보가 저장되었습니다.")
+    static let bmiGenerationAlertMSG = NSLocalizedString("bmiGenerationAlertMSG", comment: "키와 몸무게를 입력하면 자동으로 생성됩니다.")
+    static let weightRangeAlertMSG = NSLocalizedString("weightRangeAlertMSG", comment: "몸무게 입력 범위가 맞습니까?")
+    static let heightRangeAlertMSG = NSLocalizedString("heightRangeAlertMSG", comment: "키(신장) 입력 범위가 맞습니까?")
+    
+    static let lowWeight = NSLocalizedString("lowWeight", comment: "저체중")
+    static let standardWeight = NSLocalizedString("standardWeight", comment: "정상")
+    static let overWeight = NSLocalizedString("overWeight", comment: "과체중")
+    static let obesityWeight = NSLocalizedString("obesityWeight", comment: "비만")
+    static let altitudeObesityWeight = NSLocalizedString("altitudeObesityWeight", comment: "고도비만")
+    
 }

@@ -32,7 +32,7 @@ class DrugAlarmViewCell: DefaultCollectionViewCell {
         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         label.textAlignment = .left
         label.numberOfLines = 1
-        label.text = "알람 :"
+        label.text = "\(StringConstants.alarmTitle) :"
         return label
     }()
     
@@ -72,7 +72,7 @@ class DrugAlarmViewCell: DefaultCollectionViewCell {
     
     lazy var monBtn:UILabel! = {
         let button = UILabel()
-        button.text = "월"
+        button.text = StringConstants.monday
         button.font = UIFont.systemFont(ofSize: 8)
         button.textAlignment = .center
         button.backgroundColor = UIColor(0xAFDFE3)
@@ -82,7 +82,7 @@ class DrugAlarmViewCell: DefaultCollectionViewCell {
     }()
     lazy var tueBtn:UILabel! = {
         let button = UILabel()
-        button.text = "화"
+        button.text = StringConstants.tuesday
         button.font = UIFont.systemFont(ofSize: 8)
         button.textAlignment = .center
         button.backgroundColor = UIColor(0xAFDFE3)
@@ -92,7 +92,7 @@ class DrugAlarmViewCell: DefaultCollectionViewCell {
     }()
     lazy var wedBtn:UILabel! = {
         let button = UILabel()
-        button.text = "수"
+        button.text = StringConstants.wednesday
         button.font = UIFont.systemFont(ofSize: 8)
         button.textAlignment = .center
         button.backgroundColor = UIColor(0xAFDFE3)
@@ -102,7 +102,7 @@ class DrugAlarmViewCell: DefaultCollectionViewCell {
     }()
     lazy var thuBtn:UILabel! = {
         let button = UILabel()
-        button.text = "목"
+        button.text = StringConstants.thursday
         button.font = UIFont.systemFont(ofSize: 8)
         button.textAlignment = .center
         button.backgroundColor = UIColor(0xAFDFE3)
@@ -112,7 +112,7 @@ class DrugAlarmViewCell: DefaultCollectionViewCell {
     }()
     lazy var friBtn:UILabel! = {
         let button = UILabel()
-        button.text = "금"
+        button.text = StringConstants.friday
         button.font = UIFont.systemFont(ofSize: 8)
         button.textAlignment = .center
         button.backgroundColor = UIColor(0xAFDFE3)
@@ -122,7 +122,7 @@ class DrugAlarmViewCell: DefaultCollectionViewCell {
     }()
     lazy var satBtn:UILabel! = {
         let button = UILabel()
-        button.text = "토"
+        button.text = StringConstants.saturday
         button.font = UIFont.systemFont(ofSize: 8)
         button.textAlignment = .center
         button.backgroundColor = UIColor(0xAFDFE3)
@@ -133,7 +133,7 @@ class DrugAlarmViewCell: DefaultCollectionViewCell {
     
     lazy var sunBtn:UILabel! = {
         let button = UILabel()
-        button.text = "일"
+        button.text = StringConstants.sunday
         button.font = UIFont.systemFont(ofSize: 8)
         button.textAlignment = .center
         button.backgroundColor = UIColor(0xAFDFE3)

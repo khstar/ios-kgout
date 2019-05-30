@@ -56,8 +56,50 @@
 "medicineInfoFieldMSG" = "약 정보를 입력하세요.";
 
 //알람
+"alarmTitle" = "알람";
 "registAlarmTitle" = "알람 등록";
 "noAlarmMSG" = "등록된 알람이 없습니다.";
+"alarmInfoTitle" = "설        명";
 
 "addAlarm" = "알람 추가";
 "delAlarm" = "알람 삭제";
+"resetAlarmBtn" = "알람 리셋";
+
+"allday" = "매일";
+"monday" = "월";
+"tuesday" = "화";
+"wednesday" = "수";
+"thursday" = "목";
+"friday" = "금";
+"saturday" = "토";
+"sunday" = "일";
+
+"alarmRestCompMSG" = "알람이 재설정 되었습니다.";
+"alarmDeleteAlertMSG" = "알람 삭제는 취소할 수 없습니다.\n계속 하시겠습니까?";
+
+//사용자 정보
+"infoTitle" = "정보";
+"userNameTitle" = "이름";
+"birthdayTitle" = "생년월일";
+"ageTitle" = "나이";
+"height" = "키";
+"weight" = "몸무게";
+"bmi" = "BMI";
+"obesity" = "비만도";
+
+"autoMSG" = "자동생성";
+"userNameFieldMSG" = "이름을 입력해주세요.";
+"birthdayFieldMSG" = "1900-01-01";
+"heightFieldMSG" = "키(신장)을 입력해주세요.";
+"weightFieldMSG" = "몸무게를 입력해주세요.";
+
+"userInfoSaveMSG" = "사용자 정보가 저장되었습니다.";
+"bmiGenerationAlertMSG" = "키와 몸무게를 입력하면 자동으로 생성됩니다.";
+"weightRangeAlertMSG" = "몸무게 입력 범위가 맞습니까?";
+"heightRangeAlertMSG" = "키(신장) 입력 범위가 맞습니까?";
+
+"lowWeight" = "저체중";
+"standardWeight" = "정상";
+"overWeight" = "과체중";
+"obesityWeight" = "비만";
+"altitudeObesityWeight" = "고도비만";

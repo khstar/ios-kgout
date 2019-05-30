@@ -53,11 +53,54 @@
 "medicineAlarm" = "Medicine Alarm";
 
 "medicineNameFieldMSG" = "Please enter a medicine name.";
-"medicineInfoFiledMSG" = "Please enter information about the medicine.";
+"medicineInfoFieldMSG" = "Please enter information about the medicine.";
 
 //알람
+"alarmTitle" = "Alarm";
 "registAlarmTitle" = "Alarm Registration";
 "noAlarmMSG" = "There are no registered alarms.";
+"alarmInfoTitle" = "Description";
 
 "addAlarm" = "Add Alarm";
 "delAlarm" = "Del Alarm";
+"resetAlarmBtn" = "Reset Alarm";
+
+"allday" = "All";
+"monday" = "Mon";
+"tuesday" = "Tue";
+"wednesday" = "Wed";
+"thursday" = "Thu";
+"friday" = "Fri";
+"saturday" = "Sat";
+"sunday" = "Sun";
+
+"alarmRestCompMSG" = "The alarm has been reset.";
+"alarmDeleteAlertMSG" = "Alarm deletion can not be canceled.\nWould you like to continue?";
+
+
+//사용자 정보
+"infoTitle" = "Infomation";
+"userNameTitle" = "Name";
+"birthdayTitle" = "Birthday";
+"ageTitle" = "Age";
+"heightTitle" = "height";
+"weightTitle" = "weight";
+"bmiTitle" = "BMI";
+"obesityTitle" = "Obesity";
+
+"autoMSG" = "Auto generation";
+"userNameFieldMSG" = "Please enter your name.";
+"birthdayFieldMSG" = "1900-01-01";
+"heightFieldMSG" = "Please enter height.";
+"weightFieldMSG" = "Please enter weight.";
+
+"userInfoSaveMSG" = "Your user information has been saved.";
+"bmiGenerationAlertMSG" = "If you enter your key and weight, it will be created automatically.";
+"weightRangeAlertMSG" = "Is the weight input range correct?";
+"heightRangeAlertMSG" = "Is the height input range correct?";
+
+"lowWeight" = "Low-weight";
+"standardWeight" = "Standard";
+"overWeight" = "Over-weight";
+"obesityWeight" = "Obesity";
+"altitudeObesityWeight" = "Altitude Obesity";

@@ -298,7 +298,7 @@ extension DrugListViewController: UICollectionViewDelegate, UICollectionViewData
         
         if drugList.count == 0 {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EmptyCell.className, for: indexPath) as? EmptyCell {
-                cell.titleLabel.text = "알림이 없습니다."
+                cell.titleLabel.text = StringConstants.noAlarmMSG
                 cell.subsLabel.isHidden = true
                 return cell
             }

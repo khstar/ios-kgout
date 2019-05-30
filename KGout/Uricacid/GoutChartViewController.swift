@@ -398,6 +398,11 @@ class GoutChartViewController: BaseChartViewController {
             self?.nextAddViewCtrl()
             }.disposed(by: disposeBag)
         
+        completeButton.rx.tap.bind {
+            [weak self] _ in
+            self?.reqDeleteUricacid()
+            }.disposed(by:disposeBag)
+        
         deleteButton.rx.tap.bind {
             [weak self] _ in
             self?.setDeleteMode()
@@ -498,20 +503,31 @@ class GoutChartViewController: BaseChartViewController {
         }
         
         self.delUricacid = [:]
-        
+
         if isDeleteMode {
-            addUricButton.titleLabel!.text = StringConstants.completeBtn
-            
+//            addUricButton.titleLabel!.autoSetDimension(.width, toSize: 60)
+//            addUricButton.titleLabel!.text = StringConstants.completeBtn
+
             naviBar.leftButton = cancelButton
+            naviBar.rightButton = completeButton
+            
             deleteButton.isHidden = true
+            addUricButton.isHidden = true
             cancelButton.isHidden = false
+            completeButton.isHidden = false
             
         } else {
-            addUricButton.titleLabel!.text = StringConstants.addBtn
+//            addUricButton.titleLabel!.text = StringConstants.addBtn
             
             naviBar.leftButton = deleteButton
-            cancelButton.isHidden = true
+            naviBar.rightButton = addUricButton
+            
             deleteButton.isHidden = false
+            addUricButton.isHidden = false
+            cancelButton.isHidden = true
+            completeButton.isHidden = true
+//            addButton.isHidden = true
+//            deleteButton.isHidden = false
         }
         
         createDatePicker()
@@ -703,17 +719,33 @@ class GoutChartViewController: BaseChartViewController {
     
     func nextAddViewCtrl() {
         
-        if isDeleteMode {
-            if DatabaseManager.sharedInstance().deleteGoutDataList(uricacidList: delUricacid) {
-                self.isDeleteMode = false
-                self.delUricacid = [:]
-                self.fetchData()
-            }
-        } else {
-            let addViewCtrl = AddValueViewController()
-            addViewCtrl.modalPresentationStyle = .overFullScreen
-            addViewCtrl.addValueViewDelegate = self
-            present(addViewCtrl, animated: true, completion: nil)
+//        if isDeleteMode {
+//            if DatabaseManager.sharedInstance().deleteGoutDataList(uricacidList: delUricacid) {
+//                self.isDeleteMode = false
+//                self.delUricacid = [:]
+//                self.fetchData()
+//            }
+//        } else {
+//            let addViewCtrl = AddValueViewController()
+//            addViewCtrl.modalPresentationStyle = .overFullScreen
+//            addViewCtrl.addValueViewDelegate = self
+//            present(addViewCtrl, animated: true, completion: nil)
+//        }
+        
+        let addViewCtrl = AddValueViewController()
+        addViewCtrl.modalPresentationStyle = .overFullScreen
+        addViewCtrl.addValueViewDelegate = self
+        present(addViewCtrl, animated: true, completion: nil)
+    }
+    
+    /**
+     선택된 요산 데이터 삭제
+     */
+    func reqDeleteUricacid() {
+        if DatabaseManager.sharedInstance().deleteGoutDataList(uricacidList: delUricacid) {
+            self.isDeleteMode = false
+            self.delUricacid = [:]
+            self.fetchData()
         }
     }
     
@@ -861,7 +893,7 @@ extension GoutChartViewController: UICollectionViewDelegate, UICollectionViewDat
         
         if uricacidDatas.count == 0 {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EmptyCell.className, for: indexPath) as? EmptyCell {
-                cell.titleLabel.text = "알림이 없습니다."
+                cell.titleLabel.text = StringConstants.noAlarmMSG
                 cell.subsLabel.isHidden = true
                 return cell
             }

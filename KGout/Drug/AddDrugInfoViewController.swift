@@ -172,7 +172,7 @@ class AddDrugInfoViewController: GoutDefaultViewController, UITextFieldDelegate 
     
     lazy var delComformAlarmBtn:UIButton! = {
         let button = UIButton()
-        button.setTitle("삭제 하기", for: .normal)
+        button.setTitle(StringConstants.delBtn, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = UIColor(0xAFDFE3)
@@ -188,7 +188,7 @@ class AddDrugInfoViewController: GoutDefaultViewController, UITextFieldDelegate 
     
     lazy var delCancelAlarmBtn:UIButton! = {
         let button = UIButton()
-        button.setTitle("삭제 취소", for: .normal)
+        button.setTitle(StringConstants.cancelBtn, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = UIColor(0xAFDFE3)
@@ -345,7 +345,7 @@ class AddDrugInfoViewController: GoutDefaultViewController, UITextFieldDelegate 
         
         drugAlarmLabel.autoPinEdge(toSuperviewEdge: .top)
         drugAlarmLabel.autoPinEdge(toSuperviewEdge: .left)
-        drugAlarmLabel.autoSetDimensions(to: CGSize(width: 100, height: 20))
+        drugAlarmLabel.autoSetDimensions(to: CGSize(width: 120, height: 20))
         
         delComformAlarmBtn.autoPinEdge(toSuperviewEdge: .top)
         delComformAlarmBtn.autoPinEdge(.left, to: .right, of: drugAlarmLabel, withOffset: 5)
@@ -451,7 +451,11 @@ class AddDrugInfoViewController: GoutDefaultViewController, UITextFieldDelegate 
     func showAddDrugAlarm(drugAlarm:DrugAlarmInfo?, drugAlarmIndex:Int?){
         
         if isDeleteMode {
-            showAlert2("알람 삭제는 취소할 수 없습니다.\n계속 하시겠습니까?", yes: "예", no: "아니요", nextFunction: self.deleteDrugAlarm, closeFunction: self.cancelDeleteDrugAlarm)
+            showAlert2(StringConstants.alarmDeleteAlertMSG,
+                       yes: StringConstants.yesBtn,
+                       no: StringConstants.noBtn,
+                       nextFunction: self.deleteDrugAlarm,
+                       closeFunction: self.cancelDeleteDrugAlarm)
             return
         } else {
             let addDrugAlarm = AddDrugAlarmViewController()
@@ -630,18 +634,13 @@ class AddDrugInfoViewController: GoutDefaultViewController, UITextFieldDelegate 
             }
         }
     }
-    
-    func t() {
-        print("t")
-    }
-    
 }
 
 extension AddDrugInfoViewController: UITextViewDelegate {
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
-        let numberOfChars = newText.characters.count
+        let numberOfChars = newText.count
         return numberOfChars < 10000
     }
     

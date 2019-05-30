@@ -79,7 +79,7 @@ class AddDrugAlarmViewController: GoutDefaultViewController {
     
     lazy var weekBtn:repeatButton! = {
         let button = repeatButton()
-        button.setTitle("매일", for: .normal)
+        button.setTitle(StringConstants.allday, for: .normal)
         button.titleLabel!.font = UIFont.systemFont(ofSize: 12)
         button.tag = WeekType.week.rawValue
         return button
@@ -87,42 +87,42 @@ class AddDrugAlarmViewController: GoutDefaultViewController {
     
     lazy var monBtn:repeatButton! = {
         let button = repeatButton()
-        button.setTitle("월", for: .normal)
+        button.setTitle(StringConstants.monday, for: .normal)
         button.titleLabel!.font = UIFont.systemFont(ofSize: 12)
         button.tag = WeekType.monday.rawValue
         return button
     }()
     lazy var tueBtn:repeatButton! = {
         let button = repeatButton()
-        button.setTitle("화", for: .normal)
+        button.setTitle(StringConstants.tuesday, for: .normal)
         button.titleLabel!.font = UIFont.systemFont(ofSize: 12)
         button.tag = WeekType.tuesday.rawValue
         return button
     }()
     lazy var wedBtn:repeatButton! = {
         let button = repeatButton()
-        button.setTitle("수", for: .normal)
+        button.setTitle(StringConstants.wednesday, for: .normal)
         button.titleLabel!.font = UIFont.systemFont(ofSize: 12)
         button.tag = WeekType.wednesday.rawValue
         return button
     }()
     lazy var thuBtn:repeatButton! = {
         let button = repeatButton()
-        button.setTitle("목", for: .normal)
+        button.setTitle(StringConstants.thursday, for: .normal)
         button.titleLabel!.font = UIFont.systemFont(ofSize: 12)
         button.tag = WeekType.thursday.rawValue
         return button
     }()
     lazy var friBtn:repeatButton! = {
         let button = repeatButton()
-        button.setTitle("금", for: .normal)
+        button.setTitle(StringConstants.friday, for: .normal)
         button.titleLabel!.font = UIFont.systemFont(ofSize: 12)
         button.tag = WeekType.friday.rawValue
         return button
     }()
     lazy var satBtn:repeatButton! = {
         let button = repeatButton()
-        button.setTitle("토", for: .normal)
+        button.setTitle(StringConstants.saturday, for: .normal)
         button.titleLabel!.font = UIFont.systemFont(ofSize: 12)
         button.tag = WeekType.saturday.rawValue
         return button
@@ -130,7 +130,7 @@ class AddDrugAlarmViewController: GoutDefaultViewController {
     lazy var sunBtn:repeatButton! = {
         let button = repeatButton()
         button.titleLabel!.font = UIFont.systemFont(ofSize: 12)
-        button.setTitle("일", for: .normal)
+        button.setTitle(StringConstants.sunday, for: .normal)
         button.tag = WeekType.sunday.rawValue
         return button
     }()
@@ -156,7 +156,7 @@ class AddDrugAlarmViewController: GoutDefaultViewController {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 15.5, weight: .medium)
         label.textColor = .black
-        label.text = "설        명 : "
+        label.text = "\(StringConstants.alarmInfoTitle) : "
 //        label.text = "다시 알림 : "
         return label
     }()

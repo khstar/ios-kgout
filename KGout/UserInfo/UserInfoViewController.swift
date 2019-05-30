@@ -50,7 +50,7 @@ class UserInfoViewController: GoutDefaultViewController, UITextFieldDelegate {
     
     lazy var userNameLabel:UILabel! = {
         let label = UILabel()
-        label.text = "사용자 이름"
+        label.text = StringConstants.userNameTitle
         label.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         label.textColor = UIColor(0x7a7a7a)
         return label
@@ -62,7 +62,7 @@ class UserInfoViewController: GoutDefaultViewController, UITextFieldDelegate {
         field.keyboardType = .default
         field.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         field.textColor = UIColor(0x1c1c1c)
-        field.placeholder = "이름을 입력하세요."
+        field.placeholder = StringConstants.userNameFieldMSG
         
         let doneToolBar = UIToolbar()
         let doneBarButton = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(setDone))
@@ -89,7 +89,7 @@ class UserInfoViewController: GoutDefaultViewController, UITextFieldDelegate {
     
     lazy var userBirthLabel:UILabel! = {
         let label = UILabel()
-        label.text = "생년월일"
+        label.text = StringConstants.birthdayTitle
         label.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         label.textColor = UIColor(0x7a7a7a)
         return label
@@ -102,7 +102,7 @@ class UserInfoViewController: GoutDefaultViewController, UITextFieldDelegate {
         field.leftViewMode = .always
         field.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         field.textColor = UIColor(0x1c1c1c)
-        field.placeholder = "1981-01-01"
+        field.placeholder = StringConstants.birthdayFieldMSG
         
         let doneToolBar = UIToolbar()
         let doneBarButton = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(setDone))
@@ -117,7 +117,7 @@ class UserInfoViewController: GoutDefaultViewController, UITextFieldDelegate {
     
     lazy var userAgeLabel:UILabel! = {
         let label = UILabel()
-        label.text = "나이"
+        label.text = StringConstants.ageTitle
         label.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         label.textColor = UIColor(0x7a7a7a)
         return label
@@ -129,7 +129,7 @@ class UserInfoViewController: GoutDefaultViewController, UITextFieldDelegate {
         field.keyboardType = .default
         field.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         field.textColor = UIColor(0x1c1c1c)
-        field.placeholder = "자동생성"
+        field.placeholder = StringConstants.autoMSG
         field.isUserInteractionEnabled = false
         
         return field
@@ -149,7 +149,7 @@ class UserInfoViewController: GoutDefaultViewController, UITextFieldDelegate {
     
     lazy var userHeightLabel:UILabel! = {
         let label = UILabel()
-        label.text = "키(신장)"
+        label.text = StringConstants.heightTitle
         label.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         label.textColor = UIColor(0x7a7a7a)
         return label
@@ -161,7 +161,7 @@ class UserInfoViewController: GoutDefaultViewController, UITextFieldDelegate {
         field.keyboardType = .decimalPad
         field.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         field.textColor = UIColor(0x1c1c1c)
-        field.placeholder = "키(신장) 입력하세요."
+        field.placeholder = StringConstants.heightFieldMSG
         field.tag = 0
         let doneToolBar = UIToolbar()
         let doneBarButton = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(setDone))
@@ -176,7 +176,7 @@ class UserInfoViewController: GoutDefaultViewController, UITextFieldDelegate {
     
     lazy var userWeightLabel:UILabel! = {
         let label = UILabel()
-        label.text = "몸무게"
+        label.text = StringConstants.weightTitle
         label.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         label.textColor = UIColor(0x7a7a7a)
         return label
@@ -188,7 +188,7 @@ class UserInfoViewController: GoutDefaultViewController, UITextFieldDelegate {
         field.keyboardType = .decimalPad
         field.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         field.textColor = UIColor(0x1c1c1c)
-        field.placeholder = "몸무게 입력하세요."
+        field.placeholder = StringConstants.weightFieldMSG
         field.tag = 1
         let doneToolBar = UIToolbar()
         let doneBarButton = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(setDone))
@@ -215,7 +215,7 @@ class UserInfoViewController: GoutDefaultViewController, UITextFieldDelegate {
     
     lazy var userBMILabel:UILabel! = {
         let label = UILabel()
-        label.text = "BMI"
+        label.text = StringConstants.bmiTitle
         label.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         label.textColor = UIColor(0x7a7a7a)
         return label
@@ -228,14 +228,14 @@ class UserInfoViewController: GoutDefaultViewController, UITextFieldDelegate {
         field.isUserInteractionEnabled = false
         field.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         field.textColor = UIColor(0x1c1c1c)
-        field.placeholder = "자동 생성"
+        field.placeholder = StringConstants.autoMSG
         
         return field
     }()
     
     lazy var userObesityLabel:UILabel! = {
         let label = UILabel()
-        label.text = "비만도"
+        label.text = StringConstants.obesityTitle
         label.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         label.textColor = UIColor(0x7a7a7a)
         return label
@@ -247,7 +247,7 @@ class UserInfoViewController: GoutDefaultViewController, UITextFieldDelegate {
         field.isUserInteractionEnabled = false
         field.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         field.textColor = UIColor(0x1c1c1c)
-        field.placeholder = "자동 생성"
+        field.placeholder = StringConstants.autoMSG
         
         return field
     }()
@@ -272,7 +272,7 @@ class UserInfoViewController: GoutDefaultViewController, UITextFieldDelegate {
     
     lazy var resetAlarmButton: UIButton! = {
         let button = UIButton()
-        button.setTitle("알람 리셋", for: .normal)
+        button.setTitle(StringConstants.resetAlarmBtn, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         button.setTitleColor(.black, for: .normal)
         
@@ -296,7 +296,7 @@ class UserInfoViewController: GoutDefaultViewController, UITextFieldDelegate {
         naviBar.autoPinEdge(toSuperviewEdge: .right)
         naviBar.autoSetDimension(.height, toSize: 44)
         
-        naviBar.title = "정보"
+        naviBar.title = StringConstants.infoTitle
         naviBar.rightButton = completeButton
         
         self.view.addSubview(userNamePanel)
@@ -472,7 +472,7 @@ class UserInfoViewController: GoutDefaultViewController, UITextFieldDelegate {
         let maxDate = Calendar.current.date(byAdding: components, to: Date())
         let minDate = dateFormatter.date(from: "1900-01-01")
         
-        var defaultDateStr = "1981-01-01"
+        var defaultDateStr = StringConstants.birthdayFieldMSG
         if !userBirthTextField.text!.isEmpty {
             defaultDateStr = userBirthTextField.text!
         }
@@ -510,7 +510,7 @@ class UserInfoViewController: GoutDefaultViewController, UITextFieldDelegate {
     }
     
     func showBMIAlert() {
-        self.showAlertAll(title: Bundle.main.displayName!, "키와 몸무게를 입력하면 자동으로 생성됩니다.", nextFunction: {})
+        self.showAlertAll(title: Bundle.main.displayName!, StringConstants.bmiGenerationAlertMSG, nextFunction: {})
     }
     
     @objc func setDone() {
@@ -538,15 +538,15 @@ class UserInfoViewController: GoutDefaultViewController, UITextFieldDelegate {
                 userBMITextField.text = String(format: "%.1f", bmi)
                 
                 if bmi < 18.5 {
-                    userObesityTextField.text = "저체중"
+                    userObesityTextField.text = StringConstants.lowWeight
                 } else if bmi < 23 {
-                    userObesityTextField.text = "정상"
+                    userObesityTextField.text = StringConstants.standardWeight
                 } else if bmi < 25 {
-                    userObesityTextField.text = "과체중"
+                    userObesityTextField.text = StringConstants.overWeight
                 } else if bmi < 30 {
-                    userObesityTextField.text = "비만"
+                    userObesityTextField.text = StringConstants.obesityWeight
                 } else {
-                    userObesityTextField.text = "고도비만"
+                    userObesityTextField.text = StringConstants.altitudeObesityWeight
                 }
             }
         } else {
@@ -614,7 +614,7 @@ class UserInfoViewController: GoutDefaultViewController, UITextFieldDelegate {
         if !userWeightTextField.text!.isEmpty {
             let weight = Float(userWeightTextField.text!)
             if weight! < 30 || weight! > 200 {
-                showAlertAll(title: Bundle.main.displayName!, "몸무게 입력 범위가 맞습니까?", nextFunction: {})
+                showAlertAll(title: Bundle.main.displayName!, StringConstants.weightRangeAlertMSG, nextFunction: {})
                 return
             }
         }
@@ -623,7 +623,7 @@ class UserInfoViewController: GoutDefaultViewController, UITextFieldDelegate {
         if !userHeightTextField.text!.isEmpty {
             let height = Float(userHeightTextField.text!)
             if height! < 100 || height! > 250 {
-                showAlertAll(title: Bundle.main.displayName!, "키(신장) 입력 범위가 맞습니까?", nextFunction: {})
+                showAlertAll(title: Bundle.main.displayName!, StringConstants.heightRangeAlertMSG, nextFunction: {})
                 return
             }
         }
@@ -639,7 +639,7 @@ class UserInfoViewController: GoutDefaultViewController, UITextFieldDelegate {
         let result = DatabaseManager.sharedInstance().upsertUserInfo(userInfo: userInfo)
         
         if result {
-            showAlert("사용자 정보가 저장되었습니다.", nextFunction: {})
+            showAlert(StringConstants.userInfoSaveMSG, nextFunction: {})
             
             setUserInfo()
         }
@@ -677,8 +677,7 @@ class UserInfoViewController: GoutDefaultViewController, UITextFieldDelegate {
             pushManager.setDrugAlarm(drugInfo: drugInfo)
         }
         
-//        self.showAlert2("알람이 재설정 되었습니다.")
-        self.showAlert("알람이 재설정 되었습니다.", nextFunction: {})
+        self.showAlert(StringConstants.alarmResetCompMSG, nextFunction: {})
         
     }
     

@@ -98,8 +98,6 @@ class CameraViewController: GoutDefaultViewController {
         placeHolder.autoPinEdge(toSuperviewEdge: .left)
         placeHolder.autoSetDimensions(to: CGSize(width:  screenWidth, height: screenWidth))
         
-        
-        
         captureButton.autoPinEdge(.top, to: .bottom, of: placeHolder, withOffset: 20)
         captureButton.autoAlignAxis(toSuperviewAxis: .vertical)
         captureButton.autoSetDimensions(to: CGSize(width: 66, height: 66))
@@ -118,32 +116,14 @@ class CameraViewController: GoutDefaultViewController {
         
     }
     
-    func prepareCamera(){
-        
-        switch AVCaptureDevice.authorizationStatus(for: .video) {
-        case .denied:
-            print("Denied, request permission from settings")
-        case .restricted:
-            print("Restricted, device owner must approve")
-        case .authorized:
-            print("Authorized, proceed")
-        case .notDetermined:
-            AVCaptureDevice.requestAccess(for: .video) { success in
-                if success {
-                    print("Permission granted, proceed")
-                } else {
-                    print("Permission denied")
-                }
-            }
-        }
-        
+    func prepareCamera(){        
         self.session = AVCaptureSession()
         self.session.sessionPreset = AVCaptureSession.Preset.photo//AVCaptureSessionPresetPhoto
         
+        checkPermissionCamera()
         updateCameraSelection()
         setupVideoProcession()
         setupCameraPreview()
-//        Utils.saveDetectXmlFromBundle()
         
     }
     
@@ -167,13 +147,37 @@ class CameraViewController: GoutDefaultViewController {
         
     }
     
+    /**
+     카메라 접근 권한 체크 및 권한에 따른 액션 처리
+     */
     func checkPermissionCamera(){
-        AVCaptureDevice.requestAccess(for: AVMediaType.video){ [weak self] response in
-            if response{
-                self?.setupCameraPreview()
-            } else {
-                print("else")
-//                self?.deniedAuthorize(isCamera: true)
+        
+        DispatchQueue.main.async {
+            switch AVCaptureDevice.authorizationStatus(for: .video) {
+            case .denied:
+                self.showAlert2(StringConstants.cameraAccessDinied,
+                           yes: StringConstants.yesBtn,
+                           no: StringConstants.noBtn,
+                           nextFunction: {
+                                UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
+                            },
+                           closeFunction: {
+                                self.dismissSelf(true)
+                            
+                })
+            case .restricted:
+                print("Restricted, device owner must approve")
+            case .authorized:
+                print("Authorized, proceed")
+            case .notDetermined:
+                AVCaptureDevice.requestAccess(for: .video) { success in
+                    //사용자가 명시적으로 접근을 거부한 경우
+                    if !success {
+                        self.showAlert(StringConstants.cameraPermissionDinied, nextFunction: {
+                            self.dismissSelf(true)
+                        })
+                    }
+                }
             }
         }
     }

@@ -59,6 +59,10 @@
 "medicineNameFieldMSG" = "Please enter a medicine name.";
 "medicineInfoFieldMSG" = "Please enter information about the medicine.";
 
+"cameraAccessDinied" = "Access to the camera is denied.\nWould you like to set?";
+"cameraPermissionDinied" = "Camera permission denied.";
+"cameraAccessFailed" = "Failed to access camera.";
+
 //알람
 "alarmTitle" = "Alarm";
 "registAlarmTitle" = "Alarm Registration";
@@ -80,7 +84,6 @@
 
 "alarmRestCompMSG" = "The alarm has been reset.";
 "alarmDeleteAlertMSG" = "Alarm deletion can not be canceled.\nWould you like to continue?";
-
 
 //사용자 정보
 "infoTitle" = "Infomation";

@@ -35,7 +35,7 @@
 
 //요산
 "uricacid" = "요산";
-"uricacidTitle" = "요산관리";
+"uricacidTitle" = "요산 관리";
 "uricacidInfoDesc"="해당 날짜에 기록해야할 정보가 있으면 입력해 주세요.";
 "uricacidAdd" = "요산 추가";
 
@@ -58,6 +58,10 @@
 
 "medicineNameFieldMSG" = "약 이름을 입력하세요.";
 "medicineInfoFieldMSG" = "약 정보를 입력하세요.";
+
+"cameraAccessDinied" = "카메라에 대한 액세스가 거부되었습니다. \n 설정 하시겠습니까?";
+"cameraPermissionDinied" = "카메라 사용 권한이 거부되었습니다.";
+"cameraAccessFailed" = "카메라에 액세스하지 못했습니다.";
 
 //알람
 "alarmTitle" = "알람";

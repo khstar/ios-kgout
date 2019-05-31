@@ -34,13 +34,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow.init(frame: UIScreen.main.bounds)
         window?.backgroundColor = .white
         
-//        let firstTab = GoutChartViewController()
-//        let secondTab = DrugListViewController()
-//        let thirdTab = UserInfoViewController()
-//
-//        let mainViewController = GoutTabbarViewController()
-//        mainViewController.viewControllers = [firstTab, secondTab, thirdTab]
-        
         let launchViewCtrl = LaunchViewController()
         window!.rootViewController = launchViewCtrl
         

@@ -119,6 +119,9 @@ class StringConstants {
     static let medicineNameFieldMSG = NSLocalizedString("medicineNameFieldMSG", comment: "약 이름을 입력하세요.")
     static let medicineInfoFieldMSG = NSLocalizedString("medicineInfoFieldMSG", comment: "약 정보를 입력하세요.")
     
+    static let cameraAccessDinied = NSLocalizedString("cameraAccessDinied", comment: "카메라 접근 권한이 없습니다.")
+    static let cameraPermissionDinied = NSLocalizedString("cameraPermissionDinied", comment: "카메라 접근 권한이 없습니다.")
+    static let cameraAccessFailed = NSLocalizedString("cameraAccessFailed", comment: "카메라에 액세스하지 못했습니다.")
     //Alarm
     static let alarmTitle = NSLocalizedString("alarmTitle", comment: "알람")
     static let alarmRegistTitle = NSLocalizedString("registAlarmTitle", comment: "알람 등록")
@@ -141,6 +144,7 @@ class StringConstants {
     
     static let alarmResetCompMSG = NSLocalizedString("alarmResetCompMSG", comment: "알람이 재설정 되었습니다.")
     static let alarmDeleteAlertMSG = NSLocalizedString("alarmDeleteAlertMSG", comment: "알람 삭제는 취소할 수 없습니다.\n계속 하시겠습니까?")
+    
     //UserInfo
     static let infoTitle = NSLocalizedString("infoTitle", comment: "정보")
     static let userNameTitle = NSLocalizedString("userNameTitle", comment: "이름")

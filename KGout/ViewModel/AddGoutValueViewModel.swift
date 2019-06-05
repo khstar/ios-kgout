@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 class AddGoutValueViewModel {
     
-    let goutValue = Variable("")
+    let goutValue = BehaviorRelay<String>(value: "")
     
 //    var isValid:Observable<Bool> {
 ////        return Observable<Bool>.

@@ -458,9 +458,8 @@ class AddDrugAlarmViewController: GoutDefaultViewController {
         case WeekType.sunday.rawValue:
             self.sunBtn.isSelected = isSelect
             repeatWeek.sunday = self.sunBtn.isSelected
-            
         default:
-            print("error WeekType")
+            break
         }
         
         setRepeatAllDay()
@@ -566,7 +565,7 @@ class AddDrugAlarmViewController: GoutDefaultViewController {
         
         soundPicker.delegate = self
         soundPicker.tag = 2
-        
+
         soundNameTextField.inputAccessoryView = doneToolBar
         soundNameTextField.inputView = soundPicker
     }

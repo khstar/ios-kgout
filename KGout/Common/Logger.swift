@@ -23,20 +23,19 @@ public class Logger {
     }
     
     public func DFT_TRACE(filename: String = #file, line: Int = #line, funcname: String = #function) {
-        print("[\(getDateTime())][\(getFileName(fullFilePath: filename))][\(funcname)][Line \(line)]")
+        print("[T][\(getDateTime())][\(getFileName(fullFilePath: filename))][\(funcname)][Line \(line)]")
     }
     
     public func DFT_TRACE_PRINT(filename: String = #file, line: Int = #line, funcname: String = #function, output:Any...) {
-        let now = NSDate()
-        print("[\(now.description)][\(filename)][\(funcname)][Line \(line)] \(output)")
+        print("[T][\(getDateTime())][\(filename)][\(funcname)][Line \(line)] \(output)")
     }
     
     public func debug(filename: String = #file, line: Int = #line, funcname: String = #function, output:Any...) {
-        print("[\(getDateTime())][\(getFileName(fullFilePath: filename))][\(funcname)][Line \(line)] \(output)")
+        print("[D][\(getDateTime())][\(getFileName(fullFilePath: filename))][\(funcname)][Line \(line)] \(output)")
     }
     
     public func error(filename: String = #file, line: Int = #line, funcname: String = #function, output:Any...) {
-        NSLog("[\(getFileName(fullFilePath: filename))][\(funcname)][Line \(line)] \(output)")
+        NSLog("[E][\(getFileName(fullFilePath: filename))][\(funcname)][Line \(line)] \(output)")
     }
     
     //파일명만 반환

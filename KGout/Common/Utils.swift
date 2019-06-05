@@ -257,7 +257,7 @@ class Utils{
                 do {
                     try fm.copyItem(atPath: path, toPath: fullDestPathString!)
                 } catch {
-                    print(error)
+                    Logger.sharedInstance().error(output: "\(error)")
                 }
                 //let c = fm.contents(atPath: path)
                 //_ = NSString(data: c!, encoding: String.Encoding.utf8.rawValue)
@@ -275,7 +275,7 @@ class Utils{
                 do {
                     try fm.copyItem(atPath: path, toPath: fullDestPathString!)
                 } catch {
-                    print(error)
+                    Logger.sharedInstance().error(output: "\(error)")
                 }
                 //let c = fm.contents(atPath: path)
                 //_ = NSString(data: c!, encoding: String.Encoding.utf8.rawValue)
@@ -293,7 +293,7 @@ class Utils{
                 do {
                     try fm.copyItem(atPath: path, toPath: fullDestPathString!)
                 } catch {
-                    print(error)
+                    Logger.sharedInstance().error(output: "\(error)")
                 }
                 //let c = fm.contents(atPath: path)
                 //_ = NSString(data: c!, encoding: String.Encoding.utf8.rawValue)
@@ -310,7 +310,7 @@ class Utils{
                 do {
                     try fm.copyItem(atPath: path, toPath: fullDestPathString!)
                 } catch {
-                    print(error)
+                    Logger.sharedInstance().error(output: "\(error)")
                 }
                 //let c = fm.contents(atPath: path)
                 //_ = NSString(data: c!, encoding: String.Encoding.utf8.rawValue)

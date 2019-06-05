@@ -291,15 +291,7 @@ class GoutChartViewController: BaseChartViewController {
         return view
     }()
     
-    func setupRXView() {
-        
-        #if DEBUG
-            print("debug")
-        #else
-            print("else")
-        #endif
-            print("release")
-        
+    func setupRXView() {        
         self.view.addSubview(naviBar)
         
         naviBar.autoPinEdge(toSuperviewEdge: .top, withInset: Constants.statusHeight())
@@ -601,7 +593,7 @@ class GoutChartViewController: BaseChartViewController {
     }
     
     @objc func valueChanged() {
-        print("test")
+        Logger.sharedInstance().debug(output: "test")
     }
     
     override func updateChartData() {

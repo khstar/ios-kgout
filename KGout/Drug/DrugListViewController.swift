@@ -264,8 +264,7 @@ class DrugListViewController: GoutDefaultViewController {
         let database = DatabaseManager.sharedInstance()
         
         if database.deleteDrugInfoList(drugInfoList: deleteDrugList) {
-            print("삭제 성공")
-            
+            logger.debug(output: "삭제 성공")
         }
         
         self.isDeleteMode = false
@@ -336,8 +335,7 @@ extension DrugListViewController: UICollectionViewDelegate, UICollectionViewData
                     let imageData = try Data(contentsOf: URL.init(string: pathString)!)
                     cell.drugImgView.image = UIImage.init(data: imageData)
                 } catch {
-                    print("Fail Drug Image")
-                    
+                    logger.error(output: "Fail Drug Image")
                 }
             }
             
@@ -362,7 +360,7 @@ extension DrugListViewController: UICollectionViewDelegate, UICollectionViewData
                     cell.drugImgView.image = UIImage.init(data: imageData)
                     
                 } catch {
-                    print("Fail Drug Image")
+                    logger.error(output: "Fail Drug Image")
                 }
             }
             

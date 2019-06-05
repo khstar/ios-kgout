@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var databaseManager:DatabaseManager?
     var fileManager:GoutFileManager = GoutFileManager.sharedInstance()
     var ref:DatabaseReference!
+    let logger:Logger = Logger.sharedInstance()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -43,9 +44,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             //Device Push수신 여부 응답 로그
             if valid {
-                print("Device push enable")
+                Logger.sharedInstance().debug(output: "Device Push Enable")
             } else {
-                print("Device push disable")
+                Logger.sharedInstance().debug(output: "Device Push Disable")
             }
         })
         
@@ -70,12 +71,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         
         ref?.child("ios/version").observe(.value, with: { [weak self] snapshot in
-            print("version snapshot \(snapshot.description)")
+            self?.logger.debug(output: "version snapshot : \(snapshot.description)")
             self?.checkUpdatePopup(data: snapshot)
         })
         
         ref?.child("notice").observe(.value, with: { [weak self] snapshot in
-            print("version snapshot \(snapshot.description)")
+            self?.logger.debug(output: "version snapshot : \(snapshot.description)")
             self?.checkEnablePopup(data: snapshot)
         })
     }
@@ -166,7 +167,7 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        let userInfo = notification.request.content.userInfo
+        _ = notification.request.content.userInfo
         
         //Get Notification On Foreground // (Local Homecare! && FCM) FCM은 fetchcompleteHandler 이후에 들어옴
         
@@ -175,7 +176,6 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         // Print message ID.
         
         // Print full message.
-        print(userInfo)
         
         // Change this to your preferred presentation option
         completionHandler([.alert, .badge, .sound])
@@ -195,7 +195,6 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         
         //        launchViewController(data: userInfo, reqViewType: ReqViewType.NOTI)
         // Print full message.
-        print(userInfo)
         
         completionHandler()
     }

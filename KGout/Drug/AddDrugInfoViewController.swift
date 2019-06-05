@@ -432,7 +432,7 @@ class AddDrugInfoViewController: GoutDefaultViewController, UITextFieldDelegate 
                     cameraImageView.image = UIImage.init(data: imageData)
                     
                 } catch {
-                    print("Fail Drug Image")
+                    logger.error(output: "Fail Drug Image")
                 }
             }
         }
@@ -570,7 +570,7 @@ class AddDrugInfoViewController: GoutDefaultViewController, UITextFieldDelegate 
                     try data()?.write(to: pathString)
                 }
                 catch {
-                    print("이미지 생성중 에러")
+                    logger.error(output: "이미지 생성중 에러")
                 }
             } else {
                 //삭제 후 저장
@@ -588,7 +588,7 @@ class AddDrugInfoViewController: GoutDefaultViewController, UITextFieldDelegate 
                     try data()?.write(to: pathString)
                 }
                 catch {
-                    print("이미지 생성중 에러")
+                    logger.error(output: "이미지 생성중 에러")
                 }
             }
         }
@@ -609,7 +609,7 @@ class AddDrugInfoViewController: GoutDefaultViewController, UITextFieldDelegate 
     
     
     @objc func goutValid() {
-        print("\(String(describing: drugDesc.text))")
+        logger.debug(output: "\(String(describing: drugDesc.text))")
     }
 }
 

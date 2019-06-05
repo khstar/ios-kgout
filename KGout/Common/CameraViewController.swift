@@ -166,9 +166,9 @@ class CameraViewController: GoutDefaultViewController {
                             
                 })
             case .restricted:
-                print("Restricted, device owner must approve")
+                self.logger.debug(output: "Restricted, device owner must approve")
             case .authorized:
-                print("Authorized, proceed")
+                self.logger.debug(output: "Authorized, proceed")
             case .notDetermined:
                 AVCaptureDevice.requestAccess(for: .video) { success in
                     //사용자가 명시적으로 접근을 거부한 경우

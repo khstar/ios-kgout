@@ -10,7 +10,7 @@ import Foundation
 
 
 class GoutFileManager {
-    
+    let logger:Logger = Logger.sharedInstance()
     
     private init() {}
     
@@ -64,7 +64,7 @@ class GoutFileManager {
 
             try FileManager.default.removeItem(at: URL.init(string: fileFullPath)!)
         } catch {
-            print("파일 삭제 실패")
+            logger.error(output: "파일 삭제 실패")
         }
     }
     

@@ -14,11 +14,12 @@ class LaunchViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         setupView()
-        UIView.animate(withDuration: 1.5, delay: 0.0, options: .curveEaseInOut, animations: { [weak self] in
+        UIView.animate(withDuration: 1.5,
+                       delay: 0.0,
+                       options: .curveEaseInOut,
+                       animations: {},
+                       completion: {[weak self] _ in self?.presentMainViewCtrl()})
 
-            }, completion: { [weak self] _ in
-                self?.presentMainViewCtrl()
-        })
     }
     
     lazy var titleLabel:UILabel! = {

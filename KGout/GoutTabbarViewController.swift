@@ -121,8 +121,12 @@ class GoutTabbarViewController: UITabBarController {
         let iconBottomInset = (tabbarHeight - iconHeight) / 2
         let bottomHeight = Constants.bottomHeight()
         
-//        adMobView.adUnitID = "ca-app-pub-3940256099942544/2934735716"   //테스트
+        #if DEBUG
+        adMobView.adUnitID = "ca-app-pub-3940256099942544/2934735716"   //테스트
+        #else
         adMobView.adUnitID = "ca-app-pub-8837395530354963/7062014527"   //운영
+        #endif
+        
         adMobView.rootViewController = self
         adMobView.load(GADRequest())
         

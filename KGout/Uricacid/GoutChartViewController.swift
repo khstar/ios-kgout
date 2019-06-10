@@ -175,7 +175,7 @@ class GoutChartViewController: BaseChartViewController {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         label.textColor = UIColor(0x1c1c1c)
-        label.text = StringConstants.allUricacidList
+        label.text = ""
         return label
     }()
     
@@ -186,12 +186,12 @@ class GoutChartViewController: BaseChartViewController {
         field.textColor = UIColor(0x1c1c1c)
         field.tintColor = .clear
         
-        let doneToolBar = UIToolbar()
-        let doneBarButton = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(setViewTypeDone))
-        
-        doneToolBar.sizeToFit()
-        doneToolBar.items = [doneBarButton]
-        field.inputAccessoryView = doneToolBar
+//        let doneToolBar = UIToolbar()
+//        let doneBarButton = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(setViewTypeDone))
+//        
+//        doneToolBar.sizeToFit()
+//        doneToolBar.items = [doneBarButton]
+//        field.inputAccessoryView = doneToolBar
         
         return field
     }()
@@ -413,7 +413,26 @@ class GoutChartViewController: BaseChartViewController {
         datePickerBtn.addTarget(self, action: #selector(showDataPicker), for: [.touchUpInside])
         datePickerBtn.addTarget(self, action: #selector(datePickerBtnNormal), for: [.touchDragExit, .touchUpOutside, .touchCancel])
         
+        setRxBind()
+        
         chartDid()
+    }
+    
+    var u = UricacidViewModel()
+    
+    func setRxBind() {
+        Observable.just(viewTypeList)
+            .bind(to: viewTypePicker.rx.itemTitles) { _, item in
+                return "\(item)"
+        }.disposed(by: disposeBag)
+        
+//        var u = UricacidViewModel.init()
+        
+        viewTypeTextField.rx.text.changed.bind(to: u.viewTypeStr).disposed(by: disposeBag)
+//        viewTypeTextField.rx.text.changed.subscribe(onNext:{ [weak self] test in
+//            print("test12 = \(test)")
+//        })
+        
     }
     
     
@@ -753,12 +772,19 @@ class GoutChartViewController: BaseChartViewController {
      */
     func createViewTypePicker() {
         let doneToolBar = UIToolbar()
-        let doneBarButton = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(doneViewTypePicker))
+        let doneBarButton = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: nil, action: nil)
         doneToolBar.sizeToFit()
         doneToolBar.items = [doneBarButton]
         
+        doneBarButton.rx.tap.subscribe({ _ in
+            let i = self.viewTypePicker.selectedRow(inComponent: 0)
+
+            self.viewTypeTextField.text = self.viewTypeList[i]
+            self.viewTypeTextField.resignFirstResponder()
+        }).disposed(by: disposeBag)
+        
         viewTypePicker.tag = 1
-        viewTypePicker.delegate = self
+//        viewTypePicker.delegate = self
         viewTypeTextField.inputAccessoryView = doneToolBar
         viewTypeTextField.inputView = viewTypePicker
     }
@@ -789,12 +815,12 @@ class GoutChartViewController: BaseChartViewController {
      
      */
     @objc func doneViewTypePicker() {
-        let i = viewTypePicker.selectedRow(inComponent: 0)
-        viewTypeLabel.text = viewTypeList[i]
-        viewTypeTextField.resignFirstResponder()
-        selectViewTypeRow = i
-        isRefrash = true
-        fetchData()
+//        let i = viewTypePicker.selectedRow(inComponent: 0)
+//        viewTypeLabel.text = viewTypeList[i]
+//        viewTypeTextField.resignFirstResponder()
+//        selectViewTypeRow = i
+//        isRefrash = true
+//        fetchData()
     }
     
     @objc func setDateDone() {
@@ -1057,10 +1083,16 @@ extension GoutChartViewController:UIPickerViewDelegate, UIPickerViewDataSource {
         
         let pickerTag = pickerView.tag
         
-        if pickerTag == 1 {
-            return String(viewTypeList[row])
-        } else {
+//        if pickerTag == 1 {
+//            return String(viewTypeList[row])
+//        } else {
+//            return String(dateList[row])
+//        }
+        
+        if pickerTag != 1 {
             return String(dateList[row])
         }
+        
+        return ""
     }
 }

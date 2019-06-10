@@ -11,23 +11,42 @@ import RxSwift
 import RxCocoa
 
 class UricacidViewModel {
-    var listType = BehaviorRelay<String>(value: StringConstants.allUricacidList)
-    var rowV = BehaviorRelay<(row: Int, component: Int)>(value: (0, 0))
-    
-    var items = Observable.of(["a", "b", "c"])
+    var viewTypeStr = BehaviorRelay<String?>(value: "")
+    var test2 = BehaviorRelay<String?>(value: "")
+    var uricacidDataList:Observable<[GoutData]>!
+    var te:Observable<String>!
     
     init() {
-//        rowV.asObservable().map({_ in print("Tester")})
+        uricacidObserve()
+    }
+    
+    func uricacidObserve() {
+        
+//       uricacidDataList = Observable.combineLatest(viewTypeStr, test2, resultSelector: { (lastLeft, lastRight) in
+//        
+//            print("lastLeft = \(lastLeft!), lastRight = \(lastRight!)")
+//            var goutDatas:[GoutData] = []
 //
-//        rowV.asObservable().
+//            return goutDatas
+//        })
         
-        observeListType()
-    }
+        te = viewTypeStr.asObservable().map{
+            v in
+            print("v = \(v!)")
+            return v!
+        }
+        
+//        uricacidDataList = viewTypeStr.asObservable().map{
+//            viewTypeStr in
+//            
+//            print("test = \(viewTypeStr!)")
+//            
+//            var goutDatas:[GoutData] = []
+//            
+//            return goutDatas
+//        }
+        
+//        Obser
     
-    private func observeListType() {
-        
-        rowV.asObservable().map({_ in print("Tester")}).subscribe({_ in print("subscribe")})
-        
     }
-    
 }

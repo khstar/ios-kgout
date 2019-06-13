@@ -18,9 +18,8 @@ class GoutChartViewController: BaseChartViewController {
     let addButton = AddButton()
     let delButton = AddButton()
     
-    let datePicker = UIDatePicker()
     let viewTypePicker = UIPickerView()
-    let monthPick = UIPickerView()
+    let datePicker = UIPickerView()
     
     var months = ["1"]
     
@@ -157,16 +156,16 @@ class GoutChartViewController: BaseChartViewController {
     lazy var dateTextField:UITextField! = {
         let field = UITextField()
         field.leftViewMode = .always
-        field.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+        field.font = UIFont.systemFont(ofSize: 16, weight: .medium)
         field.textColor = UIColor(0x1c1c1c)
         field.tintColor = .clear
         
-        let doneToolBar = UIToolbar()
-        let doneBarButton = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(setDateDone))
-        
-        doneToolBar.sizeToFit()
-        doneToolBar.items = [doneBarButton]
-        field.inputAccessoryView = doneToolBar
+//        let doneToolBar = UIToolbar()
+//        let doneBarButton = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(setDateDone))
+//
+//        doneToolBar.sizeToFit()
+//        doneToolBar.items = [doneBarButton]
+//        field.inputAccessoryView = doneToolBar
         
         return field
     }()
@@ -175,23 +174,20 @@ class GoutChartViewController: BaseChartViewController {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         label.textColor = UIColor(0x1c1c1c)
+//        label.text = StringConstants.allUricacidList
         label.text = ""
+        
         return label
     }()
     
     lazy var viewTypeTextField:UITextField! = {
         let field = UITextField()
         field.leftViewMode = .always
-        field.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+        field.font = UIFont.systemFont(ofSize: 16, weight: .medium)
         field.textColor = UIColor(0x1c1c1c)
         field.tintColor = .clear
         
-//        let doneToolBar = UIToolbar()
-//        let doneBarButton = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(setViewTypeDone))
-//        
-//        doneToolBar.sizeToFit()
-//        doneToolBar.items = [doneBarButton]
-//        field.inputAccessoryView = doneToolBar
+        field.text = StringConstants.allUricacidList
         
         return field
     }()
@@ -313,11 +309,11 @@ class GoutChartViewController: BaseChartViewController {
         firstPanel.addSubview(viewTypePanel)
         
         viewTypePanel.autoPinEdge(toSuperviewEdge: .top)
-        viewTypePanel.autoSetDimensions(to: CGSize(width: viewTypeTextFieldWidth + 5 + 20, height: 40))
+        viewTypePanel.autoSetDimensions(to: CGSize(width: viewTypeTextFieldWidth + 5 + 20, height: 35))
         viewTypePanel.autoAlignAxis(toSuperviewAxis: .vertical)
         
         viewTypePanel.addSubview(viewTypeTextField)
-        viewTypePanel.addSubview(viewTypeLabel)
+//        viewTypePanel.addSubview(viewTypeLabel)
         viewTypePanel.addSubview(viewTypePickerIcon)
         viewTypePanel.addSubview(viewTypePickerBtn)
         
@@ -327,10 +323,10 @@ class GoutChartViewController: BaseChartViewController {
         viewTypeTextField.autoPinEdge(toSuperviewEdge: .bottom)
         viewTypeTextField.autoSetDimension(.width, toSize: viewTypeTextFieldWidth)
         
-        viewTypeLabel.autoPinEdge(toSuperviewEdge: .top)
-        viewTypeLabel.autoPinEdge(toSuperviewEdge: .left)
-        viewTypeLabel.autoPinEdge(toSuperviewEdge: .bottom)
-        viewTypeLabel.autoSetDimension(.width, toSize: viewTypeTextFieldWidth)
+//        viewTypeLabel.autoPinEdge(toSuperviewEdge: .top)
+//        viewTypeLabel.autoPinEdge(toSuperviewEdge: .left)
+//        viewTypeLabel.autoPinEdge(toSuperviewEdge: .bottom)
+//        viewTypeLabel.autoSetDimension(.width, toSize: viewTypeTextFieldWidth)
         
         viewTypePickerIcon.autoPinEdge(.left, to: .right, of: viewTypeTextField, withOffset: 5)
         viewTypePickerIcon.autoSetDimensions(to: CGSize(width: 20, height: 20))
@@ -352,7 +348,7 @@ class GoutChartViewController: BaseChartViewController {
         selectMonthPanel.autoAlignAxis(toSuperviewAxis: .vertical)
         
         selectMonthPanel.addSubview(dateTextField)
-        selectMonthPanel.addSubview(dateLabel)
+//        selectMonthPanel.addSubview(dateLabel)
         selectMonthPanel.addSubview(datePickerIcon)
         selectMonthPanel.addSubview(datePickerBtn)
         
@@ -361,10 +357,10 @@ class GoutChartViewController: BaseChartViewController {
         dateTextField.autoPinEdge(toSuperviewEdge: .bottom)
         dateTextField.autoSetDimension(.width, toSize: dateTextFieldWidth)
         
-        dateLabel.autoPinEdge(toSuperviewEdge: .top)
-        dateLabel.autoPinEdge(toSuperviewEdge: .left)
-        dateLabel.autoPinEdge(toSuperviewEdge: .bottom)
-        dateLabel.autoSetDimension(.width, toSize: dateTextFieldWidth)
+//        dateLabel.autoPinEdge(toSuperviewEdge: .top)
+//        dateLabel.autoPinEdge(toSuperviewEdge: .left)
+//        dateLabel.autoPinEdge(toSuperviewEdge: .bottom)
+//        dateLabel.autoSetDimension(.width, toSize: dateTextFieldWidth)
         
         datePickerIcon.autoPinEdge(.left, to: .right, of: dateTextField, withOffset: 5)
         datePickerIcon.autoSetDimensions(to: CGSize(width: 20, height: 20))
@@ -408,7 +404,7 @@ class GoutChartViewController: BaseChartViewController {
         viewTypePickerBtn.addTarget(self, action: #selector(viewTypePickerBtnHighlight), for: [.touchDown])
         viewTypePickerBtn.addTarget(self, action: #selector(showViewTypePicker), for: [.touchUpInside])
         viewTypePickerBtn.addTarget(self, action: #selector(viewTypePickerBtnNormal), for: [.touchDragExit, .touchUpOutside, .touchCancel])
-        
+
         datePickerBtn.addTarget(self, action: #selector(datePickerBtnHighlight), for: [.touchDown])
         datePickerBtn.addTarget(self, action: #selector(showDataPicker), for: [.touchUpInside])
         datePickerBtn.addTarget(self, action: #selector(datePickerBtnNormal), for: [.touchDragExit, .touchUpOutside, .touchCancel])
@@ -418,21 +414,126 @@ class GoutChartViewController: BaseChartViewController {
         chartDid()
     }
     
-    var u = UricacidViewModel()
+    var uricacidViewModel = UricacidViewModel()
+    
+    var d = BehaviorRelay<[String]>(value: [])
     
     func setRxBind() {
+        
         Observable.just(viewTypeList)
             .bind(to: viewTypePicker.rx.itemTitles) { _, item in
                 return "\(item)"
         }.disposed(by: disposeBag)
         
-//        var u = UricacidViewModel.init()
+
+//        Observable.repeatElement(dateList)
+//            .bind(to: datePicker.rx.itemTitles) { _, item in
+//                return "\(item)"
+//            }.disposed(by: disposeBag)
         
-        viewTypeTextField.rx.text.changed.bind(to: u.viewTypeStr).disposed(by: disposeBag)
-//        viewTypeTextField.rx.text.changed.subscribe(onNext:{ [weak self] test in
-//            print("test12 = \(test)")
-//        })
         
+//        Observable.of(dateList)
+//            .bind(to: datePicker.rx.itemTitles) { _, item in
+//                return "\(item)"
+//            }.disposed(by: disposeBag)
+        
+        
+//        Observable.just(dateList)
+//            .bind(to: datePicker.rx.itemTitles) { _, item in
+//                return "\(item)"
+//        }.disposed(by: disposeBag)
+        
+//        viewTypeTextField.rx.text.bind(to: u.viewTypeStr).disposed(by: disposeBag)
+        
+//        viewTypeTextField.rx.text
+//        .distinctUntilChanged()
+//        .bind(to: u.viewTypeStr)
+//        .disposed(by: disposeBag)
+//        u.viewTypeStr.accept("전체")
+//
+//        u.viewTypeStr.subscribe(
+//            onNext: {
+//                    [weak self] test in
+//                print("viewModel = \(String(describing: test!))")
+//            }
+//        ).disposed(by: disposeBag)
+        
+//        u.viewTypeObservable.subscribe(
+//            onNext: {
+//                [weak self] test in
+////                self?.logger.debug(output: "test = \(test)")
+//            }
+//        ).disposed(by: disposeBag)
+        
+        uricacidViewModel.dateListObs.subscribe(
+            onNext: {
+               [weak self] dateList in
+                self?.logger.debug(output: dateList.count)
+                
+                //DateList가 0 이상이면 DatePicker보여주고 아니면 안보여 주고
+                if dateList.count > 0 {
+                    self?.secondPanel.isHidden = false
+                } else {
+                    self?.secondPanel.isHidden = true
+                }
+                
+                self?.setDatePicker(dateList: dateList)
+                
+        }).disposed(by: disposeBag)
+        
+        uricacidViewModel.uricacidDataList.subscribe(
+            onNext: {
+                uricacidList in
+                
+                self.uricacidDatas = uricacidList
+                
+                print("onNext: \(uricacidList.count)")
+        }).disposed(by: disposeBag)
+    }
+    
+    func setPickerObservable() {
+        
+        //DatePicker 초기화 및 Binding
+        datePicker.delegate = nil
+        datePicker.dataSource = nil
+        
+        Observable.just(dateList)
+            .bind(to: datePicker.rx.itemTitles) { _, item in
+                return "\(item)"
+            }.disposed(by: disposeBag)
+    }
+    
+    /**
+     DatePicker와 관련된 정보 입력
+     */
+    func setDatePicker(dateList:[String]) {
+        
+        let i = self.viewTypePicker.selectedRow(inComponent: 0)
+        
+        //전역 dateList 값 처리
+        self.dateList = dateList
+        
+        var dateText = ""
+        
+        if dateList.count > 0 {
+            dateText = self.dateList[0]
+        }
+        
+        self.dateTextField.text = dateText
+//        let param:[String] = [dateText, String(i)]
+        
+//        self.uricacidViewModel.uricacidSelectParam.accept(param)
+        selectUricacidList()
+        setPickerObservable()
+    }
+    
+    func selectUricacidList() {
+        
+        let i = self.viewTypePicker.selectedRow(inComponent: 0)
+        
+        let param:[String] = [self.dateTextField.text!, String(i)]
+        
+        self.uricacidViewModel.uricacidSelectParam.accept(param)
     }
     
     
@@ -756,14 +857,26 @@ class GoutChartViewController: BaseChartViewController {
     func createDatePicker(){
         
         let doneToolBar = UIToolbar()
-        let doneBarButton = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(donePressed))
+        let doneBarButton = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: nil, action: nil)
         doneToolBar.sizeToFit()
         doneToolBar.items = [doneBarButton]
 
-        monthPick.tag = 3
-        monthPick.delegate = self
+        datePicker.tag = 3
+        
+        
+        doneBarButton.rx.tap.subscribe({ _ in
+            let i = self.datePicker.selectedRow(inComponent: 0)
+            
+            self.dateTextField.text = self.dateList[i]
+//            self.uricacidViewModel.dateStr.accept(self.dateList[i])
+            
+            self.selectUricacidList()
+            
+            self.dateTextField.resignFirstResponder()
+        }).disposed(by: disposeBag)
+        
         dateTextField.inputAccessoryView = doneToolBar
-        dateTextField.inputView = monthPick
+        dateTextField.inputView = datePicker
         
     }
     
@@ -778,13 +891,18 @@ class GoutChartViewController: BaseChartViewController {
         
         doneBarButton.rx.tap.subscribe({ _ in
             let i = self.viewTypePicker.selectedRow(inComponent: 0)
-
+            
             self.viewTypeTextField.text = self.viewTypeList[i]
+            self.uricacidViewModel.viewTypeFlag.accept(i)
+            
+            if i == 0 {
+                self.uricacidViewModel.dateStr.accept("")
+            }
+            
             self.viewTypeTextField.resignFirstResponder()
         }).disposed(by: disposeBag)
         
         viewTypePicker.tag = 1
-//        viewTypePicker.delegate = self
         viewTypeTextField.inputAccessoryView = doneToolBar
         viewTypeTextField.inputView = viewTypePicker
     }
@@ -797,7 +915,7 @@ class GoutChartViewController: BaseChartViewController {
      월별 데이터 Picker 액션
      */
     @objc func donePressed() {
-        let i = monthPick.selectedRow(inComponent: 0)
+        let i = datePicker.selectedRow(inComponent: 0)
         
         if dateList.count == 0 {
             dateTextField.resignFirstResponder()
@@ -824,7 +942,7 @@ class GoutChartViewController: BaseChartViewController {
     }
     
     @objc func setDateDone() {
-        monthPick.selectedRow(inComponent: 0)
+        datePicker.selectedRow(inComponent: 0)
     }
     
     @objc func setViewTypeDone() {

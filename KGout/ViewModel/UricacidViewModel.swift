@@ -53,12 +53,10 @@ class UricacidViewModel {
             param in
             
             if param!.count > 0 {
-                print(param![0])
-                print(param![1])
-
+                self.logger.debug(output: "Year : \(param![0]), viewType : \(goutListType(rawValue: Int(param![1])!)!)")
+                
                 let uricacidList = self.databaseManager.selectGoutVaule(date: param![0], listType: goutListType(rawValue: Int(param![1])!)!)
                 return uricacidList!
-                
             }
             
             return []

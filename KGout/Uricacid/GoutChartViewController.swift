@@ -484,10 +484,12 @@ class GoutChartViewController: BaseChartViewController {
         uricacidViewModel.uricacidDataList.subscribe(
             onNext: {
                 uricacidList in
-                
                 self.uricacidDatas = uricacidList
-                
-                print("onNext: \(uricacidList.count)")
+        }, onError: {
+                error in
+                self.logger.error(output: "error = \(error)")
+        }, onCompleted: {
+            print("comp")
         }).disposed(by: disposeBag)
     }
     
@@ -507,9 +509,6 @@ class GoutChartViewController: BaseChartViewController {
      DatePicker와 관련된 정보 입력
      */
     func setDatePicker(dateList:[String]) {
-        
-        let i = self.viewTypePicker.selectedRow(inComponent: 0)
-        
         //전역 dateList 값 처리
         self.dateList = dateList
         
@@ -520,9 +519,7 @@ class GoutChartViewController: BaseChartViewController {
         }
         
         self.dateTextField.text = dateText
-//        let param:[String] = [dateText, String(i)]
         
-//        self.uricacidViewModel.uricacidSelectParam.accept(param)
         selectUricacidList()
         setPickerObservable()
     }
@@ -814,7 +811,7 @@ class GoutChartViewController: BaseChartViewController {
         self.chartView.centerViewToAnimated(xValue: entry.x, yValue: entry.y,
                                             axis: self.chartView.data!.getDataSetByIndex(highlight.dataSetIndex).axisDependency,
                                             duration: 1)
-        self.chartView.xAxis.valueFormatter?.stringForValue(1, axis: nil)
+        _ = self.chartView.xAxis.valueFormatter?.stringForValue(1, axis: nil)
         //        self.chart
         //        self.chartView.xAxis.setValuesForKeys(<#T##keyedValues: [String : Any]##[String : Any]#>)
         

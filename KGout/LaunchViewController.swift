@@ -60,6 +60,8 @@ class LaunchViewController: UIViewController {
         
         let mainViewController = GoutTabbarViewController()
         mainViewController.viewControllers = [firstTab, secondTab, thirdTab]
+        mainViewController.modalPresentationStyle = .fullScreen
+        
         present(mainViewController, animated: true, completion: nil)
     }
 

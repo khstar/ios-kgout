@@ -391,11 +391,23 @@ class Utils{
             guard let value = element.value as? Int8, value != 0 else { return identifier }
             return identifier + String(UnicodeScalar(UInt8(value)))
         }
-        
+        print(identifier)
         //iPhoneX 구분
         if identifier == "iPhone10,3" ||
             identifier == "iPhone10,6" ||
-            identifier == "x86_64" {
+            identifier == "x86_64" ||
+            identifier == "iPhone12,3" {
+            return true
+        }
+        
+        return false
+    }
+    
+    /**
+            iPhoneX 이후인지 확인
+     */
+    static func bIphoneXLate() -> Bool {
+        if UIScreen.main.nativeBounds.height > 2208 {
             return true
         }
         

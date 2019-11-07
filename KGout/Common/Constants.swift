@@ -19,7 +19,11 @@ class Constants {
     static func statusHeight() -> CGFloat {
         var height = 20
         
-        if Utils.bIphoneX() {
+//        if Utils.bIphoneX() {
+//            height = 44
+//        }
+        
+        if Utils.bIphoneXLate() {
             height = 44
         }
         
@@ -30,7 +34,11 @@ class Constants {
     static func bottomHeight() -> CGFloat {
         var height = 0
         
-        if Utils.bIphoneX() {
+//        if Utils.bIphoneX() {
+//            height = 22
+//        }
+        
+        if Utils.bIphoneXLate() {
             height = 22
         }
         

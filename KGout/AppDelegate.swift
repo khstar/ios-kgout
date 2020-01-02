@@ -29,6 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //DB 파일이 존재하지 않으면
         if(!fileManager.isDatabaseFile()) {
             databaseManager?.createDatabase()
+        } else {
+            databaseManager?.checkColumn()
         }
         
         window = UIWindow.init(frame: UIScreen.main.bounds)

@@ -90,6 +90,73 @@ class DatabaseManager {
         sqlite3_close(db)
     }
     
+    func checkColumn() -> Bool {
+//        NSLog("Error opening database")
+        print("checkColumn")
+        var rc: Int32 = 0
+        var db: OpaquePointer? = nil
+        let dbFileFullPath = fileManager.getDBFilePath()
+        
+        rc = sqlite3_open(dbFileFullPath, &db)
+        
+        if (rc != SQLITE_OK) {
+            let errmsg = String(cString: sqlite3_errmsg(db))
+            NSLog("Error opening database: \(errmsg)")
+        }
+//        NSLog("Error opening database")
+        let queryStatementString = "SELECT sql FROM sqlite_master WHERE name='tb_gout' AND sql LIKE '%bSeizure%';"
+        var queryStatement: OpaquePointer? = nil
+        
+        if sqlite3_prepare_v2(db, queryStatementString, -1, &queryStatement, nil) == SQLITE_OK {
+            
+            while sqlite3_step(queryStatement) == SQLITE_ROW {
+                
+                print("test ")
+            }
+        } else {
+            // Fail
+            NSLog("Query Failed: \(queryStatementString)")
+        }
+        
+        sqlite3_finalize(queryStatement)
+    
+        return false
+    }
+    
+    func addColumn() {
+        
+        print("checkColumn")
+        var rc: Int32 = 0
+        var db: OpaquePointer? = nil
+        let dbFileFullPath = fileManager.getDBFilePath()
+        
+        rc = sqlite3_open(dbFileFullPath, &db)
+        
+        if (rc != SQLITE_OK) {
+            let errmsg = String(cString: sqlite3_errmsg(db))
+            NSLog("Error opening database: \(errmsg)")
+        }
+//        NSLog("Error opening database")
+        let queryStatementString = "ALTER TABLE tb_gout ADD price INTEGER DEFAULT 1;"
+        var queryStatement: OpaquePointer? = nil
+        
+        if sqlite3_prepare_v2(db, queryStatementString, -1, &queryStatement, nil) == SQLITE_OK {
+            
+            while sqlite3_step(queryStatement) == SQLITE_ROW {
+                
+                print("test ")
+            }
+        } else {
+            // Fail
+            NSLog("Query Failed: \(queryStatementString)")
+        }
+        
+        sqlite3_finalize(queryStatement)
+    
+        return false
+        
+    }
+    
     func selectUserInfo() -> UserInfo? {
         
         var rc: Int32 = 0

@@ -230,7 +230,7 @@ class AddDrugAlarmViewController: GoutDefaultViewController {
         
         self.view.addSubview(naviBar)
         
-        naviBar.autoPinEdge(toSuperviewEdge: .top, withInset: 20)
+        naviBar.autoPinEdge(toSuperviewEdge: .top, withInset: Constants.statusHeight())
         naviBar.autoPinEdge(toSuperviewEdge: .left)
         naviBar.autoPinEdge(toSuperviewEdge: .right)
         naviBar.autoSetDimension(.height, toSize: 44)

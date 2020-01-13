@@ -153,7 +153,7 @@ class DatabaseManager {
         
         sqlite3_finalize(queryStatement)
     
-        return false
+//        return false
         
     }
     

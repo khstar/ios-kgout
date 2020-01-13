@@ -463,6 +463,7 @@ class AddDrugInfoViewController: GoutDefaultViewController, UITextFieldDelegate 
             addDrugAlarm.drugAlarmInfo = drugAlarm
             addDrugAlarm.addDrugAlarmDelegate = self
             addDrugAlarm.drugAlarmIndex = drugAlarmIndex!
+            addDrugAlarm.modalPresentationStyle = .fullScreen
             
             self.present(addDrugAlarm, animated: true, completion:{})
         }
@@ -503,6 +504,8 @@ class AddDrugInfoViewController: GoutDefaultViewController, UITextFieldDelegate 
     func showCamera(){
         let cameraView = CameraViewController()
         cameraView.cameraDelegate = self
+        cameraView.modalPresentationStyle = .fullScreen
+        
         present(cameraView, animated: true, completion: nil)
     }
     

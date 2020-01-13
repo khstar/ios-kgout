@@ -254,6 +254,7 @@ class DrugListViewController: GoutDefaultViewController {
         let addViewCtrl = AddDrugInfoViewController()
         addViewCtrl.drugInfo = drugInfo
         addViewCtrl.addDrugInfoDelegate = self
+        addViewCtrl.modalPresentationStyle = .fullScreen
         present(addViewCtrl, animated: true, completion: nil)
     }
     

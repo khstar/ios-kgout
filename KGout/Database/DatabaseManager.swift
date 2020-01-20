@@ -91,7 +91,6 @@ class DatabaseManager {
     }
     
     func checkColumn() -> Bool {
-//        NSLog("Error opening database")
         print("checkColumn")
         var rc: Int32 = 0
         var db: OpaquePointer? = nil
@@ -103,7 +102,6 @@ class DatabaseManager {
             let errmsg = String(cString: sqlite3_errmsg(db))
             NSLog("Error opening database: \(errmsg)")
         }
-//        NSLog("Error opening database")
         let queryStatementString = "SELECT sql FROM sqlite_master WHERE name='tb_gout' AND sql LIKE '%bSeizure%';"
         var queryStatement: OpaquePointer? = nil
         

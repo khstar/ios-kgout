@@ -12,8 +12,9 @@ import SwiftyJSON
 import FirebaseMessaging
 import UserNotifications
 import Moya
-import Crashlytics
-import Fabric
+//import Crashlytics
+import FirebaseCrashlytics
+//import Fabric
 import RxGesture
 
 class GoutDefaultViewController: UIViewController {
